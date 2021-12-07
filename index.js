@@ -9,17 +9,18 @@ import { render } from 'react-dom';
 
 const App = () => {
   return (
-    <div class="flex justify-start">
-      <div class="text-sm font-bold" >
+    <div class="flex justify-start bg-green-200 h-screen ">
+      <p class="text-sm font-bold m-10" >
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
         tiny.”
-      </div>
-      <div class="text-lg font-bold" >
+      </p>
+      <p class="text-sm font-bold m-10" >
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
         tiny.”
-      </div>
+      </p>
+      
     </div>
   );
 };
