@@ -15,19 +15,25 @@ const App = () => {
       <div>
         <p class="text-sm font-bold m-10">
           <text class="text-blue-800">
-          “Tailwind CSS is the only framework that I've seen scale on large
-          teams. It’s easy to customize, adapts to any design, and the build
-          size is tiny.”
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
           </text>
         </p>
-   
       </div>
       <div>
+        <input type="text" class="h-5 mt-10" />
+        <button type="button" onclick="getValueInput()" class="text-blue-800">
+          Show result
+        </button>
+      </div>
+
+      <div>
         <p class="text-sm font-bold m-10">
-        <text class="text-blue-800">
-          “Tailwind CSS is the only framework that I've seen scale on large
-          teams. It’s easy to customize, adapts to any design, and the build
-          size is tiny.”
+          <text class="text-blue-800">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
           </text>
         </p>
       </div>
@@ -36,3 +42,10 @@ const App = () => {
 };
 
 render(<App />, document.getElementById('app'));
+
+/*
+    <button type="button"  onclick="getValueInput()"> 
+      click me!! 
+  </button> 
+
+*/
