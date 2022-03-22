@@ -9,6 +9,10 @@ import { useState, useReducer, useEffect } from 'react';
 // Write Javascript code!
 //const appDiv = document.getElementById('app');
 
+const alertme = () => {
+  alert('ok so far');
+};
+
 const App = () => {
   return (
     <div class="flex justify-start bg-green-200 h-screen ">
@@ -23,7 +27,7 @@ const App = () => {
       </div>
       <div>
         <input type="text" class="h-5 mt-10" />
-        <button type="button" onclick="getValueInput()" class="text-blue-800">
+        <button type="button" onclick="alertme()" class="text-blue-800">
           Show result
         </button>
       </div>
