@@ -29,7 +29,10 @@ const App = () => {
       <div>
         <input type="text" class="h-5 mt-10" />
 
-        <button onClick={alertme}> Show stuff </button>
+        <button onClick={alertme} class="text-md font-bold">
+          {' '}
+          Show stuff{' '}
+        </button>
       </div>
 
       <div>
