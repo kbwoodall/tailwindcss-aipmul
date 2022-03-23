@@ -10,6 +10,7 @@ import { useState, useReducer, useEffect } from 'react';
 //const appDiv = document.getElementById('app');alertme = () => {
 
 const alertme = () => {
+  console.log('testing alert');
   alert('ok so far');
 };
 
@@ -27,9 +28,8 @@ const App = () => {
       </div>
       <div>
         <input type="text" class="h-5 mt-10" />
-        <button type="button" onclick="alertme()" class="text-blue-800">
-          Show result
-        </button>
+
+        <button> Show stuff </button>
       </div>
 
       <div>
@@ -48,7 +48,7 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
-    <button type="button"  onclick="getValueInput()"> 
+    <button type="button"  onClick="alertme()"> 
       click me!! 
   </button> 
 
