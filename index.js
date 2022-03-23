@@ -9,12 +9,12 @@ import { useState, useReducer, useEffect } from 'react';
 // Write Javascript code!
 //const appDiv = document.getElementById('app');alertme = () => {
 
-const alertme = () => {
-  console.log('testing alert');
-  alert('ok so far');
-};
-
 const App = () => {
+  const alertme = () => {
+    console.log('testing alert');
+    alert('ok so far');
+  };
+
   return (
     <div class="flex justify-start bg-green-200 h-screen ">
       <div>
