@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 
 // Write Javascript code!
-//const appDiv = document.getElementById('app');
+//const appDiv = document.getElementById('app');alertme = () => {
 
 const alertme = () => {
   alert('ok so far');
