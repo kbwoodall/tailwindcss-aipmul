@@ -29,7 +29,7 @@ const App = () => {
       <div>
         <input type="text" class="h-5 mt-10" />
 
-        <button> Show stuff </button>
+        <button onClick={alertme}> Show stuff </button>
       </div>
 
       <div>
