@@ -30,7 +30,6 @@ const App = () => {
         <input type="Text" className="h-5 mt-10" />
 
         <button onClick={alertme} className="text-md font-bold">
-          {' '}
           Show stuff{' '}
         </button>
       </div>
