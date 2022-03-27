@@ -9,6 +9,19 @@ import { useState, useReducer, useEffect } from 'react';
 // Write Javascript code!
 //const appDiv = document.getElementById('app');alertme = () => {
 
+const TextInput = (props) => {
+  return (
+    <div>
+      <input
+        type="text"
+        value={props.value}
+        onChange={(event) => console.log('value changed!')}
+      />
+      <p>Input again</p>
+    </div>
+  );
+};
+
 const App = () => {
   const alertme = () => {
     console.log('testing alert');
@@ -30,6 +43,9 @@ const App = () => {
         <button onClick={() => alertme()} className="text-md font-bold">
           Input now
         </button>
+
+        <TextInput/>
+
       </div>
 
       <div>
