@@ -16,9 +16,9 @@ const App = () => {
   };
 
   return (
-    <div class="flex justify-start bg-green-200 h-screen ">
+    <div classname="flex justify-start bg-green-200 h-screen ">
       <div>
-        <p class="text-md font-bold m-10">
+        <p classname="text-md font-bold m-10">
           <text class="text-blue-800">
             “Tailwind CSS is the only framework that I've seen scale on large
             teams. It’s easy to customize, adapts to any design, and the build
@@ -36,8 +36,8 @@ const App = () => {
       </div>
 
       <div>
-        <p class="text-md font-bold m-10">
-          <text class="text-blue-800">
+        <p classname="text-md font-bold m-10">
+          <text classname="text-blue-800">
             “Tailwind CSS is the only framework that I've seen scale on large
             teams. It’s easy to customize, adapts to any design, and the build
             size is tiny.”
