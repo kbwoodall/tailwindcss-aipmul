@@ -19,28 +19,24 @@ const App = () => {
     <div className="flex justify-start bg-green-200 h-screen ">
       <div>
         <p className="text-md font-bold m-10">
-          <text className="text-blue-800">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </text>
+          “Tailwind CSS is the only framework that I've seen scale on large
+          teams. It’s easy to customize, adapts to any design, and the build
+          size is tiny.”
         </p>
       </div>
       <div>
-        <input type="Text" className="h-5 mt-10" />
+        <input className="h-5 mt-10" />
 
-        <button onClick={alertme} className="text-md font-bold">
-          Show stuff
+        <button onClick={() => alertme()} className="text-md font-bold">
+          Input now
         </button>
       </div>
 
       <div>
         <p className="text-md font-bold m-10">
-          <text className="text-blue-800">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </text>
+          “Tailwind CSS is the only framework that I've seen scale on large
+          teams. It’s easy to customize, adapts to any design, and the build
+          size is tiny.”
         </p>
       </div>
     </div>
