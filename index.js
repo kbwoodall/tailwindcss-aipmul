@@ -9,15 +9,36 @@ import { useState, useReducer, useEffect } from 'react';
 // Write Javascript code!
 //const appDiv = document.getElementById('app');alertme = () => {
 
+const logme = (props) => {
+  console.log(props.value);
+};
+
 const TextInput = (props) => {
+  const [text, setText] = useState('');
+  /*
+  <h2>How to use TextField Component in ReactJS?</h2>
+  <TextField
+    value={name}
+    label="Enter your name"
+    onChange={(e) => {
+      setName(e.target.value);
+    }}
+  />
+  <h3>Your Enter Value is: {name} </h3>
+</div>
+
+
+*/
+
   return (
     <div>
       <input
         type="text"
-        value={props.value}
-        onChange={(event) => console.log('value changed!')}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
       <p>Input again</p>
+      <h3>Your Enter Value is: {text} </h3>
     </div>
   );
 };
