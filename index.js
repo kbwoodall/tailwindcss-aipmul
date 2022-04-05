@@ -44,8 +44,7 @@ const App = () => {
           Input now
         </button>
 
-        <TextInput/>
-
+        <TextInput />
       </div>
 
       <div>
