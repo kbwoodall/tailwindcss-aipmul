@@ -37,8 +37,8 @@ const TextInput = (props) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <p>Input again</p>
-      <h3>Your Enter Value is: {text} </h3>
+
+      <h3 className="text-md font-bold">You entered: {text} </h3>
     </div>
   );
 };
@@ -59,9 +59,7 @@ const App = () => {
         </p>
       </div>
       <div>
-        <input className="h-5 mt-10" />
-
-        <button onClick={() => alertme()} className="text-md font-bold">
+        <button onClick={() => alertme()} className="text-md font-bold mt-10">
           Input now
         </button>
 
@@ -82,6 +80,8 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+ <p className="text-md font-bold">Input again </p>
+<input className="h-5 mt-10" />
     <button type="button"  onClick="alertme()"> 
       click me!! 
   </button> 
