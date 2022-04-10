@@ -6,7 +6,6 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 
-
 const logme = (props) => {
   console.log(props.value);
 };
@@ -16,6 +15,7 @@ const TextInput = (props) => {
 
   return (
     <div>
+      <p className="text-md font-bold mt-10">Input here</p>
       <input
         type="text"
         value={text}
@@ -43,11 +43,10 @@ const App = () => {
         </p>
       </div>
       <div>
-        <button onClick={() => alertme()} className="text-md font-bold mt-10">
-          Input now
-        </button>
-
         <TextInput />
+        <button onClick={() => alertme()} className="text-md font-bold mt-2">
+          Move Input
+        </button>
       </div>
 
       <div>
