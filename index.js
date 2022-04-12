@@ -6,12 +6,13 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 
-const logme = (props) => {
+const logger = (props) => {
   console.log(props.value);
+  alert('props ' + props.value);
 };
 
 const GetVal = (val) => {
-  alert(val);
+  alert('here ' + val);
 };
 
 const TextInput = (props) => {
@@ -33,7 +34,7 @@ const TextInput = (props) => {
 
       <h3 className="text-md font-bold">You entered: {text} </h3>
 
-      <button onClick={() => alertme()} className="text-md font-bold mt-2">
+      <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
         Move Input
       </button>
     </div>
