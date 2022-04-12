@@ -42,6 +42,14 @@ const TextInput = (props) => {
 };
 
 const App = () => {
+
+  const [user, setUser] = useState('');
+  const UserContext = createContext(user);
+  const userValue = useContext(UserContext);
+
+
+
+
   return (
     <div className="flex justify-start bg-green-200 h-screen ">
       <div>
