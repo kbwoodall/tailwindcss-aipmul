@@ -10,8 +10,17 @@ const logme = (props) => {
   console.log(props.value);
 };
 
+const GetVal = (val) => {
+  alert(val);
+};
+
 const TextInput = (props) => {
   const [text, setText] = useState('');
+
+  const alertme = () => {
+    console.log('testing alert');
+    alert('ok so far');
+  };
 
   return (
     <div>
@@ -23,16 +32,15 @@ const TextInput = (props) => {
       />
 
       <h3 className="text-md font-bold">You entered: {text} </h3>
+
+      <button onClick={() => alertme()} className="text-md font-bold mt-2">
+        Move Input
+      </button>
     </div>
   );
 };
 
 const App = () => {
-  const alertme = () => {
-    console.log('testing alert');
-    alert('ok so far');
-  };
-
   return (
     <div className="flex justify-start bg-green-200 h-screen ">
       <div>
@@ -44,9 +52,6 @@ const App = () => {
       </div>
       <div>
         <TextInput />
-        <button onClick={() => alertme()} className="text-md font-bold mt-2">
-          Move Input
-        </button>
       </div>
 
       <div>
