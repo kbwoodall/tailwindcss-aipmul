@@ -15,7 +15,7 @@ const GetVal = (val) => {
   alert('here ' + val);
 };
 
-const TextInput = (props) => {
+const TextInput = () => {
   const [text, setText] = useState('');
 
   const alertme = () => {
@@ -42,35 +42,33 @@ const TextInput = (props) => {
 };
 
 const App = () => {
-
-  const [user, setUser] = useState('');
-  const UserContext = createContext(user);
-  const userValue = useContext(UserContext);
-
-
-
+  const [info, setInfo] = useState('');
+  const UserContext = createContext(info);
+  const userInfo = useContext(UserContext);
 
   return (
-    <div className="flex justify-start bg-green-200 h-screen ">
-      <div>
-        <p className="text-md font-bold m-10">
-          “Tailwind CSS is the only framework that I've seen scale on large
-          teams. It’s easy to customize, adapts to any design, and the build
-          size is tiny.”
-        </p>
-      </div>
-      <div>
-        <TextInput />
-      </div>
+    <UserContext.Provider value={info}>
+      <div className="flex justify-start bg-green-200 h-screen ">
+        <div>
+          <p className="text-md font-bold m-10">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+        </div>
+        <div>
+          <TextInput />
+        </div>
 
-      <div>
-        <p className="text-md font-bold m-10">
-          “Tailwind CSS is the only framework that I've seen scale on large
-          teams. It’s easy to customize, adapts to any design, and the build
-          size is tiny.”
-        </p>
+        <div>
+          <p className="text-md font-bold m-10">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+        </div>
       </div>
-    </div>
+    </UserContext.Provider>
   );
 };
 
