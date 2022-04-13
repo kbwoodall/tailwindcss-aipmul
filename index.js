@@ -17,6 +17,7 @@ const GetVal = (val) => {
 
 const TextInput = () => {
   const [text, setText] = useState('');
+  //const userMore = useContext(UserContext);
 
   const alertme = () => {
     console.log('testing alert');
@@ -24,6 +25,7 @@ const TextInput = () => {
   };
 
   return (
+    //<UserContext.Consumer>
     <div>
       <p className="text-md font-bold mt-10">Input here</p>
       <input
@@ -38,6 +40,7 @@ const TextInput = () => {
         Move Input
       </button>
     </div>
+    //</UserContext.Consumer>
   );
 };
 
@@ -96,6 +99,7 @@ render(<App />, document.getElementById('app'));
 
 // Write Javascript code!
 //const appDiv = document.getElementById('app');alertme = () => {
+  /*
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
