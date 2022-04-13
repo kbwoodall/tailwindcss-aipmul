@@ -22,31 +22,28 @@ const TextInput = () => {
   };
 
   return (
-    
-      <div>
-        <p className="text-md font-bold mt-10">Input here</p>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+    <div>
+      <p className="text-md font-bold mt-10">Input here</p>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
 
-        <h3 className="text-md font-bold">You entered: {text} </h3>
+      <h3 className="text-md font-bold">You entered: {text} </h3>
 
-        <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
-          Move Input {mystuff}
-        </button>
-      </div>
-    
+      <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
+        Move Input {mystuff}
+      </button>
+    </div>
   );
 };
 
 const App = () => {
-  const [info, setInfo] = useState('');
-  const userInfo = useContext(UserContext);
+  const [info, setInfo] = useState('hey there');
 
   return (
-    <UserContext.Provider>
+    <UserContext.Provider value={info}>
       <div className="flex justify-start bg-green-200 h-screen ">
         <div>
           <p className="text-md font-bold m-10">
