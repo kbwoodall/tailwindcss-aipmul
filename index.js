@@ -6,10 +6,7 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
-const logger = (props) => {
-  console.log(props.value);
-  alert('props ' + props.value);
-};
+
 const UserContext = createContext();
 const GetVal = (val) => {
   alert('here ' + val);
@@ -17,7 +14,7 @@ const GetVal = (val) => {
 
 const TextInput = () => {
   const [text, setText] = useState('');
-  //const userMore = useContext(UserContext);
+  const userMore = useContext(UserContext);
 
   const alertme = () => {
     console.log('testing alert');
