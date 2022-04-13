@@ -14,30 +14,30 @@ const GetVal = (val) => {
 
 const TextInput = () => {
   const [text, setText] = useState('');
-  const userMore = useContext(UserContext);
+  const mystuff = useContext(UserContext);
 
   const alertme = () => {
     console.log('testing alert');
-    alert('ok so far');
+    alert('ok so far ' + mystuff);
   };
 
   return (
-    //<UserContext.Consumer>
-    <div>
-      <p className="text-md font-bold mt-10">Input here</p>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+    
+      <div>
+        <p className="text-md font-bold mt-10">Input here</p>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
 
-      <h3 className="text-md font-bold">You entered: {text} </h3>
+        <h3 className="text-md font-bold">You entered: {text} </h3>
 
-      <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
-        Move Input
-      </button>
-    </div>
-    //</UserContext.Consumer>
+        <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
+          Move Input {mystuff}
+        </button>
+      </div>
+    
   );
 };
 
@@ -46,7 +46,7 @@ const App = () => {
   const userInfo = useContext(UserContext);
 
   return (
-    <UserContext.Provider value={info}>
+    <UserContext.Provider>
       <div className="flex justify-start bg-green-200 h-screen ">
         <div>
           <p className="text-md font-bold m-10">
