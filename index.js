@@ -10,7 +10,7 @@ const logger = (props) => {
   console.log(props.value);
   alert('props ' + props.value);
 };
-
+const UserContext = createContext();
 const GetVal = (val) => {
   alert('here ' + val);
 };
@@ -46,7 +46,6 @@ const TextInput = () => {
 
 const App = () => {
   const [info, setInfo] = useState('');
-  const UserContext = createContext(info);
   const userInfo = useContext(UserContext);
 
   return (
