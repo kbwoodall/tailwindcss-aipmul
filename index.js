@@ -33,7 +33,7 @@ const TextInput = () => {
       <h3 className="text-md font-bold">You entered: {text} </h3>
 
       <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
-        Move Input {mystuff}
+        Move Input here {mystuff}
       </button>
     </div>
   );
