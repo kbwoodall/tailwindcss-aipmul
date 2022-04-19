@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 
-const UserContext = createContext();
+const UserContext = createContext('hello');
 const GetVal = (val) => {
   alert('here ' + val);
 };
@@ -18,7 +18,7 @@ const TextInput = () => {
 
   const alertme = () => {
     console.log('testing alert');
-    alert('ok so far ' + mystuff);
+    alert(mystuff + ' ' + text);
   };
 
   return (
@@ -32,15 +32,15 @@ const TextInput = () => {
 
       <h3 className="text-md font-bold">You entered: {text} </h3>
 
-      <button onClick={() => GetVal(text)} className="text-md font-bold mt-2">
-        Move Input here {mystuff}
+      <button onClick={() => alertme()} className="text-md font-bold mt-2">
+        Move Input
       </button>
     </div>
   );
 };
 
 const App = () => {
-  const [info, setInfo] = useState('hey there');
+  const [info, setInfo] = useState('ok so far');
 
   return (
     <UserContext.Provider value={info}>
@@ -51,6 +51,7 @@ const App = () => {
             teams. It’s easy to customize, adapts to any design, and the build
             size is tiny.”
           </p>
+          <p className="text-md font-bold m-10">{info}</p>
         </div>
         <div>
           <TextInput />
