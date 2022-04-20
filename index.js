@@ -13,16 +13,14 @@ const GetVal = (val) => {
   alert('here now' + val);
 };
 
-const Side1 = () => {
+const NewSide = () => {
   return (
     <div>
       <p className="text-md font-bold m-10">
-        “Tailwind CSSx is the only framework that I've seen scale on large teams.
-        It’s easy to customize, adapts to any design, and the build size is
-        tiny.”
+        “Tailwind CSSx is the only framework that I've seen scale on large
+        teams. It’s easy to customize, adapts to any design, and the build size
+        is tiny.”
       </p>
-      <p className="text-md font-bold m-10">{mystuff}</p>
-      <p className="text-md font-bold m-10">{info}</p>
     </div>
   );
 };
@@ -30,7 +28,7 @@ const Side1 = () => {
 const App = () => {
   const [info, setInfo] = useState('ok now');
   const mystuff = useContext(ExampleContext);
-  {Side1}
+
   <div>
     <p className="text-md font-bold m-10">
       “Tailwind CSS is the only framework that I've seen scale on large teams.
