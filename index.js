@@ -8,7 +8,7 @@ import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 const ExampleContext = createContext('Starting');
 const GetVal = (val) => {
-  alert('here ' + val);
+  alert('here now' + val);
 };
 
 const TextInput = () => {
