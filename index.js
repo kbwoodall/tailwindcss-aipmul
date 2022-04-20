@@ -40,9 +40,8 @@ const TextInput = () => {
 };
 
 const App = () => {
-  //const mystuff = useContext(UserContext);
-  const [info, setInfo] = useState('ok so far');
-  const UserContext = createContext('ok');
+  const [info, setInfo] = useState('ok now');
+  const UserContext = createContext(info);
   const mystuff = useContext(UserContext);
 
   return (
@@ -54,7 +53,7 @@ const App = () => {
             teams. It’s easy to customize, adapts to any design, and the build
             size is tiny.”
           </p>
-          <p className="text-md font-bold m-10">{info}</p>
+          <p className="text-md font-bold m-10">{mystuff}</p>
         </div>
         <div>
           <TextInput />
