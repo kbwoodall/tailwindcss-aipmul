@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
-const ExampleContext = createContext('Intial value');
+const ExampleContext = createContext('Starting');
 const GetVal = (val) => {
   alert('here ' + val);
 };
@@ -40,8 +40,8 @@ const TextInput = () => {
 
 const App = () => {
   const [info, setInfo] = useState('ok now');
-  const UserContext = createContext(info);
-  const mystuff = useContext(UserContext);
+  //const UserContext = createContext(info);
+  const mystuff = useContext(ExampleContext);
 
   return (
     <ExampleContext.Provider value="updated value">
