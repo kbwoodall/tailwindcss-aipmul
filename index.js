@@ -6,11 +6,47 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
+import { NewTextInput } from './showText.js';
 const ExampleContext = createContext('Starting');
+
 const GetVal = (val) => {
   alert('here now' + val);
 };
 
+const App = () => {
+  const [info, setInfo] = useState('ok now');
+  const mystuff = useContext(ExampleContext);
+
+  return (
+    <ExampleContext.Provider value="updated value">
+      <div className="flex justify-start bg-green-200 h-screen ">
+        <div>
+          <p className="text-md font-bold m-10">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+          <p className="text-md font-bold m-10">{mystuff}</p>
+        </div>
+        <div>
+          <NewTextInput />
+        </div>
+
+        <div>
+          <p className="text-md font-bold m-10">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+        </div>
+      </div>
+    </ExampleContext.Provider>
+  );
+};
+
+render(<App />, document.getElementById('app'));
+
+/*
 const TextInput = () => {
   const [text, setText] = useState('');
   const valueFromContext = useContext(ExampleContext);
@@ -37,40 +73,4 @@ const TextInput = () => {
     </div>
   );
 };
-
-const App = () => {
-  const [info, setInfo] = useState('ok now');
-  //const UserContext = createContext(info);
-  const mystuff = useContext(ExampleContext);
-
-  return (
-    <ExampleContext.Provider value="updated value">
-      <div className="flex justify-start bg-green-200 h-screen ">
-        <div>
-          <p className="text-md font-bold m-10">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </p>
-          <p className="text-md font-bold m-10">{mystuff}</p>
-        </div>
-        <div>
-          <TextInput />
-        </div>
-
-        <div>
-          <p className="text-md font-bold m-10">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </p>
-        </div>
-      </div>
-    </ExampleContext.Provider>
-  );
-};
-
-render(<App />, document.getElementById('app'));
-
-
-  
+*/

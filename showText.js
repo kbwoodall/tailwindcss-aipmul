@@ -1,3 +1,38 @@
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+
+import { useState, useReducer, useEffect } from 'react';
+import { createContext, useContext } from 'react';
+//const ExampleContext = createContext('Starting');
+
+export const NewTextInput = () => {
+  const [text, setText] = useState('');
+  //const valueFromContext = useContext(ExampleContext);
+  //const valueFromContext = useContext(ExampleContext);
+
+  const alertme = () => {
+    console.log('testing alert');
+    alert('Move input ');
+  };
+
+  return (
+    <div>
+      <p className="text-md font-bold mt-10">Input here</p>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+
+      <h3 className="text-md font-bold">You entered: {text} </h3>
+
+      <button onClick={() => alertme()} className="text-md font-bold mt-2">
+        Move Input
+      </button>
+    </div>
+  );
+};
+
 /*
 
 import React, { Component } from 'react';
