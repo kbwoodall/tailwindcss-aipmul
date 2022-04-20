@@ -28,8 +28,6 @@ const App = () => {
           </p>
           <p className="text-md font-bold m-10">{mystuff}</p>
           <p className="text-md font-bold m-10">{info}</p>
-
-
         </div>
         <div>
           <NewTextInput />
