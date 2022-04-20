@@ -7,18 +7,18 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 
-const UserContext = createContext('hello');
+//const UserContext = createContext('hello');
 const GetVal = (val) => {
   alert('here ' + val);
 };
 
 const TextInput = () => {
   const [text, setText] = useState('');
-  const mystuff = useContext(UserContext);
+  //const mystuff = useContext(UserContext);
 
   const alertme = () => {
     console.log('testing alert');
-    alert(mystuff + ' ' + text);
+    alert('Move input ' + text);
   };
 
   return (
@@ -40,7 +40,10 @@ const TextInput = () => {
 };
 
 const App = () => {
+  //const mystuff = useContext(UserContext);
   const [info, setInfo] = useState('ok so far');
+  const UserContext = createContext('ok');
+  const mystuff = useContext(UserContext);
 
   return (
     <UserContext.Provider value={info}>
