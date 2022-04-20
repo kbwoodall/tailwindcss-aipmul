@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
-const ExampleContext = createContext('Starting');
+export const ExampleContext = createContext('Starting');
 
 const GetVal = (val) => {
   alert('here now' + val);

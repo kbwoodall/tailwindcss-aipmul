@@ -3,16 +3,15 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
-//const ExampleContext = createContext('Starting');
+import { ExampleContext } from './index.js';
 
 export const NewTextInput = () => {
   const [text, setText] = useState('');
-  //const valueFromContext = useContext(ExampleContext);
-  //const valueFromContext = useContext(ExampleContext);
+  const valueFromContext = useContext(ExampleContext);
 
   const alertme = () => {
     console.log('testing alert');
-    alert('Move input ');
+    alert('Move input ' + valueFromContext);
   };
 
   return (
