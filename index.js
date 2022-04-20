@@ -6,19 +6,18 @@ import { render } from 'react-dom';
 
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
-
-//const UserContext = createContext('hello');
+const ExampleContext = createContext('Intial value');
 const GetVal = (val) => {
   alert('here ' + val);
 };
 
 const TextInput = () => {
   const [text, setText] = useState('');
-  //const mystuff = useContext(UserContext);
+  const valueFromContext = useContext(ExampleContext);
 
   const alertme = () => {
     console.log('testing alert');
-    alert('Move input ' + text);
+    alert('Move input ' + valueFromContext);
   };
 
   return (
@@ -33,7 +32,7 @@ const TextInput = () => {
       <h3 className="text-md font-bold">You entered: {text} </h3>
 
       <button onClick={() => alertme()} className="text-md font-bold mt-2">
-        Move Input
+        Move Input {valueFromContext}
       </button>
     </div>
   );
@@ -45,7 +44,7 @@ const App = () => {
   const mystuff = useContext(UserContext);
 
   return (
-    <UserContext.Provider value={info}>
+    <ExampleContext.Provider value="updated value">
       <div className="flex justify-start bg-green-200 h-screen ">
         <div>
           <p className="text-md font-bold m-10">
@@ -67,7 +66,7 @@ const App = () => {
           </p>
         </div>
       </div>
-    </UserContext.Provider>
+    </ExampleContext.Provider>
   );
 };
 
