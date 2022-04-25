@@ -14,6 +14,7 @@ const GetVal = (val) => {
 };
 
 const LeftSide = () => {
+  const mystuff = useContext(ExampleContext);
   return (
     <div>
       <p className="text-md font-bold m-10">
@@ -21,6 +22,8 @@ const LeftSide = () => {
         teams. It’s easy to customize, adapts to any design, and the build size
         is tiny.”
       </p>
+      <p className="text-md font-bold m-10">{mystuff}</p>
+
     </div>
   );
 };
