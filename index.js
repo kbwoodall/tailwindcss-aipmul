@@ -31,11 +31,11 @@ const App = () => {
 
   return (
     <ExampleContext.Provider value={info}>
-      <div className="flex justify-start bg-green-300  ">
-        <div>
+      <div className="flex justify-start bg-green-300 h-screen  ">
+        <div className="w-1/3 bg-green-300">
           <LeftSide />
         </div>
-        <div>
+        <div className="w-2/3 bg-green-300">
           <NewTextInput />
         </div>
       </div>
