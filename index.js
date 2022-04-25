@@ -13,11 +13,11 @@ const GetVal = (val) => {
   alert('here now' + val);
 };
 
-const NewSide = () => {
+const LeftSide = () => {
   return (
     <div>
       <p className="text-md font-bold m-10">
-        “Tailwind CSSx is the only framework that I've seen scale on large
+        “Tailwind CSS is the only framework that I've seen scale on large
         teams. It’s easy to customize, adapts to any design, and the build size
         is tiny.”
       </p>
@@ -33,7 +33,7 @@ const App = () => {
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300  ">
         <div>
-          <NewSide />
+          <LeftSide />
         </div>
         <div>
           <NewTextInput />
