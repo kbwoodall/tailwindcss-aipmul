@@ -33,24 +33,10 @@ const App = () => {
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300  ">
         <div>
-          <p className="text-md font-bold m-10">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </p>
-          <p className="text-md font-bold m-10">{mystuff}</p>
-          <p className="text-md font-bold m-10">{info}</p>
+          <NewSide />
         </div>
         <div>
           <NewTextInput />
-        </div>
-
-        <div>
-          <p className="text-md font-bold m-10">
-            “Tailwind CSS is the only framework that I've seen scale on large
-            teams. It’s easy to customize, adapts to any design, and the build
-            size is tiny.”
-          </p>
         </div>
       </div>
     </ExampleContext.Provider>
@@ -60,6 +46,15 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+    <div>
+          <p className="text-md font-bold m-10">
+            “Tailwind CSS is the only framework that I've seen scale on large
+            teams. It’s easy to customize, adapts to any design, and the build
+            size is tiny.”
+          </p>
+          <p className="text-md font-bold m-10">{mystuff}</p>
+          <p className="text-md font-bold m-10">{info}</p>
+        <
 const TextInput = () => {
   const [text, setText] = useState('');
   const valueFromContext = useContext(ExampleContext);
