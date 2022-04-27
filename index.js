@@ -18,12 +18,11 @@ const LeftSide = () => {
   return (
     <div>
       <p className="text-md font-bold m-10">
-        “Tailwind CSS is the only framework that I've seen scale on large
-        teams. It’s easy to customize, adapts to any design, and the build size
-        is tiny.”
+        “Tailwind CSS is the only framework that I've seen scale on large teams.
+        It’s easy to customize, adapts to any design, and the build size is
+        tiny.”
       </p>
       <p className="text-md font-bold m-10">{mystuff}</p>
-
     </div>
   );
 };
@@ -35,10 +34,11 @@ const App = () => {
   return (
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
-        <div className="w-1/3 bg-green-300">
+        <div className="bg-green-300">
           <LeftSide />
         </div>
-        <div className="w-2/3 bg-green-300">
+
+        <div className="bg-green-300">
           <NewTextInput />
         </div>
       </div>
