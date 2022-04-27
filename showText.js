@@ -11,7 +11,7 @@ export const NewTextInput = () => {
 
   const alertme = () => {
     console.log('testing alert');
-    alert('Move ' + valueFromContext);
+    alert('Move ' + valueFromContext + '  ' + text);
   };
 
   return (
@@ -26,7 +26,7 @@ export const NewTextInput = () => {
       <h3 className="text-md font-bold">You entered: {text} </h3>
 
       <button onClick={() => alertme({text})} className="text-md font-bold mt-2">
-        Move Input {valueFromContext}
+        Move Input {valueFromContext} {text}
       </button>
     </div>
   );
