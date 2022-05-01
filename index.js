@@ -41,10 +41,11 @@ const App = () => {
         <div className="bg-green-300">
           <NewTextInput />
         </div>
-        <div>
-        <button onClick={() => alertme()} className="text-md font-bold mt-2">
-          Move Input {info}
-        </button></div>
+        <div className="bg-green-300">
+          <button onClick={() => setInfo(info)} className="text-md font-bold mt-2">
+            Move Input {info}
+          </button>
+        </div>
       </div>
     </ExampleContext.Provider>
   );
