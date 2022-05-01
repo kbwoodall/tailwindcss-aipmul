@@ -42,7 +42,7 @@ const App = () => {
           <NewTextInput />
         </div>
         <div className="bg-green-300 ">
-          <button onClick={() => setInfo(info)} className="text-md font-bold mt-10">
+          <button onClick={() => setInfo(info)} className="text-md font-bold mt-10 ml-5">
             Move Input {info}
           </button>
         </div>
