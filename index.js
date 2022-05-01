@@ -17,7 +17,7 @@ const LeftSide = () => {
   const mystuff = useContext(ExampleContext);
   return (
     <div>
-      <p className="text-md font-bold m-10">
+      <p className="text-md font-bold m-10 w-32">
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
         tiny.”
@@ -41,8 +41,8 @@ const App = () => {
         <div className="bg-green-300">
           <NewTextInput />
         </div>
-        <div className="bg-green-300">
-          <button onClick={() => setInfo(info)} className="text-md font-bold mt-2">
+        <div className="bg-green-300 ">
+          <button onClick={() => setInfo(info)} className="text-md font-bold mt-10">
             Move Input {info}
           </button>
         </div>
