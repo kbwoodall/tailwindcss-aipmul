@@ -17,6 +17,7 @@ export const NewTextInput = () => {
   return (
     <div>
       <p className="text-md font-bold mt-10">Input here</p>
+      
       <input
         type="text"
         value={text}

@@ -7,14 +7,14 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
-export const ExampleContext = createContext('Starting');
+export const ExampleContext = createContext('');
 
 const GetVal = (val) => {
   alert('here now' + val);
 };
 
 const LeftSide = () => {
-  const mystuff = useContext(ExampleContext);
+  const fromContext = useContext(ExampleContext);
   return (
     <div>
       <p className="text-md font-bold m-10 w-32">
@@ -22,14 +22,14 @@ const LeftSide = () => {
         It’s easy to customize, adapts to any design, and the build size is
         tiny.”
       </p>
-      <p className="text-md font-bold m-10">{mystuff}</p>
+      <p className="text-md font-bold m-10">{fromContext}</p>
     </div>
   );
 };
 
 const App = () => {
-  const [info, setInfo] = useState('ok now');
-  const mystuff = useContext(ExampleContext);
+  const [info, setInfo] = useState('xxxx');
+  //const mystuff = useContext(ExampleContext);
 
   return (
     <ExampleContext.Provider value={info}>
@@ -42,7 +42,15 @@ const App = () => {
           <NewTextInput />
         </div>
         <div className="bg-green-300 ">
-          <button onClick={() => setInfo(info)} className="text-md font-bold mt-10 ml-5">
+          <input
+            type="text"
+            value={info}
+            onChange={(e) => setInfo(e.target.value)}
+          />
+          <button
+            onClick={() => setInfo('hello')}
+            className="text-md font-bold mt-10 ml-5"
+          >
             Move Input {info}
           </button>
         </div>
