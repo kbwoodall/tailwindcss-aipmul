@@ -41,7 +41,7 @@ const App = () => {
         <div className="bg-green-300">
           <NewTextInput />
         </div>
-        <div className="bg-green-300 ">
+        <div className="mt-6 ml-5 bg-green-300 ">
           <input
             type="text"
             value={info}
