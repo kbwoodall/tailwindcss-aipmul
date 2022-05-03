@@ -36,7 +36,7 @@ const App = () => {
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-6 ml-5 ">
-            >
+            
             <input
               type="text"
               value={info}
