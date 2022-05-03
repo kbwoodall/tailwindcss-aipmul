@@ -34,25 +34,31 @@ const App = () => {
   return (
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
-        <div className="bg-green-300">
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-6 ml-5 ">
+            >
+            <input
+              type="text"
+              value={info}
+              onChange={(e) => setInfo(e.target.value)}
+            />
+          </div>
+          <div>
+            <button
+              onClick={() => setInfo('hello')}
+              className="text-md font-bold mt-10 ml-5"
+            >
+              Move Input {info}
+            </button>
+          </div>
+        </div>
+
+        <div className="bg-green-300 ">
           <LeftSide />
         </div>
 
-        <div className="bg-green-300">
+        <div className="bg-green-300 ">
           <NewTextInput />
-        </div>
-        <div className="mt-6 ml-5 bg-green-300 ">
-          <input
-            type="text"
-            value={info}
-            onChange={(e) => setInfo(e.target.value)}
-          />
-          <button
-            onClick={() => setInfo('hello')}
-            className="text-md font-bold mt-10 ml-5"
-          >
-            Move Input {info}
-          </button>
         </div>
       </div>
     </ExampleContext.Provider>
