@@ -28,14 +28,14 @@ const LeftSide = () => {
 };
 
 const App = () => {
-  const [info, setInfo] = useState('xxxx');
+  const [info, setInfo] = useState('Starting');
   //const mystuff = useContext(ExampleContext);
 
   return (
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-6 ml-5 ">
+          <div className=" mt-10 ml-5 ">
             
             <input
               type="text"
@@ -46,7 +46,7 @@ const App = () => {
           <div>
             <button
               onClick={() => setInfo('hello')}
-              className="text-md font-bold mt-10 ml-5"
+              className="text-md font-bold mt-4 ml-5"
             >
               Move Input {info}
             </button>
