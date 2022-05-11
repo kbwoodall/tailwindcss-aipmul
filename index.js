@@ -45,7 +45,7 @@ const App = () => {
           </div>
           <div>
             <button
-              onClick={() => setInfo('hello')}
+              onClick={() => setInfo('hey')}
               className="text-md font-bold mt-4 ml-5"
             >
               Move Input {info}
