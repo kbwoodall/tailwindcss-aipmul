@@ -16,7 +16,7 @@ const GetVal = (val) => {
 const LeftSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
-    <div>
+    <div className='bg-green-500 rounded-lg ml-4'>
       <p className="text-md font-bold m-10 w-32">
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
@@ -53,7 +53,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="bg-green-300 ">
+        <div>
           <LeftSide />
         </div>
 
