@@ -16,8 +16,8 @@ const GetVal = (val) => {
 const LeftSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
-    <div className=' rounded-lg ml-4 border-red=700'>
-      <p className="text-md font-bold m-10 w-32">
+    <div className="  ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4">
+      <p className="bg-green-400 text-md font-bold m-10 w-32 ">
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
         tiny.”
@@ -36,7 +36,6 @@ const App = () => {
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-10 ml-5 ">
-            
             <input
               type="text"
               value={info}
