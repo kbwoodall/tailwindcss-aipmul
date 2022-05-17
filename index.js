@@ -13,7 +13,7 @@ const GetVal = (val) => {
   alert('here now' + val);
 };
 
-const LeftSide = () => {
+const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
     <div className="  ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4">
@@ -53,7 +53,7 @@ const App = () => {
         </div>
 
         <div>
-          <LeftSide />
+          <MiddleSide />
         </div>
 
         <div className="bg-green-300 ">
