@@ -16,19 +16,27 @@ const GetVal = (val) => {
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
-    <div className="  ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4">
-      <p className="bg-green-400 text-md font-bold m-10 w-32 ">
-        “Tailwind CSS is the only framework that I've seen scale on large teams.
-        It’s easy to customize, adapts to any design, and the build size is
-        tiny.”
+    <div className="  ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
+      <p className="bg-green-400 text-md font-bold m-10 w-1/3 h-80">
+        “Parse formula"
       </p>
       <p className="text-md font-bold m-10">{fromContext}</p>
     </div>
   );
 };
 
+const RightSide = () => {
+  const fromContext = useContext(ExampleContext);
+  return (
+    <div className="  ml-4 border-dashed border-4 border-black bg-teal-400 mt-10 mr-4">
+      <p className="bg-green-400 text-md font-bold m-10 w-40 ">“Changes ”</p>
+      <p className="text-md font-bold m-10">{fromContext}</p>
+    </div>
+  );
+};
+
 const App = () => {
-  const [info, setInfo] = useState('Starting');
+  const [info, setInfo] = useState('Formula');
   //const mystuff = useContext(ExampleContext);
 
   return (
@@ -56,8 +64,8 @@ const App = () => {
           <MiddleSide />
         </div>
 
-        <div className="bg-green-300 ">
-          <NewTextInput />
+        <div>
+          <RightSide />
         </div>
       </div>
     </ExampleContext.Provider>
@@ -67,6 +75,16 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+ <p className="bg-green-400 text-md font-bold m-10 w-32 ">
+        “Tailwind CSS is the only framework that I've seen scale on large teams.
+        It’s easy to customize, adapts to any design, and the build size is
+        tiny.”
+      </p>
+
+<div className="bg-green-300 ">
+          <NewTextInput />
+        </div>
+
     <div>
           <p className="text-md font-bold m-10">
             “Tailwind CSS is the only framework that I've seen scale on large
