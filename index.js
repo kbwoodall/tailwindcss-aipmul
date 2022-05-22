@@ -16,8 +16,18 @@ const GetVal = (val) => {
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
-    <div className="  h-64 w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
-      <p className="bg-green-400 text-md font-bold m-10 ">“Parse formula"</p>
+    <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
+      <p className="bg-green-400 text-md font-bold m-10 ">“Parse formula
+      xxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxx
+      zzzzzzzzzzzzzzzz
+      zzzzzzzzzzzzzzzz
+      zzzzzzzzzzzzzzzz
+      xxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxx"</p>
+      
       <p className="text-md font-bold m-10">{fromContext}</p>
     </div>
   );
@@ -26,7 +36,7 @@ const MiddleSide = () => {
 const RightSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
-    <div className="  h-64 w-64 ml-4 border-dashed border-4 border-black bg-teal-400 mt-10 mr-4">
+    <div className="w-64 ml-4 border-dashed border-4 border-black bg-teal-400 mt-10 mr-4">
       <p className="bg-green-400 text-md font-bold m-10 ">“Changes ”</p>
       <p className="text-md font-bold m-10">{fromContext}</p>
     </div>
