@@ -13,22 +13,20 @@ const GetVal = (val) => {
   alert('here now' + val);
 };
 
+const p1 = (param) => {
+  return param;
+};
+
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
   return (
     <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
-      <p className="bg-green-400 text-md font-bold m-10 ">“Parse formula
-      xxxxxxxxxxxxxxxx
-      xxxxxxxxxxxxxxxx
-      xxxxxxxxxxxxxxxx
-      zzzzzzzzzzzzzzzz
-      zzzzzzzzzzzzzzzz
-      zzzzzzzzzzzzzzzz
-      xxxxxxxxxxxxxxxx
-      xxxxxxxxxxxxxxxx
-      xxxxxxxxxxxxxxxx"</p>
-      
-      <p className="text-md font-bold m-10">{fromContext}</p>
+      <p className="bg-green-400 text-md font-bold m-10 ">
+        “Parse formula xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx zzzzzzzzzzzzzzzz
+        xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx"
+      </p>
+
+      <p className="text-md font-bold m-10">p1({fromContext})</p>
     </div>
   );
 };
