@@ -37,10 +37,10 @@ const MiddleSide = () => {
 
   return (
     <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
-      <p className="bg-green-400 text-md font-bold m-10 ">“Parse formula "</p>
+      <p className="bg-green-400 text-md font-bold pl-10 pt-5">“Parse formula "</p>
 
-      <p className="text-md font-bold m-10">{fromContext}</p>
-      <p className="text-md font-bold m-10">x = {result(text)}</p>
+      <p className="text-md font-bold pl-10 pt-5">{fromContext}</p>
+      <p className="text-md font-bold pl-10 pt-5 pb-5">x = {result(text)}</p>
 
     </div>
   );
