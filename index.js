@@ -19,6 +19,10 @@ const p1 = (param) => {
 
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
+  let text = {fromContext};
+  //const myArray = text.split(' ');
+  //let word = myArray[1];
+  console.log(text);
   return (
     <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
       <p className="bg-green-400 text-md font-bold m-10 ">
