@@ -19,7 +19,10 @@ const p1 = (param) => {
 
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
-  let text = {fromContext};
+  
+  let text = fromContext;
+
+  //let ntext = text.split(" ");
   //const myArray = text.split(' ');
   //let word = myArray[1];
   console.log(text);
