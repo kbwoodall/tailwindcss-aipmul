@@ -20,7 +20,7 @@ const p1 = (param) => {
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
   
-  let text = fromContext;
+  const text = fromContext.split(' ');
 
   //let ntext = text.split(" ");
   //const myArray = text.split(' ');
@@ -33,7 +33,7 @@ const MiddleSide = () => {
         xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx"
       </p>
 
-      <p className="text-md font-bold m-10">p1({fromContext})</p>
+      <p className="text-md font-bold m-10">{fromContext}</p>
     </div>
   );
 };
