@@ -19,21 +19,29 @@ const p1 = (param) => {
 
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
-  
-  const text = fromContext.split(' ');
 
-  //let ntext = text.split(" ");
-  //const myArray = text.split(' ');
-  //let word = myArray[1];
+  const text = fromContext.split(' ');
   console.log(text);
+
+  const result = (text) => {
+    let f0 = text[0];
+    let f1 = text[1];
+    let f2 = text[2];
+    let fin = f0 / 2;
+    let fin1 = f2 / 2;
+    console.log(fin1);
+    return fin1;
+  };
+
+  result(text);
+
   return (
     <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
-      <p className="bg-green-400 text-md font-bold m-10 ">
-        “Parse formula xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx zzzzzzzzzzzzzzzz
-        xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx"
-      </p>
+      <p className="bg-green-400 text-md font-bold m-10 ">“Parse formula "</p>
 
-      <p className="text-md font-bold m-10">{fromContext}</p>
+      <p className="text-md font-bold m-10">{fromContext}{result(text)}</p>
+      <p className="text-md font-bold m-10">x = {result(text)}</p>
+
     </div>
   );
 };
@@ -49,7 +57,7 @@ const RightSide = () => {
 };
 
 const App = () => {
-  const [info, setInfo] = useState('Formula');
+  const [info, setInfo] = useState('2x = 144');
   //const mystuff = useContext(ExampleContext);
 
   return (
