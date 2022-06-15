@@ -10,7 +10,7 @@ import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
 const GetVal = (val) => {
-  alert('here now' + val);
+  alert('testing now' + val);
 };
 
 const p1 = (param) => {
