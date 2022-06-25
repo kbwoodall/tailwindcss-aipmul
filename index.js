@@ -17,6 +17,24 @@ const p1 = (param) => {
   return param;
 };
 
+const listing = [
+  {
+    customer: 'Leo',
+    item: 'shirt',
+    cost: 300,
+  },
+  {
+    customer: 'Otto',
+    item: 'shoes',
+    cost: 100,
+  },
+  {
+    customer: 'Otto',
+    item: 'pants',
+    cost: 200,
+  },
+];
+
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
 
@@ -37,11 +55,12 @@ const MiddleSide = () => {
 
   return (
     <div className=" w-64 ml-4 border-dashed border-4 border-teal-600 bg-teal-400 mt-10 mr-4 ">
-      <p className="bg-teal-400 text-md font-bold pl-10 pt-5">“Parse formula "</p>
+      <p className="bg-teal-400 text-md font-bold pl-10 pt-5">
+        “Parse formula "
+      </p>
 
       <p className="text-md font-bold pl-10 pt-5">{fromContext}</p>
       <p className="text-md font-bold pl-10 pt-5 pb-5">x = {result(text)}</p>
-
     </div>
   );
 };
