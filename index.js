@@ -77,6 +77,11 @@ const RightSide = () => {
 
 const App = () => {
   const [info, setInfo] = useState('2x = 144');
+
+  const itemlist = listing.map((items) =>
+  <li key={items.customer}>{items.item}</li>
+);
+
   //const mystuff = useContext(ExampleContext);
 
   return (
@@ -89,6 +94,8 @@ const App = () => {
               value={info}
               onChange={(e) => setInfo(e.target.value)}
             />
+            {itemlist}
+
           </div>
           <div>
             <button
