@@ -18,6 +18,8 @@ const p1 = (param) => {
 };
 
 const listing = () => {
+  let tot = 0;
+
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
     {
@@ -33,6 +35,14 @@ const listing = () => {
       cost: 200,
     },
   ];
+
+  const total = list.map((items) => (
+
+    <li key={items.id}>
+      {items.customer} {items.item} {items.cost}
+    </li>
+    
+  ));
 
   return list;
 };
@@ -79,12 +89,9 @@ const RightSide = () => {
 const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
-  let tot = 0;
   const newlist = listing();
 
   const itemlist = newlist.map((items) => (
-    //tot = tot + {items.id.cost}
-
     <li key={items.id}>
       {items.customer} {items.item} {items.cost}
     </li>
