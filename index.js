@@ -18,19 +18,15 @@ const p1 = (param) => {
 };
 
 const listing = [
-  { id: 1,
-    customer: 'Leo',
-    item: 'shirt',
-    cost: 300,
-  },
+  { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
   {
-    id:2,
+    id: 2,
     customer: 'Otto',
     item: 'shoes',
     cost: 100,
   },
   {
-    id:3,
+    id: 3,
     customer: 'Otto',
     item: 'pants',
     cost: 200,
@@ -80,9 +76,11 @@ const RightSide = () => {
 const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
-  const itemlist = listing.map((items) =>
-  <li key={items.id}>{items.customer} {items.item}</li>
-);
+  const itemlist = listing.map((items) => (
+    <li key={items.id}>
+      {items.customer} {items.item}
+    </li>
+  ));
 
   //const mystuff = useContext(ExampleContext);
 
@@ -90,15 +88,16 @@ const App = () => {
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
+          <div className=" mt-10 ml-5 ">{itemlist}</div>
+
           <div className=" mt-10 ml-5 ">
             <input
               type="text"
               value={info}
               onChange={(e) => setInfo(e.target.value)}
             />
-            {itemlist}
-
           </div>
+
           <div>
             <button
               onClick={() => setInfo('hey')}
