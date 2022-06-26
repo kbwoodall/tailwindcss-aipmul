@@ -81,7 +81,7 @@ const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
   const itemlist = listing.map((items) =>
-  <li key={items.id}>{items.item}</li>
+  <li key={items.id}>{items.customer} {items.item}</li>
 );
 
   //const mystuff = useContext(ExampleContext);
