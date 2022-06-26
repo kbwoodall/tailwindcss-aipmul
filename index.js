@@ -18,17 +18,19 @@ const p1 = (param) => {
 };
 
 const listing = [
-  {
+  { id: 1,
     customer: 'Leo',
     item: 'shirt',
     cost: 300,
   },
   {
+    id:2,
     customer: 'Otto',
     item: 'shoes',
     cost: 100,
   },
   {
+    id:3,
     customer: 'Otto',
     item: 'pants',
     cost: 200,
@@ -79,7 +81,7 @@ const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
   const itemlist = listing.map((items) =>
-  <li key={items.customer}>{items.item}</li>
+  <li key={items.id}>{items.item}</li>
 );
 
   //const mystuff = useContext(ExampleContext);
