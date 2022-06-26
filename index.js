@@ -17,22 +17,25 @@ const p1 = (param) => {
   return param;
 };
 
-const listing = [
-  { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
-  {
-    id: 2,
-    customer: 'Otto',
-    item: 'shoes',
-    cost: 100,
-  },
-  {
-    id: 3,
-    customer: 'Otto',
-    item: 'pants',
-    cost: 200,
-  },
-];
+const listing = () => {
+  const list = [
+    { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
+    {
+      id: 2,
+      customer: 'Otto',
+      item: 'shoes',
+      cost: 100,
+    },
+    {
+      id: 3,
+      customer: 'Otto',
+      item: 'pants',
+      cost: 200,
+    },
+  ];
 
+  return list;
+};
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
 
@@ -77,8 +80,9 @@ const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
   let tot = 0;
-  const itemlist = listing.map((items) => (
+  const newlist = listing();
 
+  const itemlist = newlist.map((items) => (
     //tot = tot + {items.id.cost}
 
     <li key={items.id}>
