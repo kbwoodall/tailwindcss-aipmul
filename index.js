@@ -76,9 +76,13 @@ const RightSide = () => {
 const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
+  let tot = 0;
   const itemlist = listing.map((items) => (
+
+    //tot = tot + {items.id.cost}
+
     <li key={items.id}>
-      {items.customer} {items.item}
+      {items.customer} {items.item} {items.cost}
     </li>
   ));
 
