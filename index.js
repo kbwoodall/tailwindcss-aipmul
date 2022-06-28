@@ -88,7 +88,7 @@ const RightSide = () => {
 };
 */
 const App = () => {
-  //const [info, setInfo] = useState('2x = 144');
+  const [info, setInfo] = useState('2x = 144');
 
   const newlist = listing();
   /*
