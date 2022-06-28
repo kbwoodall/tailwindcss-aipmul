@@ -38,13 +38,15 @@ const listing = () => {
   //<p> key={items.id}
 
   const total = list.map((items) => (
-    <p> 
+    <p>
       {items.customer} {items.item} {items.cost}
     </p>
   ));
 
   return list;
 };
+
+/*
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
 
@@ -84,7 +86,7 @@ const RightSide = () => {
     </div>
   );
 };
-
+*/
 const App = () => {
   const [info, setInfo] = useState('2x = 144');
 
@@ -103,8 +105,17 @@ const App = () => {
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-10 ml-5 ">{itemlist}</div>
+        </div>
+      </div>
+    </ExampleContext.Provider>
+  );
+};
 
-          <div className=" mt-10 ml-5 ">
+render(<App />, document.getElementById('app'));
+
+/*
+
+  <div className=" mt-10 ml-5 ">
             <input
               type="text"
               value={info}
@@ -120,23 +131,15 @@ const App = () => {
               Move Input {info}
             </button>
           </div>
-        </div>
 
-        <div>
+          <div>
           <MiddleSide />
         </div>
 
         <div>
           <RightSide />
         </div>
-      </div>
-    </ExampleContext.Provider>
-  );
-};
 
-render(<App />, document.getElementById('app'));
-
-/*
  <p className="bg-green-400 text-md font-bold m-10 w-32 ">
         “Tailwind CSS is the only framework that I've seen scale on large teams.
         It’s easy to customize, adapts to any design, and the build size is
