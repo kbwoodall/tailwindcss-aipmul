@@ -40,13 +40,10 @@ const listing = () => {
   let hitem = 'y';
   let hcost = 0;
 
+  const totln = () => {
+    return <p>Total purchases by Customer</p>;
+  };
   const print = () => {
-    return (
-      <p>
-        {hcust} {hitem} {first}
-      </p>
-    );
-
     for (var i = 0; i < list.length; i++) {
       console.log(list[i]);
       if (first) {
@@ -57,6 +54,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
+
         <p>
           {hcust} {hitem} {hcost}
         </p>;
@@ -69,10 +67,9 @@ const listing = () => {
     }
   };
   console.log(tot);
-
-  return print();
-
-  /*
+  return totln();
+};
+/*
   const print = () => {
     const printtotal = () => {
       <p>{tot}</p>;
@@ -91,8 +88,8 @@ const listing = () => {
   };
 */
 
-  //return tot;
-};
+//return tot;
+
 /*
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
