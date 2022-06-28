@@ -59,7 +59,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-        return 'total is ' + (tot = tot + list[i].cost);
+        return 'Total is ' + (tot = tot + list[i].cost);
         <p>
           {hcust} {hitem} {hcost}
         </p>;
@@ -154,7 +154,7 @@ const App = () => {
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
           <p className=" mt-5 ml-5 ">Total purchases by Customer</p>
-          <div className=" mt-10 ml-5 ">{newlist}</div>
+          <div className=" mt-5 ml-5 ">{newlist}</div>
         </div>
       </div>
     </ExampleContext.Provider>
