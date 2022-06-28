@@ -43,6 +43,11 @@ const listing = () => {
   const totln = () => {
     return <p>Total purchases by Customer</p>;
   };
+
+  const println = () => {
+    return <p>Total purchases by Customer again {hcust}</p>;
+  };
+
   const print = () => {
     for (var i = 0; i < list.length; i++) {
       console.log(list[i]);
@@ -54,7 +59,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-
+        return 'total is ' + (tot = tot + list[i].cost);
         <p>
           {hcust} {hitem} {hcost}
         </p>;
@@ -62,12 +67,12 @@ const listing = () => {
         if (hcust == list[i].customer) {
         }
       }
-
-      tot = tot + list[i].cost;
+      return (tot = tot + list[i].cost);
     }
   };
-  console.log(tot);
-  return totln();
+  console.log('total ' + tot);
+  return print();
+  //return <p>Total purchases by Customer again {hcust}</p>;
 };
 /*
   const print = () => {
