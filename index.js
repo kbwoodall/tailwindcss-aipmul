@@ -19,23 +19,46 @@ const p1 = (param) => {
 
 const listing = () => {
   const list = [
-    { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
+    { id: 1, customer: 'Leo', item: 'shirt', cost: 300.44 },
     {
       id: 2,
       customer: 'Otto',
       item: 'shoes',
-      cost: 100,
+      cost: 100.15,
     },
     {
       id: 3,
       customer: 'Otto',
       item: 'pants',
-      cost: 200,
+      cost: 200.36,
     },
   ];
-  let tot = 0;
 
-  //<p> key={items.id}
+  let tot = 0;
+  let first = 1;
+  let hcust = '';
+  let hitem = '';
+  let hcost = 0;
+
+  for (var i = 0; i < list.length; i++) {
+    console.log(list[i]);
+    if (first) {
+      console.log(first),
+        console.log('ok'),
+        (first = 0),
+        (hcust = list[i].customer),
+        (hitem = list[i].item),
+        (hcost = list[i].cost),
+        console.log(hcust);
+    } else {
+      if (hcust == list[i].customer) {
+      }
+    }
+
+    tot = tot + list[i].cost;
+  }
+
+  console.log(tot);
 
   const total = list.map((items) => (
     <p>
