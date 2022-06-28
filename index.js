@@ -64,18 +64,29 @@ const listing = () => {
   console.log(tot);
 
   let total = '';
-  const print = () => {
-    total = list.map((items) => (
-      <p>
-        {items.customer} {items.item} {items.cost}
-      </p>
-    ));
 
-    return total;
+  const print = () => {
+    const println = () => {
+      total = list.map((items) => (
+        <p>
+          {items.customer} {items.item} {items.cost}
+        </p>
+      ));
+
+      return total;
+    };
+
+    return println();
+
+
+
+
+    
   };
 
   return print();
 };
+
 /*
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
