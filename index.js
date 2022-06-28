@@ -43,7 +43,7 @@ const listing = () => {
     </p>
   ));
 
-  return list;
+  return total;
 };
 
 /*
@@ -88,23 +88,23 @@ const RightSide = () => {
 };
 */
 const App = () => {
-  const [info, setInfo] = useState('2x = 144');
+  //const [info, setInfo] = useState('2x = 144');
 
   const newlist = listing();
-
+  /*
   const itemlist = newlist.map((items) => (
     <p key={items.id}>
       {items.customer} {items.item} {items.cost}
     </p>
   ));
-
+  */
   //const mystuff = useContext(ExampleContext);
 
   return (
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-10 ml-5 ">{itemlist}</div>
+          <div className=" mt-10 ml-5 ">{newlist}</div>
         </div>
       </div>
     </ExampleContext.Provider>
