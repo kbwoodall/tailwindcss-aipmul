@@ -50,6 +50,9 @@ const listing = () => {
         (hitem = list[i].item),
         (hcost = list[i].cost),
         console.log(hcust);
+      <p>
+        {hcust} {hitem} {hcost}
+      </p>;
     } else {
       if (hcust == list[i].customer) {
       }
@@ -60,15 +63,19 @@ const listing = () => {
 
   console.log(tot);
 
-  const total = list.map((items) => (
-    <p>
-      {items.customer} {items.item} {items.cost}
-    </p>
-  ));
+  let total = '';
+  const print = () => {
+    total = list.map((items) => (
+      <p>
+        {items.customer} {items.item} {items.cost}
+      </p>
+    ));
 
-  return total;
+    return total;
+  };
+
+  return print();
 };
-
 /*
 const MiddleSide = () => {
   const fromContext = useContext(ExampleContext);
