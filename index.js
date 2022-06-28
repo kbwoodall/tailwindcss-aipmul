@@ -36,33 +36,43 @@ const listing = () => {
 
   let tot = 0;
   let first = 1;
-  let hcust = '';
-  let hitem = '';
+  let hcust = 'x';
+  let hitem = 'y';
   let hcost = 0;
 
-  for (var i = 0; i < list.length; i++) {
-    console.log(list[i]);
-    if (first) {
-      console.log(first),
-        console.log('ok'),
-        (first = 0),
-        (hcust = list[i].customer),
-        (hitem = list[i].item),
-        (hcost = list[i].cost),
-        console.log(hcust);
+  const print = () => {
+    return (
       <p>
-        {hcust} {hitem} {hcost}
-      </p>;
-    } else {
-      if (hcust == list[i].customer) {
+        {hcust} {hitem} {first}
+      </p>
+    );
+
+    for (var i = 0; i < list.length; i++) {
+      console.log(list[i]);
+      if (first) {
+        console.log(first),
+          console.log('ok'),
+          (first = 0),
+          (hcust = list[i].customer),
+          (hitem = list[i].item),
+          (hcost = list[i].cost),
+          console.log(hcust);
+        <p>
+          {hcust} {hitem} {hcost}
+        </p>;
+      } else {
+        if (hcust == list[i].customer) {
+        }
       }
+
+      tot = tot + list[i].cost;
     }
-
-    tot = tot + list[i].cost;
-  }
-
+  };
   console.log(tot);
 
+  return print();
+
+  /*
   const print = () => {
     const printtotal = () => {
       <p>{tot}</p>;
@@ -79,7 +89,9 @@ const listing = () => {
 
     return printtotal();
   };
-  return print();
+*/
+
+  //return tot;
 };
 /*
 const MiddleSide = () => {
