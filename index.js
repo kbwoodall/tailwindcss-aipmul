@@ -18,8 +18,6 @@ const p1 = (param) => {
 };
 
 const listing = () => {
-  let tot = 0;
-
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt', cost: 300 },
     {
@@ -35,13 +33,14 @@ const listing = () => {
       cost: 200,
     },
   ];
+  let tot = 0;
+
+  //<p> key={items.id}
 
   const total = list.map((items) => (
-
-    <li key={items.id}>
+    <p> 
       {items.customer} {items.item} {items.cost}
-    </li>
-    
+    </p>
   ));
 
   return list;
@@ -92,9 +91,9 @@ const App = () => {
   const newlist = listing();
 
   const itemlist = newlist.map((items) => (
-    <li key={items.id}>
+    <p key={items.id}>
       {items.customer} {items.item} {items.cost}
-    </li>
+    </p>
   ));
 
   //const mystuff = useContext(ExampleContext);
