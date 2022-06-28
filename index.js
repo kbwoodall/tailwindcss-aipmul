@@ -153,6 +153,7 @@ const App = () => {
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
+          <p className=" mt-5 ml-5 ">Total purchases by Customer</p>
           <div className=" mt-10 ml-5 ">{newlist}</div>
         </div>
       </div>
