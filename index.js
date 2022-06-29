@@ -33,20 +33,12 @@ const listing = () => {
       cost: 200.36,
     },
   ];
-  
+
   let tot = 0;
   let first = 1;
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
-
-  const totln = () => {
-    return <p>Total purchases by Customer</p>;
-  };
-
-  const println = () => {
-    return <p>Total purchases by Customer again {hcust}</p>;
-  };
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -69,14 +61,47 @@ const listing = () => {
         }
       }
     }
-    
+
     return 'Total is ' + tot.toFixed(2);
   };
   console.log('total ' + tot);
   return print();
-  //return <p>Total purchases by Customer again {hcust}</p>;
 };
+
+const App = () => {
+  const [info, setInfo] = useState('2x = 144');
+
+  const newlist = listing();
+
+  const hdg = () => {
+    return <p>Total purchases by Customer</p>;
+  };
+
+  return (
+    <ExampleContext.Provider value={info}>
+      <div className="flex justify-start bg-green-300 h-screen  ">
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-5 ml-5 ">{hdg()}</div>
+          <div className=" mt-5 ml-5 ">{newlist}</div>
+        </div>
+      </div>
+    </ExampleContext.Provider>
+  );
+};
+
+render(<App />, document.getElementById('app'));
+
 /*
+  const itemlist = newlist.map((items) => (
+    <p key={items.id}>
+      {items.customer} {items.item} {items.cost}
+    </p>
+  ));
+  
+  //const mystuff = useContext(ExampleContext);
+
+
+//return <p>Total purchases by Customer again {hcust}</p>;
   const print = () => {
     const printtotal = () => {
       <p>{tot}</p>;
@@ -137,35 +162,7 @@ const RightSide = () => {
     </div>
   );
 };
-*/
-const App = () => {
-  const [info, setInfo] = useState('2x = 144');
 
-  const newlist = listing();
-  /*
-  const itemlist = newlist.map((items) => (
-    <p key={items.id}>
-      {items.customer} {items.item} {items.cost}
-    </p>
-  ));
-  */
-  //const mystuff = useContext(ExampleContext);
-
-  return (
-    <ExampleContext.Provider value={info}>
-      <div className="flex justify-start bg-green-300 h-screen  ">
-        <div className=" bg-green-300 flex-row">
-          <p className=" mt-5 ml-5 ">Total purchases by Customer</p>
-          <div className=" mt-5 ml-5 ">{newlist}</div>
-        </div>
-      </div>
-    </ExampleContext.Provider>
-  );
-};
-
-render(<App />, document.getElementById('app'));
-
-/*
 
   <div className=" mt-10 ml-5 ">
             <input
