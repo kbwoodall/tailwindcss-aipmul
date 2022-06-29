@@ -33,7 +33,7 @@ const listing = () => {
       cost: 200.36,
     },
   ];
-
+  
   let tot = 0;
   let first = 1;
   let hcust = 'x';
@@ -49,7 +49,8 @@ const listing = () => {
   };
 
   const print = () => {
-    for (var i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i++) {
+      tot = tot + list[0].cost;
       console.log(list[i]);
       if (first) {
         console.log(first),
@@ -59,7 +60,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-        return 'Total is ' + (tot = tot + list[i].cost);
+
         <p>
           {hcust} {hitem} {hcost}
         </p>;
@@ -67,8 +68,9 @@ const listing = () => {
         if (hcust == list[i].customer) {
         }
       }
-      return (tot = tot + list[i].cost);
     }
+    
+    return 'Total is ' + tot.toFixed(2);
   };
   console.log('total ' + tot);
   return print();
