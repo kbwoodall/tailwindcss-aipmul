@@ -13,8 +13,15 @@ const GetVal = (val) => {
   alert('testing now' + val);
 };
 
-const p1 = (param) => {
-  return param;
+const println = (cus, item, cst) => {
+  return 'ok';
+  /*
+  (return (
+  '<p>'
+          /us} {item} {cst}
+        '</p>'
+  ))
+  */
 };
 
 const listing = () => {
@@ -52,10 +59,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-
-        <p>
-          {hcust} {hitem} {hcost}
-        </p>;
+          return println(1,2,3)
       } else {
         if (hcust == list[i].customer) {
         }
