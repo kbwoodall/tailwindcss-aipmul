@@ -15,7 +15,7 @@ const GetVal = (val) => {
 
 const println = (cus, item, cst) => {
   return (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2">
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
       {cus} {item} {cst}
     </p>
   );
@@ -24,14 +24,15 @@ const println = (cus, item, cst) => {
 const listing = () => {
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt', cost: 300.44 },
+    { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
     {
-      id: 2,
+      id: 3,
       customer: 'Otto',
       item: 'shoes',
       cost: 100.15,
     },
     {
-      id: 3,
+      id: 4,
       customer: 'Otto',
       item: 'pants',
       cost: 200.36,
@@ -75,7 +76,7 @@ const App = () => {
   const newlist = listing();
 
   const hdg = () => {
-    return <p className="bg-green-400 text-md font-bold pl-5 pt-5">Total purchases by Customer</p>;
+    return <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4"> Total purchases by Customer  </p>;
   };
 
   return (
