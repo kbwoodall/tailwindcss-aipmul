@@ -14,7 +14,11 @@ const GetVal = (val) => {
 };
 
 const println = (cus, item, cst) => {
-  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2"> {cst} </p>;
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2">
+      {cus} {item} {cst}
+    </p>
+  );
 };
 
 const listing = () => {
@@ -71,7 +75,7 @@ const App = () => {
   const newlist = listing();
 
   const hdg = () => {
-    return <p>Total purchases by Customer</p>;
+    return <p className="bg-green-400 text-md font-bold pl-5 pt-5">Total purchases by Customer</p>;
   };
 
   return (
