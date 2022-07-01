@@ -21,9 +21,25 @@ const println = (cus, item, cst) => {
   );
 };
 
+const printsub = (cus, item, cst) => {
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
+      {cus} {item} {cst}
+    </p>
+  );
+};
+
+const totln = (cst) => {
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
+      {cst}
+    </p>
+  );
+};
+
 const listing = () => {
   const list = [
-    { id: 1, customer: 'Leo', item: 'shirt', cost: 300.44 },
+    { id: 1, customer: 'Leo', item: 'shirt-m', cost: 300.44 },
     { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
     {
       id: 3,
@@ -64,7 +80,7 @@ const listing = () => {
       }
     }
 
-    return 'Total is ' + tot.toFixed(2);
+    return 'Total is ' + totln(tot.toFixed(2));
   };
   console.log('total ' + tot);
   return print();
