@@ -14,14 +14,7 @@ const GetVal = (val) => {
 };
 
 const println = (cus, item, cst) => {
-  return 'ok';
-  /*
-  (return (
-  '<p>'
-          /us} {item} {cst}
-        '</p>'
-  ))
-  */
+  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2"> {cst} </p>;
 };
 
 const listing = () => {
@@ -59,7 +52,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-          return println(1,2,3)
+        return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
         }
