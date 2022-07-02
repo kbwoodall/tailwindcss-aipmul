@@ -60,6 +60,7 @@ const listing = () => {
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
+  let printItems = [];
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -73,9 +74,13 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
+          printItems.push(list[i]);
         return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
+          printItems.push(list[i]);
+        }else {
+          printItems.push(list[i]);
         }
       }
     }
