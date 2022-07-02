@@ -30,11 +30,7 @@ const printsub = (cus, item, cst) => {
 };
 
 const totln = (cst) => {
-  return (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
-      {cst}
-    </p>
-  );
+  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{cst}</p>;
 };
 
 const listing = () => {
@@ -62,6 +58,12 @@ const listing = () => {
   let hcost = 0;
   let printItems = [];
 
+  const itemlist = printItems.map((items) => (
+    <p key={items.id}>
+      {items.customer} {items.item} {items.cost}
+    </p>
+  ));
+
   const print = () => {
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[0].cost;
@@ -74,18 +76,21 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-          printItems.push(list[i]);
+        printItems.push(list[i]);
         return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
           printItems.push(list[i]);
-        }else {
+        } else {
           printItems.push(list[i]);
         }
       }
     }
 
+    return itemlist();
+
     return 'Total is ' + totln(tot.toFixed(2));
+
   };
   console.log('total ' + tot);
   return print();
@@ -97,7 +102,12 @@ const App = () => {
   const newlist = listing();
 
   const hdg = () => {
-    return <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4"> Total purchases by Customer  </p>;
+    return (
+      <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
+        {' '}
+        Total purchases by Customer{' '}
+      </p>
+    );
   };
 
   return (
