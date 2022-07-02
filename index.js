@@ -34,6 +34,7 @@ const totln = (cst) => {
     Total {cst}</p>;
 };
 
+let tot = 0;
 const listing = () => {
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt-m', cost: 300.44 },
@@ -52,7 +53,7 @@ const listing = () => {
     },
   ];
 
-  let tot = 0;
+  //let tot = 0;
   let first = 1;
   let hcust = 'x';
   let hitem = 'y';
@@ -88,7 +89,7 @@ const listing = () => {
       }
     }
 
-    //return printAll(hcust,hitem,hcost);
+    return printall(hcust,hitem,hcost);
 
     return totln(tot.toFixed(2));
 
@@ -117,6 +118,7 @@ const App = () => {
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
           <div className=" mt-5 ml-5 ">{newlist}</div>
+          <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
         </div>
       </div>
     </ExampleContext.Provider>
