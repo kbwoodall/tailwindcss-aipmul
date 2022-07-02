@@ -30,7 +30,8 @@ const printsub = (cus, item, cst) => {
 };
 
 const totln = (cst) => {
-  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{cst}</p>;
+  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
+    Total {cst}</p>;
 };
 
 const listing = () => {
@@ -77,7 +78,7 @@ const listing = () => {
           (hcost = list[i].cost),
           console.log(hcust);
         printList.push(list[i]);
-        return println(hcust, hitem, hcost);
+        //return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
@@ -87,9 +88,9 @@ const listing = () => {
       }
     }
 
-    return itemlist();
+    //return itemlist();
 
-    return 'Total is ' + totln(tot.toFixed(2));
+    return totln(tot.toFixed(2));
 
   };
   console.log('total ' + tot);
