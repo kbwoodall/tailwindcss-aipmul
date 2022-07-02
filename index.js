@@ -56,9 +56,9 @@ const listing = () => {
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
-  let printItems = [];
+  let printList = [];
 
-  const itemlist = printItems.map((items) => (
+  const printAll = printList.map((items) => (
     <p key={items.id}>
       {items.customer} {items.item} {items.cost}
     </p>
@@ -76,13 +76,13 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           console.log(hcust);
-        printItems.push(list[i]);
+        printList.push(list[i]);
         return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
-          printItems.push(list[i]);
+          printList.push(list[i]);
         } else {
-          printItems.push(list[i]);
+          printList.push(list[i]);
         }
       }
     }
