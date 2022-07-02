@@ -9,10 +9,6 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
-const GetVal = (val) => {
-  alert('testing now' + val);
-};
-
 const println = (cus, item, cst) => {
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
@@ -30,8 +26,9 @@ const printall = (cus, item, cst) => {
 };
 
 const totln = (cst) => {
-  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
-    Total {cst}</p>;
+  return (
+    <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {cst}</p>
+  );
 };
 
 let tot = 0;
@@ -89,10 +86,7 @@ const listing = () => {
       }
     }
 
-    return printall(hcust,hitem,hcost);
-
-    return totln(tot.toFixed(2));
-
+    return printall(hcust, hitem, hcost);
   };
   console.log('total ' + tot);
   return print();
@@ -128,6 +122,11 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+const GetVal = (val) => {
+  alert('testing now' + val);
+};
+
   const itemlist = newlist.map((items) => (
     <p key={items.id}>
       {items.customer} {items.item} {items.cost}
