@@ -21,7 +21,7 @@ const println = (cus, item, cst) => {
   );
 };
 
-const printsub = (cus, item, cst) => {
+const printall = (cus, item, cst) => {
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
       {cus} {item} {cst}
@@ -88,7 +88,7 @@ const listing = () => {
       }
     }
 
-    //return itemlist();
+    //return printAll(hcust,hitem,hcost);
 
     return totln(tot.toFixed(2));
 
