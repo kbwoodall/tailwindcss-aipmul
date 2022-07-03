@@ -9,6 +9,9 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
+let tot = 0;
+let printList = [];
+
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -33,24 +36,23 @@ const printall = (cus, item, cst) => {
   );
 };
 
+const printallx = (printList) => {
+  return printList.map((items) => (
+    <p key={items.id}>
+      {items.customer} {items.item} {items.cost}
+    </p>
+  ));
+};
+
 const totln = (cst) => {
   return (
     <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {cst}</p>
   );
 };
 
-let tot = 0;
-let printList = [];
-
 const GetVal = (v1, v2, v3, v4) => {
   console.log('hold values ' + v1, v2, v3, v4);
 };
-
-const printAll = printList.map((items) => (
-  <p key={items.id}>
-    {items.customer} {items.item} {items.cost}
-  </p>
-));
 
 const listing = () => {
   const list = [
@@ -104,9 +106,9 @@ const listing = () => {
       printList[3].customer
     );
 
-    //return printAll(printList);
+    return printallx(printList);
 
-    return printall(hcust, hitem, hcost);
+    //return printall(hcust, hitem, hcost);
   };
 
   return print();
