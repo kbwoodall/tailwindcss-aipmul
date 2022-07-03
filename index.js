@@ -28,17 +28,9 @@ const println = (cus, item, cst) => {
   );
 };
 
-const printall = (cus, item, cst) => {
-  return (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
-      {cus} {item} {cst}
-    </p>
-  );
-};
-
-const printallx = (printList) => {
+const printall = (printList) => {
   return printList.map((items) => (
-    <p key={items.id}>
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2" key={items.id}>
       {items.customer} {items.item} {items.cost}
     </p>
   ));
@@ -48,10 +40,6 @@ const totln = (cst) => {
   return (
     <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {cst}</p>
   );
-};
-
-const GetVal = (v1, v2, v3, v4) => {
-  console.log('hold values ' + v1, v2, v3, v4);
 };
 
 const listing = () => {
@@ -99,16 +87,7 @@ const listing = () => {
       }
     }
 
-    GetVal(
-      printList[0].customer,
-      printList[1].customer,
-      printList[2].customer,
-      printList[3].customer
-    );
-
-    return printallx(printList);
-
-    //return printall(hcust, hitem, hcost);
+    return printall(printList);
   };
 
   return print();
@@ -129,6 +108,24 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+const printallx = (cus, item, cst) => {
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
+      {cus} {item} {cst}
+    </p>
+  );
+};
+
+const GetVal = (v1, v2, v3, v4) => {
+  console.log('hold values ' + v1, v2, v3, v4);
+};
+
+GetVal(
+      printList[0].customer,
+      printList[1].customer,
+      printList[2].customer,
+      printList[3].customer
+    );
 
 const GetVal = (val) => {
   alert('testing now' + val);
