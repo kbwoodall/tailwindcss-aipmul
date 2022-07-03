@@ -32,6 +32,18 @@ const totln = (cst) => {
 };
 
 let tot = 0;
+let printList = [];
+
+const GetVal = (v1, v2, v3, v4) => {
+  console.log('hold values ' + v1, v2, v3, v4);
+};
+
+const printAll = printList.map((items) => (
+  <p key={items.id}>
+    {items.customer} {items.item} {items.cost}
+  </p>
+));
+
 const listing = () => {
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt-m', cost: 300.44 },
@@ -55,17 +67,7 @@ const listing = () => {
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
-  let printList = [];
-
-  const printAll = printList.map((items) => (
-    <p key={items.id}>
-      {items.customer} {items.item} {items.cost}
-    </p>
-  ));
-
-  const GetVal = (v1, v2, v3, v4) => {
-    console.log('hold values ' + v1, v2, v3, v4);
-  };
+  //let printList = [];
 
   // const printHold = printList.map((items) => (
   //   return (
@@ -103,7 +105,7 @@ const listing = () => {
       printList[3].customer
     );
 
-    //printHold;
+    //return printAll(printList);
 
     return printall(hcust, hitem, hcost);
   };
