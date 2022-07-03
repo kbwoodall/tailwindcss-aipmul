@@ -63,10 +63,16 @@ const listing = () => {
     </p>
   ));
 
-  const printHold = printList.map((items) => {}
-    //alert('here');
-    //alert('hold ' + items.customer + items.item + items.cost)
-  )
+  const GetVal = (v1, v2, v3, v4) => {
+    console.log('hold values ' + v1, v2, v3, v4);
+  };
+
+  // const printHold = printList.map((items) => (
+  //   return (
+  //   console.log("done")   )
+  // ));
+
+  //alert('hold ' + items.customer + items.item + items.cost)
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -81,7 +87,6 @@ const listing = () => {
           (hcost = list[i].cost),
           console.log(hcust);
         printList.push(list[i]);
-        //return println(hcust, hitem, hcost);
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
@@ -91,11 +96,18 @@ const listing = () => {
       }
     }
 
-    printHold;
+    GetVal(
+      printList[0].customer,
+      printList[1].customer,
+      printList[2].customer,
+      printList[3].customer
+    );
+
+    //printHold;
 
     return printall(hcust, hitem, hcost);
   };
-  console.log('total ' + tot);
+
   return print();
 };
 
