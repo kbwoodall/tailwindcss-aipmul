@@ -63,9 +63,10 @@ const listing = () => {
     </p>
   ));
 
-  const printHold = printList.map((items) => (
-    console.log('hold ' + items.customer + items.item + items.cost)
-  ));
+  const printHold = printList.map((items) => {}
+    //alert('here');
+    //alert('hold ' + items.customer + items.item + items.cost)
+  )
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
