@@ -63,6 +63,10 @@ const listing = () => {
     </p>
   ));
 
+  const printHold = printList.map((items) => (
+    console.log('hold ' + items.customer + items.item + items.cost)
+  ));
+
   const print = () => {
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[0].cost;
@@ -85,6 +89,8 @@ const listing = () => {
         }
       }
     }
+
+    printHold;
 
     return printall(hcust, hitem, hcost);
   };
