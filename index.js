@@ -70,19 +70,10 @@ const listing = () => {
     },
   ];
 
-  //let tot = 0;
   let first = 1;
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
-  //let printList = [];
-
-  // const printHold = printList.map((items) => (
-  //   return (
-  //   console.log("done")   )
-  // ));
-
-  //alert('hold ' + items.customer + items.item + items.cost)
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -122,18 +113,14 @@ const listing = () => {
 };
 
 const App = () => {
-  const [info, setInfo] = useState('');
-
   return (
-    <ExampleContext.Provider value={info}>
-      <div className="flex justify-start bg-green-300 h-screen  ">
-        <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{listing()}</div>
-          <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
-        </div>
+    <div className="flex justify-start bg-green-300 h-screen  ">
+      <div className=" bg-green-300 flex-row">
+        <div className=" mt-5 ml-5 ">{hdg()}</div>
+        <div className=" mt-5 ml-5 ">{listing()}</div>
+        <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
       </div>
-    </ExampleContext.Provider>
+    </div>
   );
 };
 
