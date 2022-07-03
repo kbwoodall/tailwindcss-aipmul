@@ -9,6 +9,14 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
+const hdg = () => {
+  return (
+    <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
+      {' '}
+      Total purchases by Customer{' '}
+    </p>
+  );
+};
 const println = (cus, item, cst) => {
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
@@ -114,25 +122,14 @@ const listing = () => {
 };
 
 const App = () => {
-  const [info, setInfo] = useState('2x = 144');
-
-  const newlist = listing();
-
-  const hdg = () => {
-    return (
-      <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
-        {' '}
-        Total purchases by Customer{' '}
-      </p>
-    );
-  };
+  const [info, setInfo] = useState('');
 
   return (
     <ExampleContext.Provider value={info}>
       <div className="flex justify-start bg-green-300 h-screen  ">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{newlist}</div>
+          <div className=" mt-5 ml-5 ">{listing()}</div>
           <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
         </div>
       </div>
