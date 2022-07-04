@@ -44,7 +44,7 @@ const totln = (cst) => {
 
 const listing = () => {
   const list = [
-    { customer: 'Leo', item: 'shirt-m', cost: 112.44 },
+    { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
     { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
     {
       //id: 3,
@@ -90,6 +90,11 @@ const listing = () => {
           prev = [{ customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
+          console.log(prev[0])
+          prev = [{ customer: hcust, item: '', cost: subtot }];
+          printList.push(prev[0]);
+
+
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
@@ -109,11 +114,10 @@ const listing = () => {
       console.log('i is ' + i + ' ' + list.length);
       if (i == list.length - 1) {
         printList.push(prev[0]);
-      
-      prev = [{ customer: hcust, item: '', cost: subtot }];
-      printList.push(prev[0]);
-    }
 
+        prev = [{ customer: hcust, item: '', cost: subtot }];
+        printList.push(prev[0]);
+      }
     }
 
     return printall(printList);
