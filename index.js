@@ -77,8 +77,6 @@ const listing = () => {
           (hcost = list[i].cost),
           (subtot = list[i].cost),
           (prev = [{ customer: hcust, item: hitem, cost: hcost }]);
-        //printList.push(list[i]),
-        //(subtot = list[i].cost);
         console.log(prev[0]);
       } else {
         if (hcust == list[i].customer) {
@@ -90,28 +88,19 @@ const listing = () => {
           prev = [{ customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
-          console.log(prev[0])
+          console.log(prev[0]);
           prev = [{ customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
-
 
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
           prev = [{ customer: hcust, item: hitem, cost: hcost }];
-          //let sub = [{ customer: hcust, item: '', cost: subtot }];
-          //printList.push(sub[0]);
 
           subtot = 0;
           subtot = subtot + list[i].cost;
-          //prev = [{ customer: hcust, item: '', cost: subtot }];
-          //printList.push(prev[0]);
-
-          //printList.push(list[i]);
         }
-        //printList.push(prev[0]);
       }
-      console.log('i is ' + i + ' ' + list.length);
       if (i == list.length - 1) {
         printList.push(prev[0]);
 
@@ -119,10 +108,8 @@ const listing = () => {
         printList.push(prev[0]);
       }
     }
-
     return printall(printList);
   };
-
   return print();
 };
 
