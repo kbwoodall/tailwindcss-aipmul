@@ -64,6 +64,7 @@ const listing = () => {
   let hcust = 'x';
   let hitem = 'y';
   let hcost = 0;
+  let subtot = 0;
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -73,7 +74,8 @@ const listing = () => {
           (hcust = list[i].customer),
           (hitem = list[i].item),
           (hcost = list[i].cost),
-          printList.push(list[i]);
+          printList.push(list[i]),
+          subtot = subtot + list[i].cost;
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
