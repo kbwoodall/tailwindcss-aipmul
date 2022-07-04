@@ -68,19 +68,22 @@ const listing = () => {
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
-      tot = tot + list[0].cost;
+      tot = tot + list[i].cost;
       if (first) {
         (first = 0),
           (hcust = list[i].customer),
           (hitem = list[i].item),
           (hcost = list[i].cost),
           printList.push(list[i]),
-          subtot = subtot + list[i].cost;
+          (subtot = subtot + list[i].cost);
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
+          subtot = subtot + list[i].cost;
         } else {
           printList.push(list[i]);
+          subtot = 0;
+          subtot = subtot + list[i].cost;
         }
       }
     }
