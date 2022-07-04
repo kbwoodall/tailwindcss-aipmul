@@ -99,6 +99,9 @@ const listing = () => {
 
           subtot = 0;
           subtot = subtot + list[i].cost;
+          //prev = [{ customer: hcust, item: '', cost: subtot }];
+          //printList.push(prev[0]);
+
           //printList.push(list[i]);
         }
         //printList.push(prev[0]);
