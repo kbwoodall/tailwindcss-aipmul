@@ -44,8 +44,8 @@ const totln = (cst) => {
 
 const listing = () => {
   const list = [
-    { customer: 'Leo', item: 'shirt-m', cost: 300.44 },
-    { customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
+    { customer: 'Leo', item: 'shirt-m', cost: 112.44 },
+    { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
     {
       //id: 3,
       customer: 'Otto',
@@ -86,7 +86,7 @@ const listing = () => {
 
         } else {
           let sub = [{ customer: hcust, item: '', cost: subtot }];
-          printList.push(sub[0]);
+          //printList.push(sub[0]);
 
           subtot = 0;
           subtot = subtot + list[i].cost;
@@ -94,7 +94,7 @@ const listing = () => {
         }
       }
     }
-
+    
     return printall(printList);
   };
 
