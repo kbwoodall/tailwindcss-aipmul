@@ -106,9 +106,11 @@ const listing = () => {
       console.log('i is ' + i + ' ' + list.length);
       if (i == list.length - 1) {
         printList.push(prev[0]);
-      }
-      //prev = [{ customer: hcust, item: '', cost: subtot }];
-      //printList.push(prev[0]);
+      
+      prev = [{ customer: hcust, item: '', cost: subtot }];
+      printList.push(prev[0]);
+    }
+
     }
 
     return printall(printList);
