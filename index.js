@@ -75,15 +75,19 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           printList.push(list[i]),
-          (subtot = subtot + list[i].cost);
+          subtot = list[i].cost;
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
           subtot = subtot + list[i].cost;
         } else {
+          //printList.push('xxx', 0, 100);
+
           printList.push(list[i]);
+
           subtot = 0;
           subtot = subtot + list[i].cost;
+          //printList.push(list[i]);
         }
       }
     }
