@@ -66,11 +66,6 @@ const listing = () => {
   let hcost = 0;
   let subtot = 0;
 
-  //const listx = [{ customer: 'Leo', item: '', cost: subtot }];
-
-  let text = '{ "customer" : [' + '{ "item":"" , "cost":"Jones" } ]}';
-  const obj = JSON.parse(text);
-
   const print = () => {
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
@@ -85,14 +80,17 @@ const listing = () => {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
           subtot = subtot + list[i].cost;
-        } else {
-          const listx = [{ customer: 'Leo', item: '', cost: subtot }];
-          printList.push(listx[0]);
+          (hcust = list[i].customer);
+          (hitem = list[i].item);
+          (hcost = list[i].cost);
 
-          printList.push(list[i]);
+        } else {
+          let sub = [{ customer: hcust, item: '', cost: subtot }];
+          printList.push(sub[0]);
 
           subtot = 0;
           subtot = subtot + list[i].cost;
+          printList.push(list[i]);
         }
       }
     }
@@ -118,6 +116,9 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+let text = '{ "customer" : [' + '{ "item":"" , "cost":"Jones" } ]}';
+  const obj = JSON.parse(text);
 const printallx = (cus, item, cst) => {
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
