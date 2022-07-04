@@ -44,16 +44,16 @@ const totln = (cst) => {
 
 const listing = () => {
   const list = [
-    { id: 1, customer: 'Leo', item: 'shirt-m', cost: 300.44 },
-    { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
+    {  customer: 'Leo', item: 'shirt-m', cost: 300.44 },
+    {  customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
     {
-      id: 3,
+      //id: 3,
       customer: 'Otto',
       item: 'shoes',
       cost: 100.15,
     },
     {
-      id: 4,
+      //id: 4,
       customer: 'Otto',
       item: 'pants',
       cost: 200.36,
@@ -65,6 +65,11 @@ const listing = () => {
   let hitem = 'y';
   let hcost = 0;
   let subtot = 0;
+
+  let text = '{ "customer" : [' +
+  '{ "item":"" , "cost":"Jones" } ]}'; 
+  const obj = JSON.parse(text); 
+  
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -81,7 +86,7 @@ const listing = () => {
           printList.push(list[i]);
           subtot = subtot + list[i].cost;
         } else {
-          //printList.push('xxx', 0, 100);
+          //printList.push(obj);
 
           printList.push(list[i]);
 
