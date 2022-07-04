@@ -44,8 +44,8 @@ const totln = (cst) => {
 
 const listing = () => {
   const list = [
-    {  customer: 'Leo', item: 'shirt-m', cost: 300.44 },
-    {  customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
+    { customer: 'Leo', item: 'shirt-m', cost: 300.44 },
+    { customer: 'Leo', item: 'shirt-lg', cost: 350.44 },
     {
       //id: 3,
       customer: 'Otto',
@@ -66,10 +66,10 @@ const listing = () => {
   let hcost = 0;
   let subtot = 0;
 
-  let text = '{ "customer" : [' +
-  '{ "item":"" , "cost":"Jones" } ]}'; 
-  const obj = JSON.parse(text); 
-  
+  //const listx = [{ customer: 'Leo', item: '', cost: subtot }];
+
+  let text = '{ "customer" : [' + '{ "item":"" , "cost":"Jones" } ]}';
+  const obj = JSON.parse(text);
 
   const print = () => {
     for (let i = 0; i < list.length; i++) {
@@ -80,19 +80,19 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           printList.push(list[i]),
-          subtot = list[i].cost;
+          (subtot = list[i].cost);
       } else {
         if (hcust == list[i].customer) {
           printList.push(list[i]);
           subtot = subtot + list[i].cost;
         } else {
-          //printList.push(obj);
+          const listx = [{ customer: 'Leo', item: '', cost: subtot }];
+          printList.push(listx[0]);
 
           printList.push(list[i]);
 
           subtot = 0;
           subtot = subtot + list[i].cost;
-          //printList.push(list[i]);
         }
       }
     }
