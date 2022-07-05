@@ -1,4 +1,5 @@
-// Import stylesheets
+//Author: Kerry Woodall
+//Import stylesheets
 import './style.css';
 
 import React, { Component } from 'react';
