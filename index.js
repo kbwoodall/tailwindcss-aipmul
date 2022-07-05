@@ -69,6 +69,7 @@ const listing = () => {
   let prev = [];
 
   const print = () => {
+    tot = 0.00;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
