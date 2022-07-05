@@ -10,6 +10,7 @@ import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
 let tot = 0;
+
 let printList = [];
 
 const hdg = () => {
