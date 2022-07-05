@@ -9,8 +9,7 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
-let tot = 0;
-
+let tot = 0.00;
 let printList = [];
 
 const hdg = () => {
@@ -44,6 +43,7 @@ const totln = (cst) => {
 };
 
 const listing = () => {
+
   const list = [
     { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
     { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
@@ -115,12 +115,13 @@ const listing = () => {
 };
 
 const App = () => {
+  
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
       <div className=" bg-green-300 flex-row">
         <div className=" mt-5 ml-5 ">{hdg()}</div>
         <div className=" mt-5 ml-5 ">{listing()}</div>
-        <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
+        <div className=" mt-5 ml-5 ">{totln(tot)}</div>
       </div>
     </div>
   );
@@ -129,7 +130,7 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
-
+<div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
 let text = '{ "customer" : [' + '{ "item":"" , "cost":"Jones" } ]}';
   const obj = JSON.parse(text);
 const printallx = (cus, item, cst) => {
