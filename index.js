@@ -10,14 +10,13 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
-let tot = 0.00;
+let tot = 0.0;
 let printList = [];
 
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
-      {' '}
-      Total purchases by Customer{' '}
+      Total purchases by Customer
     </p>
   );
 };
@@ -44,7 +43,6 @@ const totln = (cst) => {
 };
 
 const listing = () => {
-
   const list = [
     { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
     { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
@@ -70,7 +68,7 @@ const listing = () => {
   let prev = [];
 
   const print = () => {
-    tot = 0.00;
+    tot = 0.0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
@@ -117,7 +115,6 @@ const listing = () => {
 };
 
 const App = () => {
-  
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
       <div className=" bg-green-300 flex-row">
