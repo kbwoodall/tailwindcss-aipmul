@@ -16,7 +16,7 @@ let printList = [];
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
-      Total purchases by Customers
+      Total Purchases by Customers
     </p>
   );
 };
@@ -60,7 +60,7 @@ const listing = () => {
     },
   ];
 
-  let first = 1;
+  let first = true;
   let hcust = '';
   let hitem = '';
   let hcost = 0;
@@ -72,7 +72,7 @@ const listing = () => {
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
-        (first = 0),
+        (first = false),
           (hcust = list[i].customer),
           (hitem = list[i].item),
           (hcost = list[i].cost),
