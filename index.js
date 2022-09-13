@@ -50,10 +50,25 @@ const totln = (cst) => {
   );
 };
 
-const clist = [
-  { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-  { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-];
+const clisting = () => {
+  const clist = [{ customer: 'Leo' }, { customer: 'Otto' }];
+
+  const people = [
+    { id: 1, name: 'Leo', gender: 'male', age: 30 },
+    { id: 3, name: 'Otto', gender: 'male', age: 13 },
+  ];
+
+  function cus() {
+    return (
+      <ul>
+        {people.map((person) => {
+          return <li key={person.id}>{person.name}</li>;
+        })}
+      </ul>
+    );
+  }
+  return cus();
+};
 
 const listing = () => {
   const list = [
@@ -132,6 +147,7 @@ const App = () => {
     <div className="flex justify-start bg-green-300 h-screen  ">
       <div className=" bg-green-300 flex-row">
         <div className=" mt-5 ml-5 ">{chdg()}</div>
+        <div className=" mt-5 ml-5 ">{clisting()}</div>
       </div>
 
       <div className=" bg-green-300 flex-row">
