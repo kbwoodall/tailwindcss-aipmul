@@ -59,13 +59,14 @@ const clisting = () => {
   ];
 
   function cus() {
-    return (
-      <ul>
-        {people.map((person) => {
-          return <li key={person.id}>{person.name}</li>;
-        })}
-      </ul>
-    );
+    return people.map((items) => (
+      <p
+        className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+        key={items.id}
+      >
+        {items.name}
+      </p>
+    ));
   }
   return cus();
 };
