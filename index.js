@@ -20,6 +20,14 @@ const hdg = () => {
     </p>
   );
 };
+const chdg = () => {
+  return (
+    <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
+      Customers
+    </p>
+  );
+};
+
 const println = (cus, item, cst) => {
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
@@ -41,6 +49,11 @@ const totln = (cst) => {
     <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {cst}</p>
   );
 };
+
+const clist = [
+  { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
+  { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
+];
 
 const listing = () => {
   const list = [
@@ -117,6 +130,10 @@ const listing = () => {
 const App = () => {
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
+      <div className=" bg-green-300 flex-row">
+        <div className=" mt-5 ml-5 ">{chdg()}</div>
+      </div>
+
       <div className=" bg-green-300 flex-row">
         <div className=" mt-5 ml-5 ">{hdg()}</div>
         <div className=" mt-5 ml-5 ">{listing()}</div>
