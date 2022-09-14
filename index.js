@@ -12,6 +12,7 @@ export const ExampleContext = createContext('');
 
 let tot = 0.0;
 let printList = [];
+let saveName = 'initial';
 
 const hdg = () => {
   return (
@@ -51,18 +52,20 @@ const totln = (cst) => {
 };
 
 const clisting = () => {
-  const clist = [{ name: 'Leo' }, { name: 'Otto' }];
-  const arr = ['Austria', 'Belgium', 'Canada'];
+  //const clist = [{ name: 'Leo' }, { name: 'Otto' }];
+  ///const arr = ['Austria', 'Belgium', 'Canada'];
+  //let saveName = 'initial';
 
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
 
-  const handleClick = (event, key) => {
+  const handleClick = (event, key) => {   
     console.log(event.target);
     console.log('key index: ', key);
-    alert('key index: ' + key.name);
+    saveName = key.name;
+    alert('save name: ' + saveName);
   };
 
   function cus() {
