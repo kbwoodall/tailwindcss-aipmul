@@ -55,10 +55,28 @@ const clisting = () => {
 
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
-    { id: 3, name: 'Otto', gender: 'male', age: 13 },
+    { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
 
+  const handleClick = (event, key) => {
+    console.log(event.target);
+    console.log('key index: ', key);
+  };
+
   function cus() {
+    /* 
+    return (
+      <div>
+        {people.map((element, key) => (
+          <div onClick={event => handleClick(event, key)} key={key}>
+            {element}
+            <hr />
+          </div>
+        ))}
+      </div>
+    );
+    */
+
     return people.map((items) => (
       <p
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
@@ -68,6 +86,7 @@ const clisting = () => {
       </p>
     ));
   }
+
   return cus();
 };
 
