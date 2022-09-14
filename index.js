@@ -65,27 +65,14 @@ const clisting = () => {
   };
 
   function cus() {
-    /* 
-    return (
-      <div>
-        {people.map((element, key) => (
-          <div onClick={event => handleClick(event, key)} key={key}>
-            {element}
-            <hr />
-          </div>
-        ))}
-      </div>
-    );
-    */
-
-    return arr.map((key) => (
+    return people.map((key) => (
       <p
-       
-        onClick={event => handleClick(event, key)} key={key}
+        onClick={(event) => handleClick(event, key)}
+        key={key}
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
         key={key}
       >
-        {name}
+        {key.name}
       </p>
     ));
   }
@@ -185,6 +172,20 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+
+    return (
+      <div>
+        {people.map((element, key) => (
+          <div onClick={event => handleClick(event, key)} key={key}>
+            {element}
+            <hr />
+          </div>
+        ))}
+      </div>
+    );
+    
+
 <div className=" mt-5 ml-5 ">{totln(tot.toFixed(2))}</div>
 let text = '{ "customer" : [' + '{ "item":"" , "cost":"Jones" } ]}';
   const obj = JSON.parse(text);
