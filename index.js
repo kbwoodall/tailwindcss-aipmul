@@ -62,6 +62,7 @@ const clisting = () => {
   const handleClick = (event, key) => {
     console.log(event.target);
     console.log('key index: ', key);
+    alert('key index: ' + key.name);
   };
 
   function cus() {
