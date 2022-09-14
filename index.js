@@ -51,7 +51,8 @@ const totln = (cst) => {
 };
 
 const clisting = () => {
-  const clist = [{ customer: 'Leo' }, { customer: 'Otto' }];
+  const clist = [{ name: 'Leo' }, { name: 'Otto' }];
+  const arr = ['Austria', 'Belgium', 'Canada'];
 
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
@@ -77,12 +78,14 @@ const clisting = () => {
     );
     */
 
-    return people.map((items) => (
+    return arr.map((key) => (
       <p
+       
+        onClick={event => handleClick(event, key)} key={key}
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-        key={items.id}
+        key={key}
       >
-        {items.name}
+        {name}
       </p>
     ));
   }
