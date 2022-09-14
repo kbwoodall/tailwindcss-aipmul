@@ -61,7 +61,7 @@ const clisting = () => {
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
 
-  const handleClick = (event, key) => {   
+  const handleClick = (event, key) => {
     console.log(event.target);
     console.log('key index: ', key);
     saveName = key.name;
@@ -84,18 +84,21 @@ const clisting = () => {
   return cus();
 };
 
+const smallList = (name) => {
+  let rlist =[]
+
+}
+
 const listing = () => {
   const list = [
     { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
     { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
     {
-      //id: 3,
       customer: 'Otto',
       item: 'shoes',
       cost: 100.15,
     },
     {
-      //id: 4,
       customer: 'Otto',
       item: 'pants',
       cost: 200.36,
@@ -176,6 +179,19 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+const names = ['James', 'John', 'Paul', 'Ringo', 'George'];
+
+function App() {
+  return (
+    <div>
+      {names.filter(name => name.includes('J')).map(filteredName => (
+        <li>
+          {filteredName}
+        </li>
+      ))}
+    </div>
+  );
+}
 
 
     return (
