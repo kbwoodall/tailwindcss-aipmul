@@ -52,10 +52,6 @@ const totln = (cst) => {
 };
 
 const clisting = () => {
-  //const clist = [{ name: 'Leo' }, { name: 'Otto' }];
-  ///const arr = ['Austria', 'Belgium', 'Canada'];
-  //let saveName = 'initial';
-
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
@@ -85,9 +81,8 @@ const clisting = () => {
 };
 
 const smallList = (name) => {
-  let rlist =[]
-
-}
+  let rlist = [];
+};
 
 const listing = () => {
   const list = [
@@ -125,7 +120,7 @@ const listing = () => {
           (prev = [{ customer: hcust, item: hitem, cost: hcost }]);
         console.log(prev[0]);
       } else {
-        if (hcust == list[i].customer) {
+        if (hcust == list[i].customer && hcust == saveName) {
           printList.push(prev[0]);
           subtot = subtot + list[i].cost;
           hcust = list[i].customer;
