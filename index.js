@@ -86,14 +86,16 @@ const smallList = (name) => {
 
 const listing = () => {
   const list = [
-    { customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-    { customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
+    { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
+    { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
     {
+      id: 3,
       customer: 'Otto',
       item: 'shoes',
       cost: 100.15,
     },
     {
+      id: 4,
       customer: 'Otto',
       item: 'pants',
       cost: 200.36,
@@ -101,6 +103,7 @@ const listing = () => {
   ];
 
   let first = true;
+  let hid = 0;
   let hcust = '';
   let hitem = '';
   let hcost = 0;
@@ -117,7 +120,7 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           (subtot = list[i].cost),
-          (prev = [{ customer: hcust, item: hitem, cost: hcost }]);
+          (prev = [{ id: hid++, hcustomer: hcust, item: hitem, cost: hcost }]);
         console.log(prev[0]);
       } else {
         if (hcust == list[i].customer && hcust == saveName) {
@@ -126,17 +129,17 @@ const listing = () => {
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
-          prev = [{ customer: hcust, item: hitem, cost: hcost }];
+          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
           console.log(prev[0]);
-          prev = [{ customer: hcust, item: '', cost: subtot }];
+          prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
 
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
-          prev = [{ customer: hcust, item: hitem, cost: hcost }];
+          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
 
           subtot = 0;
           subtot = subtot + list[i].cost;
@@ -145,7 +148,7 @@ const listing = () => {
       if (i == list.length - 1) {
         printList.push(prev[0]);
 
-        prev = [{ customer: hcust, item: '', cost: subtot }];
+        prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
         printList.push(prev[0]);
       }
     }
