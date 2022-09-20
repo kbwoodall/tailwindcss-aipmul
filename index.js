@@ -85,23 +85,6 @@ const smallList = (name) => {
 };
 
 const listing = () => {
-  const list = [
-    { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-    { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
-    {
-      id: 3,
-      customer: 'Otto',
-      item: 'shoes',
-      cost: 100.15,
-    },
-    {
-      id: 4,
-      customer: 'Otto',
-      item: 'pants',
-      cost: 200.36,
-    },
-  ];
-
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -112,6 +95,24 @@ const listing = () => {
 
   const print = () => {
     tot = 0.0;
+
+    const list = [
+      { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
+      { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
+      {
+        id: 3,
+        customer: 'Otto',
+        item: 'shoes',
+        cost: 100.15,
+      },
+      {
+        id: 4,
+        customer: 'Otto',
+        item: 'pants',
+        cost: 200.36,
+      },
+    ];
+
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
@@ -120,10 +121,10 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           (subtot = list[i].cost),
-          (prev = [{ id: hid++, hcustomer: hcust, item: hitem, cost: hcost }]);
-        console.log(prev[0]);
+          (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }]);
+        console.log('first ' + prev[0].id);
       } else {
-        if (hcust == list[i].customer && hcust == saveName) {
+        if (hcust == list[i].customer) {
           printList.push(prev[0]);
           subtot = subtot + list[i].cost;
           hcust = list[i].customer;
@@ -131,8 +132,11 @@ const listing = () => {
           hcost = list[i].cost;
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
         } else {
+          console.log('next ' + prev[0].id);
+          console.log('next ' + prev[0].customer);
+
           printList.push(prev[0]);
-          console.log(prev[0]);
+
           prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
 
