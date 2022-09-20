@@ -121,8 +121,10 @@ const listing = () => {
           (hitem = list[i].item),
           (hcost = list[i].cost),
           (subtot = list[i].cost),
-          (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }]);
-        console.log('first ' + prev[0].id);
+          hid++;
+          (prev = [{ id: hid, customer: hcust, item: hitem, cost: hcost }]);
+        console.log('first ' + prev[0].id) ;
+        console.log('first ' + prev[0].customer) ;
       } else {
         if (hcust == list[i].customer) {
           printList.push(prev[0]);
@@ -130,20 +132,24 @@ const listing = () => {
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
-          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
+          hid++;
+          prev = [{ id: hid, customer: hcust, item: hitem, cost: hcost }];
+          console.log('same ' + prev[0].id) ;
+          console.log('same ' + prev[0].customer) ;
         } else {
           console.log('next ' + prev[0].id);
           console.log('next ' + prev[0].customer);
 
           printList.push(prev[0]);
-
-          prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
+          hid++;
+          prev = [{ id: hid, customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
 
           hcust = list[i].customer;
           hitem = list[i].item;
           hcost = list[i].cost;
-          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
+          hid++;
+          prev = [{ id: hid, customer: hcust, item: hitem, cost: hcost }];
 
           subtot = 0;
           subtot = subtot + list[i].cost;
@@ -151,8 +157,8 @@ const listing = () => {
       }
       if (i == list.length - 1) {
         printList.push(prev[0]);
-
-        prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
+        hid++;
+        prev = [{ id: hid, customer: hcust, item: '', cost: subtot }];
         printList.push(prev[0]);
       }
     }
