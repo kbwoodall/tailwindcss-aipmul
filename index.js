@@ -68,16 +68,23 @@ const list = [
   },
 ];
 
-const subList = (nList) => {
-  list.filter((name) => {
-    return list.name === saveName;
+const smallList = (name) => {
+  let rlist = name;
+  console.log(rlist);
+
+  const filtered = rlist.filter(person => {
+    return person.customer === 'Terry';
   });
+
+  console.log(filtered);
+
+  return filtered;
 };
 
 const clisting = () => {
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
-    { id: 2, name: 'Otto', gender: 'male', age: 13 },
+    { id: 2, name: 'Terry', gender: 'male', age: 13 },
   ];
 
   const handleClick = (person, index) => {
@@ -103,10 +110,6 @@ const clisting = () => {
   return cus();
 };
 
-const smallList = (name) => {
-  let rlist = [];
-};
-
 const listing = () => {
   let first = true;
   let hid = 0;
@@ -116,6 +119,8 @@ const listing = () => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
+
+  const slist = smallList(list);
 
   const print = () => {
     tot = 0;
