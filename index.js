@@ -84,19 +84,19 @@ const smallList = (name) => {
   let rlist = [];
 };
 
-const listing2 = () => {
+const listing = () => {
   const list = [
     { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-    { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
+    { id: 2, customer: 'Jim', item: 'shirt-lg', cost: 127.56 },
     {
       id: 3,
-      customer: 'Otto',
+      customer: 'Terry',
       item: 'shoes',
       cost: 100.15,
     },
     {
       id: 4,
-      customer: 'Otto',
+      customer: 'Terry',
       item: 'pants',
       cost: 200.36,
     },
@@ -107,7 +107,7 @@ const listing2 = () => {
   let hcust = '';
   let hitem = '';
   let hcost = 0;
-  let subtot = 0.00;
+  let subtot = 0.0;
   let prev = [];
   let printList = [];
 
@@ -132,7 +132,6 @@ const listing2 = () => {
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
-          console.log(prev[0]);
           prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
           hcust = list[i].customer;
@@ -154,10 +153,32 @@ const listing2 = () => {
   return print();
 };
 
+const App = () => {
+  return (
+    <div className="flex justify-start bg-green-300 h-screen  ">
+      <div className=" bg-green-300 flex-row">
+        <div className=" mt-5 ml-5 ">{chdg()}</div>
+        <div className=" mt-5 ml-5 ">{clisting()}</div>
+      </div>
 
+      <div className=" bg-green-300 flex-row">
+        <div className=" mt-5 ml-5 ">{hdg()}</div>
+        <div className=" mt-5 ml-5 ">{listing()}</div>
+        <div className=" mt-5 ml-5 ">{totln(tot)}</div>
+      </div>
+    </div>
+  );
+};
 
+render(<App />, document.getElementById('app'));
 
-const listing = () => {
+/*
+
+<div className=" mt-5 ml-5 ">{clisting()}</div>
+
+//console.log(prev[0]);
+
+const listing3 = () => {
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -241,7 +262,7 @@ const listing = () => {
           subtot = subtot + list[i].cost;
         }
 
-        */
+        
       }
       if (i == list.length - 1) {
         printList.push(prev[0]);
@@ -256,24 +277,7 @@ const listing = () => {
   return print();
 };
 
-const App = () => {
-  return (
-    <div className="flex justify-start bg-green-300 h-screen  ">
-      <div className=" bg-green-300 flex-row">
-        <div className=" mt-5 ml-5 ">{chdg()}</div>
-        <div className=" mt-5 ml-5 ">{clisting()}</div>
-      </div>
 
-      <div className=" bg-green-300 flex-row">
-        <div className=" mt-5 ml-5 ">{hdg()}</div>
-        <div className=" mt-5 ml-5 ">{listing2()}</div>
-        <div className=" mt-5 ml-5 ">{totln(tot)}</div>
-      </div>
-    </div>
-  );
-};
-
-render(<App />, document.getElementById('app'));
 
 /*
 const listing = () => {
