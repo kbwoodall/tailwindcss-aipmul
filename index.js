@@ -57,22 +57,22 @@ const clisting = () => {
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
 
-  const handleClick = (event, key) => {
-    console.log(event.target);
-    console.log('key index: ', key);
-    saveName = key.name;
+  const handleClick = (event, index) => {
+    //onsole.log(event.target);
+    //console.log('key index: ', key);
+    saveName = index.name;
     alert('save name: ' + saveName);
   };
 
   function cus() {
-    return people.map((key) => (
+    return people.map((person, index) => (
       <p
-        onClick={(event) => handleClick(event, key)}
-        key={key}
+        onClick={(event) => handleClick(event,index)}
+        key={index}
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-        key={key}
+        key={index}
       >
-        {key.name}
+        {person.name}
       </p>
     ));
   }
