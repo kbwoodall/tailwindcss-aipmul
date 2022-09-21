@@ -73,7 +73,7 @@ const clisting = () => {
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
-
+  /*
   const handleClick = (event, index) => {
     //console.log(event.target);
     console.log('key index: ', index);
@@ -81,43 +81,25 @@ const clisting = () => {
     saveName = index;
     alert('save name: ' + saveName);
   };
+*/
 
-  /*
-
-const handleClick = (event, key) => {
+  const handleClick = (event, key) => {
     console.log(event.target);
     console.log('key index: ', key);
   };
 
-
-
-  {arr.map((element, key) => (
-    <div onClick={event => handleClick(event, key)} key={key}>
-      {element}
-      <hr />
-
-
-  onClick={(event) => handleClick(event, index)}
-        key={index}
-        className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-        key={index}
-      >
-        {people.name}
-
- {arr.map((element, key) => (
-        <div onClick={event => handleClick(event, key)} key={key}>
-          {element}
-          <hr />
-        </div>
-      ))}
-
-
-*/
-
   function cus() {
-    return people.map((element, key) =>
-
-    <p>{element.name}</p>);
+    {
+      return people.map((person, index) => (
+        <p
+          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+          key={index}
+        >
+          {' '}
+          {person.name}
+        </p>
+      ));
+    }
   }
 
   return cus();
@@ -199,6 +181,31 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+/*
+
+  {arr.map((element, key) => (
+    <div onClick={event => handleClick(event, key)} key={key}>
+      {element}
+      <hr />
+
+
+  onClick={(event) => handleClick(event, index)}
+        key={index}
+        className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+        key={index}
+      >
+        {people.name}
+
+ {arr.map((element, key) => (
+        <p onClick={event => handleClick(event, key)} key={key}>
+          {element}
+          <hr />
+        </p>
+      ))}
+
+
+
+
 
 <div className=" mt-5 ml-5 ">{clisting()}</div>
 
