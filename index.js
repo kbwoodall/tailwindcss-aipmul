@@ -51,6 +51,23 @@ const totln = (cst) => {
   );
 };
 
+const list = [
+  { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
+  { id: 2, customer: 'Jim', item: 'shirt-lg', cost: 127.56 },
+  {
+    id: 3,
+    customer: 'Terry',
+    item: 'shoes',
+    cost: 100.15,
+  },
+  {
+    id: 4,
+    customer: 'Terry',
+    item: 'pants',
+    cost: 200.36,
+  },
+];
+
 const clisting = () => {
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
@@ -58,23 +75,49 @@ const clisting = () => {
   ];
 
   const handleClick = (event, index) => {
-    //onsole.log(event.target);
-    //console.log('key index: ', key);
-    saveName = index.name;
+    //console.log(event.target);
+    console.log('key index: ', index);
+    //console.log('person ', person.name);
+    saveName = index;
     alert('save name: ' + saveName);
   };
 
-  function cus() {
-    return people.map((person, index) => (
-      <p
-        onClick={(event) => handleClick(event,index)}
+  /*
+
+const handleClick = (event, key) => {
+    console.log(event.target);
+    console.log('key index: ', key);
+  };
+
+
+
+  {arr.map((element, key) => (
+    <div onClick={event => handleClick(event, key)} key={key}>
+      {element}
+      <hr />
+
+
+  onClick={(event) => handleClick(event, index)}
         key={index}
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
         key={index}
       >
-        {person.name}
-      </p>
-    ));
+        {people.name}
+
+ {arr.map((element, key) => (
+        <div onClick={event => handleClick(event, key)} key={key}>
+          {element}
+          <hr />
+        </div>
+      ))}
+
+
+*/
+
+  function cus() {
+    return people.map((element, key) =>
+
+    <p>{element.name}</p>);
   }
 
   return cus();
@@ -85,23 +128,6 @@ const smallList = (name) => {
 };
 
 const listing = () => {
-  const list = [
-    { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-    { id: 2, customer: 'Jim', item: 'shirt-lg', cost: 127.56 },
-    {
-      id: 3,
-      customer: 'Terry',
-      item: 'shoes',
-      cost: 100.15,
-    },
-    {
-      id: 4,
-      customer: 'Terry',
-      item: 'pants',
-      cost: 200.36,
-    },
-  ];
-
   let first = true;
   let hid = 0;
   let hcust = '';
