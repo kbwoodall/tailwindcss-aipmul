@@ -68,24 +68,22 @@ const list = [
   },
 ];
 
+const subList = (nList) => {
+  list.filter((name) => {
+    return list.name === saveName;
+  });
+};
+
 const clisting = () => {
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Otto', gender: 'male', age: 13 },
   ];
-  /*
-  const handleClick = (event, index) => {
-    //console.log(event.target);
-    console.log('key index: ', index);
-    //console.log('person ', person.name);
-    saveName = index;
-    alert('save name: ' + saveName);
-  };
-*/
 
-  const handleClick = (event, key) => {
-    console.log(event.target);
-    console.log('key index: ', key);
+  const handleClick = (person, index) => {
+    console.log('key index: ', index);
+    console.log('key name ', person.name);
+    saveName = person.name;
   };
 
   function cus() {
@@ -94,8 +92,8 @@ const clisting = () => {
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
           key={index}
+          onClick={(event) => handleClick(person, index)}
         >
-          {' '}
           {person.name}
         </p>
       ));
@@ -181,7 +179,15 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
-/*
+ 
+  const handleClick = (event, index) => {
+    //console.log(event.target);
+    console.log('key index: ', index);
+    //console.log('person ', person.name);
+    saveName = index;
+    alert('save name: ' + saveName);
+  };
+
 
   {arr.map((element, key) => (
     <div onClick={event => handleClick(event, key)} key={key}>
