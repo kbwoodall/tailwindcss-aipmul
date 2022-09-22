@@ -69,11 +69,11 @@ const list = [
 ];
 
 const smallList = (name) => {
-  let rlist = name;
-  console.log(rlist);
+  //let rlist = name;
+  //console.log(rlist);
 
-  const filtered = rlist.filter(person => {
-    return person.customer === 'Terry';
+  const filtered = list.filter(person => {
+    return person.customer === name;
   });
 
   console.log(filtered);
@@ -91,6 +91,7 @@ const clisting = () => {
     console.log('key index: ', index);
     console.log('key name ', person.name);
     saveName = person.name;
+    alert("Selected " + saveName);
   };
 
   function cus() {
