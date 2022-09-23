@@ -69,16 +69,17 @@ const list = [
 ];
 
 const smallList = (name) => {
-  //let rlist = name;
-  //console.log(rlist);
+  let categories = [...new Set(list.map((iname) => iname.customer))];
+  console.log('new ' + categories);
 
-  const filtered = list.filter(person => {
+  /*
+  const filtered = categories.filter(person => {
     return person.customer === name;
   });
 
-  console.log(filtered);
-
-  return filtered;
+  console.log('filtered ' + filtered);
+  */
+  return categories;
 };
 
 const clisting = () => {
@@ -91,7 +92,7 @@ const clisting = () => {
     console.log('key index: ', index);
     console.log('key name ', person.name);
     saveName = person.name;
-    alert("Selected " + saveName);
+    alert('Selected ' + saveName);
   };
 
   function cus() {
