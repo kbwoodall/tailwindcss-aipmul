@@ -52,8 +52,8 @@ const totln = (cst) => {
 };
 
 const list = [
-  { id: 1, customer: 'Leo', item: 'shirt-m', cost: 112.45 },
-  { id: 2, customer: 'Jim', item: 'shirt-lg', cost: 127.56 },
+  { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45 },
+  { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
   {
     id: 3,
     customer: 'Terry',
@@ -90,20 +90,23 @@ const clisting = () => {
 
   const handleClick = (person, index) => {
     console.log('key index: ', index);
-    console.log('key name ', person.name);
-    saveName = person.name;
+    console.log('key name ', person.customer);
+    saveName = person.customer;
     alert('Selected ' + saveName);
   };
 
   function cus() {
     {
-      return people.map((person, index) => (
+      let categories = [...new Set(list.map((iname) => iname.customer))];
+      console.log('new ' + categories);
+
+      return list.map((person, index) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
           key={index}
           onClick={(event) => handleClick(person, index)}
         >
-          {person.name}
+          {person.customer}
         </p>
       ));
     }
@@ -122,7 +125,7 @@ const listing = () => {
   let prev = [];
   let printList = [];
 
-  const slist = smallList(list);
+ //const slist = smallList(list);
 
   const print = () => {
     tot = 0;
