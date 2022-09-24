@@ -99,6 +99,8 @@ const clisting = () => {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
       console.log('new ' + categories);
+      let sublist = Array.from(categories);
+      console.log('sublist ' + sublist[0]);
 
       return list.map((person, index) => (
         <p
