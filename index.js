@@ -17,7 +17,7 @@ let saveName = 'initial';
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
-      Total Purchases by Customers
+      Total Purchases by Customer
     </p>
   );
 };
@@ -88,19 +88,36 @@ const clisting = () => {
     { id: 2, name: 'Terry', gender: 'male', age: 13 },
   ];
 
+  const handleClick = (person) => {
+    console.log('key name ', person);
+    saveName = person;
+    alert('Selected ' + saveName);
+  };
+  /*
   const handleClick = (person, index) => {
     console.log('key index: ', index);
     console.log('key name ', person.customer);
     saveName = person.customer;
     alert('Selected ' + saveName);
   };
-
+*/
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
       console.log('new ' + categories);
       let sublist = Array.from(categories);
       console.log('sublist ' + sublist[0]);
+
+      return sublist.map((person) => (
+        <p
+          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+          onClick={(event) => handleClick(person)}
+        >
+          {person}
+        </p>
+      ));
+
+      /*
 
       return list.map((person, index) => (
         <p
@@ -111,6 +128,8 @@ const clisting = () => {
           {person.customer}
         </p>
       ));
+
+*/
     }
   }
 
@@ -127,7 +146,7 @@ const listing = () => {
   let prev = [];
   let printList = [];
 
- //const slist = smallList(list);
+  //const slist = smallList(list);
 
   const print = () => {
     tot = 0;
