@@ -149,8 +149,12 @@ const listing = () => {
   //const slist = smallList(list);
 
   const print = () => {
+    const filtered = list.filter((person) => {
+      return person.customer === saveName;
+    });
+
     tot = 0;
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < filtered.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
         (first = false),
