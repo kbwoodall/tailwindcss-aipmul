@@ -13,6 +13,7 @@ export const ExampleContext = createContext('');
 let tot = 0.0;
 let printList = [];
 let saveName = 'initial';
+let saveArray = [];
 
 const hdg = () => {
   return (
@@ -92,6 +93,11 @@ const clisting = () => {
     console.log('key name ', person);
     saveName = person;
     alert('Selected ' + saveName);
+
+    saveArray = list.filter((person) => {
+      return person.customer === saveName;
+    });
+    console.log('save is ' + saveArray.length);
   };
   /*
   const handleClick = (person, index) => {
@@ -154,6 +160,8 @@ const listing = () => {
   //const slist = smallList(list);
 
   const print = () => {
+    console.log('save ' + saveArray.length);
+
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
