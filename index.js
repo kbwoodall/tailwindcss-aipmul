@@ -108,6 +108,11 @@ const clisting = () => {
       let sublist = Array.from(categories);
       console.log('sublist ' + sublist[0]);
 
+      const filtered = list.filter((person) => {
+        return person.customer === saveName;
+      });
+      console.log(list.length);
+
       return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
@@ -149,12 +154,8 @@ const listing = () => {
   //const slist = smallList(list);
 
   const print = () => {
-    const filtered = list.filter((person) => {
-      return person.customer === saveName;
-    });
-
     tot = 0;
-    for (let i = 0; i < filtered.length; i++) {
+    for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
       if (first) {
         (first = false),
