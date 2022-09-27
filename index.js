@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 //Author: Kerry Woodall 7/17/2022
 //Import stylesheets
 import './style.css';
@@ -194,6 +195,27 @@ render(<App />, document.getElementById('app'));
 
 /*
 
+function Example() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+}
+
+function Example() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
  
       return list.map((person, index) => (
         <p
