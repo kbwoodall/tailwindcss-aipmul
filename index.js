@@ -16,6 +16,17 @@ let saveName = 'initial';
 let saveArray = [];
 let names = [];
 
+function GetArray() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    saveArray = list.filter((person) => {
+      return person.customer === saveName;
+    });
+  }, [saveArray]);
+  console.log('GetArray is ' + saveArray.length);
+}
+
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -83,7 +94,8 @@ const clisting = () => {
     { id: 2, name: 'Terry', gender: 'male', age: 13 },
   ];
 
-  const handleClick = (person) => {
+  const handleClick = (person) => {  
+
     console.log('selected name ', person);
     saveName = person;
     alert('Selected ' + saveName);
