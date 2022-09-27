@@ -11,9 +11,9 @@ import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
 let tot = 0.0;
-//let printList = [];
 let saveName = 'initial';
 let saveArray = [];
+let names = [];
 
 const hdg = () => {
   return (
@@ -92,14 +92,7 @@ const clisting = () => {
     });
     console.log('saveArray is ' + saveArray.length);
   };
-  /*
-  const handleClick = (person, index) => {
-    console.log('key index: ', index);
-    console.log('key name ', person.customer);
-    saveName = person.customer;
-    alert('Selected ' + saveName);
-  };
-*/
+
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
@@ -125,7 +118,7 @@ const clisting = () => {
   return cus();
 };
 
-const listing = () => {
+const listing = (saveArray) => {
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -135,8 +128,8 @@ const listing = () => {
   let prev = [];
   let printList = [];
 
-  const list = [...saveArray];
-  console.log('copy ' + list.length);
+  //saveArray = [...list];
+  console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
     tot = 0;
@@ -190,7 +183,7 @@ const App = () => {
 
       <div className=" bg-green-300 flex-row">
         <div className=" mt-5 ml-5 ">{hdg()}</div>
-        <div className=" mt-5 ml-5 ">{listing()}</div>
+        <div className=" mt-5 ml-5 ">{listing(saveArray)}</div>
         <div className=" mt-5 ml-5 ">{totln(tot)}</div>
       </div>
     </div>
