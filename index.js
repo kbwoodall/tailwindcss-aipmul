@@ -11,7 +11,7 @@ import { NewTextInput } from './showText.js';
 export const ExampleContext = createContext('');
 
 let tot = 0.0;
-let printList = [];
+//let printList = [];
 let saveName = 'initial';
 let saveArray = [];
 
@@ -71,15 +71,8 @@ const list = [
 
 const smallList = (name) => {
   let categories = [...new Set(list.map((iname) => iname.customer))];
-  console.log('new ' + categories);
+  console.log('purchase list ' + categories);
 
-  /*
-  const filtered = categories.filter(person => {
-    return person.customer === name;
-  });
-
-  console.log('filtered ' + filtered);
-  */
   return categories;
 };
 
@@ -90,14 +83,14 @@ const clisting = () => {
   ];
 
   const handleClick = (person) => {
-    console.log('key name ', person);
+    console.log('selected name ', person);
     saveName = person;
     alert('Selected ' + saveName);
 
     saveArray = list.filter((person) => {
       return person.customer === saveName;
     });
-    console.log('save is ' + saveArray.length);
+    console.log('saveArray is ' + saveArray.length);
   };
   /*
   const handleClick = (person, index) => {
@@ -110,14 +103,13 @@ const clisting = () => {
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
-      console.log('new ' + categories);
+      console.log('customer list ' + categories);
       let sublist = Array.from(categories);
-      console.log('sublist ' + sublist[0]);
 
       const filtered = list.filter((person) => {
         return person.customer === saveName;
       });
-      console.log(list.length);
+      console.log('purhase list size ' + list.length);
 
       return sublist.map((person) => (
         <p
@@ -127,20 +119,6 @@ const clisting = () => {
           {person}
         </p>
       ));
-
-      /*
-
-      return list.map((person, index) => (
-        <p
-          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          key={index}
-          onClick={(event) => handleClick(person, index)}
-        >
-          {person.customer}
-        </p>
-      ));
-
-*/
     }
   }
 
@@ -160,7 +138,7 @@ const listing = () => {
   //const slist = smallList(list);
 
   const print = () => {
-    console.log('save ' + saveArray.length);
+    //console.log('save ' + saveArray.length);
 
     tot = 0;
     for (let i = 0; i < list.length; i++) {
@@ -223,6 +201,18 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+ 
+      return list.map((person, index) => (
+        <p
+          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+          key={index}
+          onClick={(event) => handleClick(person, index)}
+        >
+          {person.customer}
+        </p>
+      ));
+
  
   const handleClick = (event, index) => {
     //console.log(event.target);
