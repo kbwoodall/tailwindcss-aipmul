@@ -135,11 +135,10 @@ const listing = () => {
   let prev = [];
   let printList = [];
 
-  //const slist = smallList(list);
+  const list = [...saveArray];
+  console.log('copy ' + list.length);
 
   const print = () => {
-    //console.log('save ' + saveArray.length);
-
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
