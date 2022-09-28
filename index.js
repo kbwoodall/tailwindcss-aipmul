@@ -91,8 +91,19 @@ const smallList = (name) => {
   return categories;
 };
 
-const clisting = () => {
+function Component1() {
   const [user, setUser] = useState('Jesse Hall');
+
+  return (
+    <UserContext.Provider value={user}>
+      <h1>{`Hello ${user}!`}</h1>
+      <Component2 />
+    </UserContext.Provider>
+  );
+}
+
+const clisting = () => {
+  const [user, setUser] = useState('not ready');
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Terry', gender: 'male', age: 13 },
@@ -102,6 +113,8 @@ const clisting = () => {
     console.log('selected name ', person);
     saveName = person;
     alert('Selected ' + saveName);
+
+    setUser(person);
 
     saveArray = list.filter((person) => {
       return person.customer === saveName;
@@ -135,7 +148,8 @@ const clisting = () => {
 };
 
 const listing = (saveArray) => {
-  const [user, setUser] = useState('Jesse Hall');
+  //const [user, setUser] = useState('not ready');
+  const user = useContext(UserContext);
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -144,6 +158,8 @@ const listing = (saveArray) => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
+
+  console.log('usestate saveName ' + user);
 
   const [count, setCount] = useState(0);
 
@@ -202,18 +218,18 @@ const listing = (saveArray) => {
 const App = () => {
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <div className=" bg-green-300 flex-row">
-        <div className=" mt-5 ml-5 ">{chdg()}</div>
-        <div className=" mt-5 ml-5 ">{clisting()}</div>
-      </div>
+      <UserContext.Provider value={saveName}>
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-5 ml-5 ">{chdg()}</div>
+          <div className=" mt-5 ml-5 ">{clisting()}</div>
+        </div>
 
-      <div className=" bg-green-300 flex-row">
-        <div className=" mt-5 ml-5 ">{hdg()}</div>
-        <UserContext.Provider value={saveName}>
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-5 ml-5 ">{hdg()}</div>
           <div className=" mt-5 ml-5 ">{listing(saveArray)}</div>
-        </UserContext.Provider>
-        <div className=" mt-5 ml-5 ">{totln(tot)}</div>
-      </div>
+          <div className=" mt-5 ml-5 ">{totln(tot)}</div>
+        </div>
+      </UserContext.Provider>
     </div>
   );
 };
