@@ -9,7 +9,10 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
-export const ExampleContext = createContext('');
+
+const UserContext = createContext();
+
+//export const ExampleContext = createContext('');
 
 let tot = 0.0;
 let saveName = 'initial';
@@ -89,13 +92,13 @@ const smallList = (name) => {
 };
 
 const clisting = () => {
+  const [user, setUser] = useState('Jesse Hall');
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Terry', gender: 'male', age: 13 },
   ];
 
-  const handleClick = (person) => {  
-
+  const handleClick = (person) => {
     console.log('selected name ', person);
     saveName = person;
     alert('Selected ' + saveName);
@@ -132,6 +135,7 @@ const clisting = () => {
 };
 
 const listing = (saveArray) => {
+  const [user, setUser] = useState('Jesse Hall');
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -140,6 +144,15 @@ const listing = (saveArray) => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    saveArray = list.filter((person) => {
+      return person.customer === saveName;
+    });
+    console.log('copy in useEffect ' + saveArray.length);
+  }, [saveArray]);
 
   //saveArray = [...list];
   console.log('copy in listing ' + saveArray.length);
@@ -196,7 +209,9 @@ const App = () => {
 
       <div className=" bg-green-300 flex-row">
         <div className=" mt-5 ml-5 ">{hdg()}</div>
-        <div className=" mt-5 ml-5 ">{listing(saveArray)}</div>
+        <UserContext.Provider value={saveName}>
+          <div className=" mt-5 ml-5 ">{listing(saveArray)}</div>
+        </UserContext.Provider>
         <div className=" mt-5 ml-5 ">{totln(tot)}</div>
       </div>
     </div>
