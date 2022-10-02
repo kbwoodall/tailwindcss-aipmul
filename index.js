@@ -11,7 +11,7 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
 //const UserContext = createContext();
-const UserContext = React.createContext('Terry');
+const UserContext = React.createContext();
 //export const ExampleContext = createContext('');
 
 let tot = 0.0;
@@ -104,9 +104,10 @@ function Component1() {
 
 const clisting = () => {
   const [user, setUser] = useState('all');
+  const value = React.useContext(UserContext)
 
-  const userx = useContext(UserContext);
-  console.log('clisting ' + userx);
+  //const userx = useContext(UserContext);
+  console.log('clisting ' + user);
 
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
@@ -154,7 +155,7 @@ const clisting = () => {
 const listing = (saveArray) => {
   //const [user, setUser] = useState('not ready');
   //const user = useContext(UserContext);
-  const value = React.useContext(UserContext);
+  const value = useContext(UserContext);
   console.log('listing ' + value);
 
   let first = true;
