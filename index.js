@@ -10,12 +10,12 @@ import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
-const UserContext = createContext();
-
+//const UserContext = createContext();
+const UserContext = React.createContext();
 //export const ExampleContext = createContext('');
 
 let tot = 0.0;
-let saveName = 'initial';
+let saveName = 'Terry';
 let saveArray = [];
 let names = [];
 
@@ -103,7 +103,11 @@ function Component1() {
 }
 
 const clisting = () => {
-  const [user, setUser] = useState('not ready');
+  const [user, setUser] = useState('all');
+
+  const userx = useContext(UserContext);
+  console.log('heyx ' + userx);
+
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
     { id: 2, name: 'Terry', gender: 'male', age: 13 },
@@ -149,7 +153,10 @@ const clisting = () => {
 
 const listing = (saveArray) => {
   //const [user, setUser] = useState('not ready');
-  const user = useContext(UserContext);
+  //const user = useContext(UserContext);
+  const value = React.useContext(UserContext);
+  //console.log('hey ' + value);
+
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -159,7 +166,7 @@ const listing = (saveArray) => {
   let prev = [];
   let printList = [];
 
-  console.log('usestate saveName ' + user);
+  //console.log('usestate saveName ' + user);
 
   const [count, setCount] = useState(0);
 
@@ -218,7 +225,7 @@ const listing = (saveArray) => {
 const App = () => {
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value={saveName}>
+      <UserContext.Provider value="Terry">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
           <div className=" mt-5 ml-5 ">{clisting()}</div>
