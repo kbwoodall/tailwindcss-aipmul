@@ -11,13 +11,15 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
 //const UserContext = createContext();
-const UserContext = React.createContext();
+//const UserContext = React.createContext();
 //export const ExampleContext = createContext('');
 
 let tot = 0.0;
 let saveName = 'Terry';
 let saveArray = [];
 let names = [];
+
+const UserContext = React.createContext(saveName);
 
 function GetArray() {
   const [count, setCount] = useState(0);
@@ -107,7 +109,7 @@ const clisting = () => {
   const value = React.useContext(UserContext)
 
   //const userx = useContext(UserContext);
-  console.log('clisting ' + user);
+  console.log('clisting ' + value);
 
   const people = [
     { id: 1, name: 'Leo', gender: 'male', age: 30 },
