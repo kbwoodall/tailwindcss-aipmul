@@ -15,7 +15,7 @@ import { NewTextInput } from './showText.js';
 //export const ExampleContext = createContext('');
 
 let tot = 0.0;
-let saveName = 'Terry';
+let saveName = 'All';
 let saveArray = [];
 let names = [];
 
@@ -105,10 +105,9 @@ function Component1() {
 }
 
 const clisting = () => {
-  const [user, setUser] = useState('all');
+  const [user, setUser] = useState(saveName);
   const value = React.useContext(UserContext)
-
-  //const userx = useContext(UserContext);
+  
   console.log('clisting ' + value);
 
   const people = [
@@ -117,11 +116,12 @@ const clisting = () => {
   ];
 
   const handleClick = (person) => {
-    console.log('selected name ', person);
+    console.log('selected name click ', person);
     saveName = person;
     alert('Selected ' + saveName);
 
     setUser(person);
+    console.log('clisting click ' + saveName);
 
     saveArray = list.filter((person) => {
       return person.customer === saveName;
