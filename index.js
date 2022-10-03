@@ -158,7 +158,7 @@ const listing = (saveArray) => {
   //const [user, setUser] = useState('not ready');
   //const user = useContext(UserContext);
   const value = useContext(UserContext);
-  console.log('listing ' + value);
+  console.log('listing namevalue ' + saveName);
 
   let first = true;
   let hid = 0;
@@ -180,7 +180,7 @@ const listing = (saveArray) => {
     console.log('copy in useEffect ' + saveArray.length);
   }, [saveArray]);
 
-  //saveArray = [...list];
+  let list = [...saveArray];
   console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
