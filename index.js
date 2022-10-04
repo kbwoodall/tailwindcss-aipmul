@@ -106,8 +106,8 @@ function Component1() {
 
 const clisting = () => {
   const [user, setUser] = useState(saveName);
-  const value = React.useContext(UserContext)
-  
+  const value = React.useContext(UserContext);
+
   console.log('clisting ' + value);
 
   const people = [
@@ -145,7 +145,7 @@ const clisting = () => {
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
           onClick={(event) => handleClick(person)}
         >
-          {person}
+          <p className="text-lg">{person}</p>
         </p>
       ));
     }
