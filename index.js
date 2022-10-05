@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //Author: Kerry Woodall 7/17/2022
-//Import stylesheets
+
 import './style.css';
 
 import React, { Component } from 'react';
@@ -9,10 +9,6 @@ import { render } from 'react-dom';
 import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
-
-//const UserContext = createContext();
-//const UserContext = React.createContext();
-//export const ExampleContext = createContext('');
 
 let tot = 0.0;
 let saveName = 'All';
@@ -43,14 +39,6 @@ const chdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
       Customers
-    </p>
-  );
-};
-
-const println = (cus, item, cst) => {
-  return (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
-      {cus} {item} {cst}
     </p>
   );
 };
@@ -93,17 +81,6 @@ const smallList = (name) => {
   return categories;
 };
 
-function Component1() {
-  const [user, setUser] = useState('Jesse Hall');
-
-  return (
-    <UserContext.Provider value={user}>
-      <h1>{`Hello ${user}!`}</h1>
-      <Component2 />
-    </UserContext.Provider>
-  );
-}
-
 const clisting = () => {
   const [user, setUser] = useState(saveName);
   const value = React.useContext(UserContext);
@@ -145,7 +122,7 @@ const clisting = () => {
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
           onClick={(event) => handleClick(person)}
         >
-          <p className="text-lg">{person}</p>
+          <p className="text-lg bg-teal-400">{person}</p>
         </p>
       ));
     }
@@ -155,8 +132,6 @@ const clisting = () => {
 };
 
 const listing = (saveArray) => {
-  //const [user, setUser] = useState('not ready');
-  //const user = useContext(UserContext);
   const value = useContext(UserContext);
   console.log('listing namevalue ' + saveName);
 
@@ -168,8 +143,6 @@ const listing = (saveArray) => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
-
-  //console.log('usestate saveName ' + user);
 
   const [count, setCount] = useState(0);
 
@@ -247,6 +220,38 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+  //const [user, setUser] = useState('not ready');
+  //const user = useContext(UserContext);
+  //const UserContext = createContext();
+  //const UserContext = React.createContext();
+  //export const ExampleContext = createContext('');
+const println = (cus, item, cst) => {
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">
+      {cus} {item} {cst}
+    </p>
+  );
+};
+
+//const UserContext = createContext();
+//const UserContext = React.createContext();
+//export const ExampleContext = createContext('');
+
+//const UserContext = createContext();
+//const UserContext = React.createContext();
+//export const ExampleContext = createContext('');
+
+function Component1() {
+  const [user, setUser] = useState('Jesse Hall');
+
+  return (
+    <UserContext.Provider value={user}>
+      <h1>{`Hello ${user}!`}</h1>
+      <Component2 />
+    </UserContext.Provider>
+  );
+}
 
 function Example() {
   const [count, setCount] = useState(0);
