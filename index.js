@@ -87,12 +87,7 @@ const clisting = () => {
 
   console.log('clisting ' + value);
 
-  const people = [
-    { id: 1, name: 'Leo', gender: 'male', age: 30 },
-    { id: 2, name: 'Terry', gender: 'male', age: 13 },
-  ];
-
-  const handleClick = (person) => {
+  const handleClick = (person, i) => {
     console.log('selected name click ', person);
     saveName = person;
     alert('Selected ' + saveName);
@@ -100,15 +95,28 @@ const clisting = () => {
     setUser(person);
     console.log('clisting click ' + saveName);
 
-    saveArray = list.filter((person) => {
+    saveArray = list.filter((person,i) => {
       return person.customer === saveName;
     });
     console.log('saveArray is ' + saveArray.length);
   };
 
+  function Lista(listb) {
+    const numbers = [0, 1, 2, 3, 4, 4];
+
+    return (
+      <ul>
+        {listb.map((n, i) => (
+          <li key={i}> {n} </li>
+        ))}
+      </ul>
+    );
+  }
+
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
+
       console.log('customer list ' + categories);
       let sublist = Array.from(categories);
 
@@ -117,12 +125,14 @@ const clisting = () => {
       });
       console.log('purhase list size ' + list.length);
 
-      return sublist.map((person) => (
+      return sublist.map((person, i) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
+          onClick={(event) => handleClick(person,i)}
         >
-          <p className="text-lg bg-teal-400">{person}</p>
+          <p className="text-lg bg-teal-400">
+            {i} {person}{' '}
+          </p>
         </p>
       ));
     }
@@ -220,6 +230,11 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+  //const people = [
+  //   { id: 1, name: 'Leo', gender: 'male', age: 30 },
+  //   { id: 2, name: 'Terry', gender: 'male', age: 13 },
+  // ];
 
   //const [user, setUser] = useState('not ready');
   //const user = useContext(UserContext);
