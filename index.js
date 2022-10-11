@@ -64,9 +64,8 @@ const list = [
 ];
 
 const clisting = () => {
-  //const value = React.useContext(UserContext);
-
-  //console.log('clisting ' + value);
+  const value = React.useContext(UserContext);
+  console.log('clisting function ' + value);
 
   const handleClick = (person) => {
     console.log('selected name click ', person);
