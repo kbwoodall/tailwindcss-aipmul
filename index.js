@@ -105,8 +105,8 @@ const clisting = () => {
 };
 
 const listing = () => {
-  const value = useContext(UserContext);
-  console.log('listing namevalue ' + value);
+  const value = React.useContext(UserContext);
+  console.log('listing value ' + value);
 
   let first = true;
   let hid = 0;
@@ -175,6 +175,7 @@ const App = () => {
       <UserContext.Provider value="Initial">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
+
           <div className=" mt-5 ml-5 ">{clisting()}</div>
         </div>
 
