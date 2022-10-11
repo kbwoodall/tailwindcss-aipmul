@@ -95,7 +95,7 @@ const clisting = () => {
     setUser(person);
     console.log('clisting click ' + saveName);
 
-    saveArray = list.filter((person,i) => {
+    saveArray = list.filter((person, i) => {
       return person.customer === saveName;
     });
     console.log('saveArray is ' + saveArray.length);
@@ -117,18 +117,22 @@ const clisting = () => {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
-      console.log('customer list ' + categories);
-      let sublist = Array.from(categories);
+      console.log('customer list ' + categories[0]);
 
-      const filtered = list.filter((person) => {
-        return person.customer === saveName;
-      });
-      console.log('purhase list size ' + list.length);
+  
+
+      let sublist = Array.from(categories);
+      console.log('customer array ' + sublist[0]);
+
+      //const filtered = list.filter((person) => {
+      //  return person.customer === saveName;
+      //});
+      //console.log('purhase list size ' + list.length);
 
       return sublist.map((person, i) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person,i)}
+          onClick={(event) => handleClick(person, i)}
         >
           <p className="text-lg bg-teal-400">
             {i} {person}{' '}
