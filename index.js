@@ -17,17 +17,6 @@ let names = [];
 
 const UserContext = React.createContext(saveName);
 
-function GetArray() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    saveArray = list.filter((person) => {
-      return person.customer === saveName;
-    });
-  }, [saveArray]);
-  console.log('GetArray is ' + saveArray.length);
-}
-
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -106,7 +95,7 @@ const clisting = () => {
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
           onClick={(event) => handleClick(person)}
         >
-          <p className="text-lg bg-teal-400">{person} </p>
+          {person}
         </p>
       ));
     }
@@ -117,7 +106,7 @@ const clisting = () => {
 
 const listing = () => {
   const value = useContext(UserContext);
-  console.log('listing namevalue ' + saveArray);
+  console.log('listing namevalue ' + value);
 
   let first = true;
   let hid = 0;
@@ -127,8 +116,6 @@ const listing = () => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
-
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     saveArray = list.filter((person) => {
@@ -185,7 +172,7 @@ const listing = () => {
 const App = () => {
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value="Terry">
+      <UserContext.Provider value="Initial">
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
           <div className=" mt-5 ml-5 ">{clisting()}</div>
@@ -193,7 +180,7 @@ const App = () => {
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{listing(saveArray)}</div>
+          <div className=" mt-5 ml-5 ">{listing()}</div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
@@ -204,6 +191,17 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+ //const [count, setCount] = useState(0);
+function GetArray() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    saveArray = list.filter((person) => {
+      return person.customer === saveName;
+    });
+  }, [saveArray]);
+  console.log('GetArray is ' + saveArray.length);
+}
  //const [user, setUser] = useState(saveName);
   function Lista(listb) {
     const numbers = [0, 1, 2, 3, 4, 4];
