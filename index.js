@@ -64,9 +64,9 @@ const list = [
 ];
 
 const clisting = () => {
-  const value = React.useContext(UserContext);
+  //const value = React.useContext(UserContext);
 
-  console.log('clisting ' + value);
+  //console.log('clisting ' + value);
 
   const handleClick = (person) => {
     console.log('selected name click ', person);
@@ -172,7 +172,7 @@ const listing = () => {
 const App = () => {
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value="Initial">
+      <UserContext.Provider value={saveName}>
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
 
