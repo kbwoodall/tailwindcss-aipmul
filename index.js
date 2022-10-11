@@ -11,7 +11,7 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
 let tot = 0.0;
-let saveName = 'Terry';
+let saveName = 'Starting';
 let saveArray = [];
 let names = [];
 
@@ -115,9 +115,9 @@ const clisting = () => {
   return cus();
 };
 
-const listing = (saveArray) => {
+const listing = () => {
   const value = useContext(UserContext);
-  console.log('listing namevalue ' + saveName);
+  console.log('listing namevalue ' + saveArray);
 
   let first = true;
   let hid = 0;
@@ -132,12 +132,12 @@ const listing = (saveArray) => {
 
   useEffect(() => {
     saveArray = list.filter((person) => {
-      return person.customer === saveName;
+      return person.customer === 'Terry';
     });
     console.log('copy in useEffect ' + saveArray.length);
   }, [saveArray]);
 
-  //let list = [...saveArray];
+  let list = [...saveArray];
   console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
