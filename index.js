@@ -11,7 +11,7 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
 let tot = 0.0;
-let saveName = 'All';
+let saveName = 'Terry';
 let saveArray = [];
 let names = [];
 
@@ -74,69 +74,39 @@ const list = [
   },
 ];
 
-const smallList = (name) => {
-  let categories = [...new Set(list.map((iname) => iname.customer))];
-  console.log('purchase list ' + categories);
-
-  return categories;
-};
-
 const clisting = () => {
-  const [user, setUser] = useState(saveName);
   const value = React.useContext(UserContext);
 
   console.log('clisting ' + value);
 
-  const handleClick = (person, i) => {
+  const handleClick = (person) => {
     console.log('selected name click ', person);
     saveName = person;
     alert('Selected ' + saveName);
 
-    setUser(person);
     console.log('clisting click ' + saveName);
 
-    saveArray = list.filter((person, i) => {
+    saveArray = list.filter((person) => {
       return person.customer === saveName;
     });
     console.log('saveArray is ' + saveArray.length);
   };
 
-  function Lista(listb) {
-    const numbers = [0, 1, 2, 3, 4, 4];
-
-    return (
-      <ul>
-        {listb.map((n, i) => (
-          <li key={i}> {n} </li>
-        ))}
-      </ul>
-    );
-  }
-
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
-      console.log('customer list ' + categories[0]);
-
-  
+      console.log('customer list ' + categories);
 
       let sublist = Array.from(categories);
-      console.log('customer array ' + sublist[0]);
+      console.log('customer array ' + sublist);
 
-      //const filtered = list.filter((person) => {
-      //  return person.customer === saveName;
-      //});
-      //console.log('purhase list size ' + list.length);
-
-      return sublist.map((person, i) => (
+      return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person, i)}
+          onClick={(event) => handleClick(person)}
         >
-          <p className="text-lg bg-teal-400">
-            {i} {person}{' '}
-          </p>
+          <p className="text-lg bg-teal-400">{person} </p>
         </p>
       ));
     }
@@ -167,7 +137,7 @@ const listing = (saveArray) => {
     console.log('copy in useEffect ' + saveArray.length);
   }, [saveArray]);
 
-  let list = [...saveArray];
+  //let list = [...saveArray];
   console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
@@ -234,6 +204,29 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+ //const [user, setUser] = useState(saveName);
+  function Lista(listb) {
+    const numbers = [0, 1, 2, 3, 4, 4];
+
+    return (
+      <ul>
+        {listb.map((n, i) => (
+          <li key={i}> {n} </li>
+        ))}
+      </ul>
+    );
+  }
+const smallList = (name) => {
+  let categories = [...new Set(list.map((iname) => iname.customer))];
+  console.log('purchase list ' + categories);
+
+  return categories;
+};
+
+  //const filtered = list.filter((person) => {
+      //  return person.customer === saveName;
+      //});
+      //console.log('purhase list size ' + list.length);
 
   //const people = [
   //   { id: 1, name: 'Leo', gender: 'male', age: 30 },
