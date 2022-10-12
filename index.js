@@ -113,12 +113,12 @@ const clisting = () => {
   return cus();
 };
 
-const listing = () => {
+const listing = (sameArray) => {
   //const [user, setUser] = useState(saveName);
   const user = React.useContext(UserContext);
   console.log('listing value ' + user);
   console.log('listing saveName ' + saveName);
-  console.log('listing saveArray ' + saveArray);
+  console.log('listing saveArray ' + list);
 
   let first = true;
   let hid = 0;
@@ -131,7 +131,7 @@ const listing = () => {
   let newList = [];
 
   useEffect(() => {
-    newList = list.filter((person) => {
+    sameArray = list.filter((person) => {
       return person.customer === 'saveName';
     });
     console.log('copy in useEffect ' + newList.length + ' ' + newList);
@@ -141,10 +141,10 @@ const listing = () => {
     return person.customer === saveName;
   });
   console.log('purchase list size ' + filtered.length);
-
-  //let list = [...newList]
-  console.log('copy in listing ' + saveArray.length);
   */
+  //list = [...saveArray]
+  console.log('copy in listing ' + saveArray.length);
+  
   const print = () => {
     tot = 0;
     for (let i = 0; i < list.length; i++) {
@@ -195,12 +195,12 @@ const App = () => {
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
 
-          <div className=" mt-5 ml-5 ">{clisting()}</div>
+          <div className=" mt-5 ml-5 ">{clisting(list)}</div>
         </div>
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{listing()}</div>
+          <div className=" mt-5 ml-5 ">{listing(list)}</div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
