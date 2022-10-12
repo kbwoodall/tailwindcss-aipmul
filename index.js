@@ -123,7 +123,12 @@ const listing = () => {
     console.log('copy in useEffect ' + saveArray.length);
   }, [saveArray]);
 
-  let list = [...saveArray];
+  const filtered = list.filter((person) => {
+    return person.customer === saveName;
+  });
+  console.log('purchase list size ' + filtered.length);
+
+  //list = [...saveArray]
   console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
