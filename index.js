@@ -46,7 +46,7 @@ const totln = (cst) => {
   );
 };
 
-let list = [
+const list = [
   { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45 },
   { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
   {
@@ -64,6 +64,14 @@ let list = [
 ];
 
 const clisting = () => {
+  /*
+  useEffect(() => {
+    saveArray = list.filter((person) => {
+      return person.customer === 'saveName';
+    });
+    console.log('handleClick useEffect ' + saveArray.length + ' ' + saveArray);
+  }, [saveArray]);
+  */
   const value = React.useContext(UserContext);
   console.log('clisting function ' + value);
 
@@ -72,7 +80,7 @@ const clisting = () => {
     saveName = person;
     alert('Selected ' + saveName);
 
-    console.log('clisting click ' + saveName);
+    console.log('clisting saveName ' + saveName);
 
     saveArray = list.filter((person) => {
       return person.customer === saveName;
@@ -97,6 +105,8 @@ const clisting = () => {
           {person}
         </p>
       ));
+      saveArray = sublist;
+      console.log('customer array ' + saveArray);
     }
   }
 
@@ -104,8 +114,11 @@ const clisting = () => {
 };
 
 const listing = () => {
-  const value = React.useContext(UserContext);
-  console.log('listing value ' + value);
+  //const [user, setUser] = useState(saveName);
+  const user = React.useContext(UserContext);
+  console.log('listing value ' + user);
+  console.log('listing saveName ' + saveName);
+  console.log('listing saveArray ' + saveArray);
 
   let first = true;
   let hid = 0;
@@ -115,22 +128,23 @@ const listing = () => {
   let subtot = 0.0;
   let prev = [];
   let printList = [];
+  let newList = [];
 
   useEffect(() => {
-    saveArray = list.filter((person) => {
-      return person.customer === 'Terry';
+    newList = list.filter((person) => {
+      return person.customer === 'saveName';
     });
-    console.log('copy in useEffect ' + saveArray.length);
+    console.log('copy in useEffect ' + newList.length + ' ' + newList);
   }, [saveArray]);
-
+  /*
   const filtered = list.filter((person) => {
     return person.customer === saveName;
   });
   console.log('purchase list size ' + filtered.length);
 
-  let list2 = [...saveArray]
+  //let list = [...newList]
   console.log('copy in listing ' + saveArray.length);
-
+  */
   const print = () => {
     tot = 0;
     for (let i = 0; i < list.length; i++) {
@@ -174,6 +188,7 @@ const listing = () => {
 };
 
 const App = () => {
+  const [user, setUser] = useState(saveName);
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
       <UserContext.Provider value={saveName}>
