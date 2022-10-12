@@ -46,7 +46,7 @@ const totln = (cst) => {
   );
 };
 
-const list = [
+let list = [
   { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45 },
   { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56 },
   {
@@ -128,7 +128,7 @@ const listing = () => {
   });
   console.log('purchase list size ' + filtered.length);
 
-  //list = [...saveArray]
+  let list2 = [...saveArray]
   console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
