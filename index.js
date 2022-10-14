@@ -15,7 +15,7 @@ let saveName = 'Starting';
 let saveArray = [];
 let names = [];
 
-const UserContext = React.createContext(saveName);
+const UserContext = React.createContext();
 
 const hdg = () => {
   return (
@@ -72,16 +72,17 @@ const clisting = () => {
     console.log('handleClick useEffect ' + saveArray.length + ' ' + saveArray);
   }, [saveArray]);
   */
-  const value = React.useContext(UserContext);
-  console.log('clisting function ' + value);
+  //const value = React.useContext(UserContext);
+  const [name, setName] = useState('xxxx');
+
+
+  console.log('clisting function ' + name);
 
   const handleClick = (person) => {
     console.log('selected name click ', person);
     saveName = person;
-    alert('Selected ' + saveName);
-
-    console.log('clisting saveName ' + saveName);
-
+    setName('bbbb');
+    alert('Selected ' + name);
     saveArray = list.filter((person) => {
       return person.customer === saveName;
     });
@@ -106,7 +107,6 @@ const clisting = () => {
         </p>
       ));
       saveArray = sublist;
-      console.log('customer array ' + saveArray);
     }
   }
 
@@ -114,8 +114,8 @@ const clisting = () => {
 };
 
 const listing = (sameArray) => {
-  //const [user, setUser] = useState(saveName);
-  const user = React.useContext(UserContext);
+  //const [name, setName] = useState(saveName);
+  //const user = React.useContext(UserContext);
   console.log('listing value ' + user);
   console.log('listing saveName ' + saveName);
   console.log('listing saveArray ' + list);
@@ -144,7 +144,7 @@ const listing = (sameArray) => {
   */
   //list = [...saveArray]
   console.log('copy in listing ' + saveArray.length);
-  
+
   const print = () => {
     tot = 0;
     for (let i = 0; i < list.length; i++) {
@@ -200,7 +200,7 @@ const App = () => {
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{listing(list)}</div>
+
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
@@ -211,6 +211,10 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+ <div className=" mt-5 ml-5 ">{listing(list)}</div>
+
+
  //const [count, setCount] = useState(0);
 function GetArray() {
   const [count, setCount] = useState(0);
