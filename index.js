@@ -73,30 +73,37 @@ const clisting = () => {
   }, [saveArray]);
   */
   //const value = React.useContext(UserContext);
-  const [name, setName] = useState('xxxx');
-
-
+  const [name, setName] = useState('initial');
   console.log('clisting function ' + name);
 
-  const handleClick = (person) => {
-    console.log('selected name click ', person);
-    saveName = person;
-    setName('bbbb');
-    alert('Selected ' + name);
-    saveArray = list.filter((person) => {
-      return person.customer === saveName;
+  console.log('saveArray test is ' + saveArray.length );
+
+  const handleClick = (val) => {
+    console.log('selected name click ', val);
+
+    alert('Selected ' + val);
+    saveArray = list.filter((val) => {
+      return val.customer === saveName;
     });
-    console.log('saveArray is ' + saveArray.length);
+
+    if (!saveArray.length == 0 ) {
+      console.log('saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer);
+    //setName(saveArray[0].customer);
+
+
+    console.log(name);}
   };
 
   function cus() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
-      console.log('customer list ' + categories);
+      console.log('customer set ' + categories);
 
       let sublist = Array.from(categories);
       console.log('customer array ' + sublist);
+      saveArray = sublist;
+      console.log('saveArray is ' + saveArray.length);
 
       return sublist.map((person) => (
         <p
@@ -106,7 +113,6 @@ const clisting = () => {
           {person}
         </p>
       ));
-      saveArray = sublist;
     }
   }
 
