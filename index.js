@@ -75,23 +75,26 @@ const clisting = () => {
   //const value = React.useContext(UserContext);
   const [name, setName] = useState('initial');
   console.log('clisting function ' + name);
-
-  console.log('saveArray test is ' + saveArray.length );
+  let n = 'empty';
 
   const handleClick = (val) => {
     console.log('selected name click ', val);
+    //setName(n);
 
     alert('Selected ' + val);
+    alert('Selected ' + n);
     saveArray = list.filter((val) => {
       return val.customer === saveName;
     });
 
-    if (!saveArray.length == 0 ) {
-      console.log('saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer);
-    //setName(saveArray[0].customer);
+    if (saveArray.length > 0) {
+      console.log(
+        'saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer
+      );
+      //setName(saveArray[0].customer);
 
-
-    console.log(name);}
+      //console.log(name);
+    }
   };
 
   function cus() {
