@@ -75,12 +75,16 @@ const clisting = () => {
   //const value = React.useContext(UserContext);
   const [name, setName] = useState('initial');
   console.log('clisting function ' + name);
-  let n = 'empty';
-
-  const handleClick = (val) => {
-    console.log('selected name click ', val);
-    //setName(n);
-
+  useEffect(() => {
+    //setName(person);
+    console.log('handleClick useEffect ' + name);
+  }, []);
+  //});
+//  }, [name]);
+  const handleClick = (person) => {
+    //setName(person);
+    console.log('selected name click ', name);
+    /*
     alert('Selected ' + val);
     alert('Selected ' + n);
     saveArray = list.filter((val) => {
@@ -92,9 +96,9 @@ const clisting = () => {
         'saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer
       );
       //setName(saveArray[0].customer);
-
       //console.log(name);
     }
+    */
   };
 
   function cus() {
@@ -111,7 +115,7 @@ const clisting = () => {
       return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
+          onClick={(event) => handleClick(setName(person))}
         >
           {person}
         </p>
