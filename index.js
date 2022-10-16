@@ -11,7 +11,7 @@ import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
 let tot = 0.0;
-let saveName = 'Starting';
+let saveName = 'initial';
 let saveArray = [];
 let names = [];
 
@@ -87,9 +87,12 @@ const clisting = () => {
   //  }, [name]);
   const handleClick = (person) => {
     //setName(person);
-    console.log('selected name click ', person);
+    //console.log('selected name click ', person);
     saveName = person;
-    console.log('selected array click ', saveArray);
+
+    //const value = React.useContext(UserContext);
+
+    //console.log('selected array click ', saveArray);
     console.log('selected saveName click ', saveName);
     /*
     alert('Selected ' + val);
@@ -133,12 +136,12 @@ const clisting = () => {
   return cus();
 };
 
-const listing = (sameArray, saveName) => {
+const listing = () => {
   //const [name, setName] = useState(saveName);
-  //const user = React.useContext(UserContext);
+  const user = React.useContext(UserContext);
   //console.log('listing value ' + user);
-  console.log('listing saveName ' + saveName);
-  console.log('listing saveArray ' + list);
+  //console.log('listing saveName ' + saveName);
+  //console.log('listing saveArray ' + list);
 
   let first = true;
   let hid = 0;
@@ -149,21 +152,21 @@ const listing = (sameArray, saveName) => {
   let prev = [];
   let printList = [];
   let newList = [];
-
+  /*
   useEffect(() => {
     sameArray = list.filter((person) => {
       return person.customer === 'saveName';
     });
     console.log('copy in useEffect ' + newList.length + ' ' + newList);
   }, [saveArray]);
-  /*
+  
   const filtered = list.filter((person) => {
     return person.customer === saveName;
   });
   console.log('purchase list size ' + filtered.length);
   */
   //list = [...saveArray]
-  console.log('copy in listing ' + saveArray.length);
+  //console.log('copy in listing ' + saveArray.length);
 
   const print = () => {
     tot = 0;
@@ -220,7 +223,7 @@ const App = () => {
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-          <div className=" mt-5 ml-5 ">{listing(list,save)}</div>
+          <div className=" mt-5 ml-5 ">{listing(list)}</div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
