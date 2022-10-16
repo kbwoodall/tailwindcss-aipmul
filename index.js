@@ -133,10 +133,10 @@ const clisting = () => {
   return cus();
 };
 
-const listing = (sameArray) => {
+const listing = (sameArray, saveName) => {
   //const [name, setName] = useState(saveName);
   //const user = React.useContext(UserContext);
-  console.log('listing value ' + user);
+  //console.log('listing value ' + user);
   console.log('listing saveName ' + saveName);
   console.log('listing saveArray ' + list);
 
@@ -220,7 +220,7 @@ const App = () => {
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{hdg()}</div>
-
+          <div className=" mt-5 ml-5 ">{listing(list,save)}</div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
