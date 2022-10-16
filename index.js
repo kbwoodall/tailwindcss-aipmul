@@ -64,6 +64,8 @@ const list = [
 ];
 
 const clisting = () => {
+
+  const [name, setName] = useState('initial');
   /*
   useEffect(() => {
     saveArray = list.filter((person) => {
@@ -89,11 +91,12 @@ const clisting = () => {
     //setName(person);
     //console.log('selected name click ', person);
     saveName = person;
+    setName(saveName);
 
-    //const value = React.useContext(UserContext);
+    //const value = React.useContext(person);
 
     //console.log('selected array click ', saveArray);
-    console.log('selected saveName click ', saveName);
+    console.log('selected saveName click ', name);
     /*
     alert('Selected ' + val);
     alert('Selected ' + n);
@@ -125,7 +128,7 @@ const clisting = () => {
       return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
+          onClick={(event) => setName(person)}
         >
           {person}
         </p>
@@ -136,12 +139,18 @@ const clisting = () => {
   return cus();
 };
 
+
+//  onClick={() => setCurrency(CURRENCIES.Euro)}
+//onClick={(event) => handleClick(setName(person))}
+
 const listing = () => {
   //const [name, setName] = useState(saveName);
   const user = React.useContext(UserContext);
-  //console.log('listing value ' + user);
+  console.log('listing value ' + user);
   //console.log('listing saveName ' + saveName);
   //console.log('listing saveArray ' + list);
+
+  //const currency = React.useContext(CurrencyContext);
 
   let first = true;
   let hid = 0;
