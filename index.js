@@ -15,7 +15,7 @@ let saveName = 'initial';
 let saveArray = [];
 let names = [];
 
-const UserContext = React.createContext();
+const UserContext = React.createContext('notready');
 
 const hdg = () => {
   return (
@@ -66,6 +66,8 @@ const list = [
 const clisting = () => {
 
   const [name, setName] = useState('initial');
+  const user = React.useContext(UserContext);
+  console.log('clisting value ' + user);
   /*
   useEffect(() => {
     saveArray = list.filter((person) => {
