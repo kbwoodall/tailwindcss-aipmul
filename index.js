@@ -65,10 +65,10 @@ const list = [
 
 const clisting = () => {
 
-  const [name, setName] = useState('initial');
+  //const [name, setName] = useState('initial');
   const user = React.useContext(UserContext);
   console.log('clisting value ' + user);
-
+ 
   //const user = React.useContext(UserContext);
   //console.log('clisting value ' + user);
   /*
@@ -95,9 +95,10 @@ const clisting = () => {
   const handleClick = (person) => {
     
     //setName(person);
-    console.log('selected name click value', value);
     saveName = person;
-    setName(saveName);
+    console.log('selected name click value', saveName);
+    //saveName = person;
+    //setName(saveName);
 
     //const value = React.useContext(person);
 
@@ -153,7 +154,9 @@ const listing = () => {
   //const [name, setName] = useState(saveName);
   const user = React.useContext(UserContext);
   console.log('listing value ' + user);
-  //console.log('listing saveName ' + saveName);
+
+
+  console.log('listing saveName ' + saveName);
   //console.log('listing saveArray ' + list);
 
   //const currency = React.useContext(CurrencyContext);
@@ -226,10 +229,10 @@ const listing = () => {
 };
 
 const App = () => {
-  const [user, setUser] = useState(saveName);
+  const [name, setName] = useState(saveName);
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value={saveName}>
+      <UserContext.Provider value={name}>
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
 
