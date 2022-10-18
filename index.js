@@ -66,8 +66,8 @@ const list = [
 const clisting = () => {
 
   //const [name, setName] = useState('initial');
-  const user = React.useContext(UserContext);
-  console.log('clisting value ' + user);
+  //const user = React.useContext(UserContext);
+  //console.log('clisting value ' + user);
  
   //const user = React.useContext(UserContext);
   //console.log('clisting value ' + user);
@@ -96,7 +96,11 @@ const clisting = () => {
     
     //setName(person);
     saveName = person;
+
     console.log('selected name click value', saveName);
+    const value = "My Context Value";
+
+    return <UserContext.Consumer>{(value) => <span>{value}</span>}</UserContext.Consumer>;
     //saveName = person;
     //setName(saveName);
 
@@ -123,6 +127,13 @@ const clisting = () => {
 
   function cus() {
     {
+      const user = React.useContext(UserContext);
+    
+      //setName('kkkk')
+      //console.log('cus value ' + user);
+      //const user = React.useContext(UserContext);
+      console.log('cus value ' + user);
+
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
       console.log('customer set ' + categories);
@@ -135,7 +146,7 @@ const clisting = () => {
       return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
+          onClick={(event) => handleClick('xxx')}
         >
           {person}
         </p>
@@ -229,10 +240,10 @@ const listing = () => {
 };
 
 const App = () => {
-  const [name, setName] = useState(saveName);
+  //const [name, setName] = useState(saveName);e
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value={name}>
+      <UserContext.Provider value={saveName}>
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
 
@@ -252,6 +263,24 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+import { createContext } from "react";
+
+const Context = createContext("Default Value");
+
+export function Main() {
+  const value = "My Context Value";
+
+  return (
+    <Context.Provider value={value}>
+      <MyComponent />
+    </Context.Provider>
+  );
+}
+
+function MyComponent() {
+  return <Context.Consumer>{(value) => <span>{value}</span>}</Context.Consumer>;
+}
 
  <div className=" mt-5 ml-5 ">{listing(list)}</div>
 
