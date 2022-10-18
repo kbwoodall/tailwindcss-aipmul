@@ -10,12 +10,18 @@ import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 import { NewTextInput } from './showText.js';
 
+import { useMemo } from 'react';
+const UserContext = createContext({
+  userName: '',
+  setUserName: () => {},
+});
+
 let tot = 0.0;
 let saveName = 'initial';
 let saveArray = [];
 let names = [];
 
-const UserContext = React.createContext('notready');
+//const UserContext = React.createContext('notready');
 
 const hdg = () => {
   return (
@@ -64,11 +70,10 @@ const list = [
 ];
 
 const clisting = () => {
-
   //const [name, setName] = useState('initial');
   //const user = React.useContext(UserContext);
   //console.log('clisting value ' + user);
- 
+
   //const user = React.useContext(UserContext);
   //console.log('clisting value ' + user);
   /*
@@ -93,14 +98,15 @@ const clisting = () => {
   //});
   //  }, [name]);
   const handleClick = (person) => {
-    
     //setName(person);
     saveName = person;
 
     console.log('selected name click value', saveName);
-    const value = "My Context Value";
+    const value = 'My Context Value';
 
-    return <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>;
+    return (
+      <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>
+    );
     //saveName = person;
     //setName(saveName);
 
@@ -128,7 +134,7 @@ const clisting = () => {
   function cus() {
     {
       const user = React.useContext(UserContext);
-    
+
       //setName('kkkk')
       //console.log('cus value ' + user);
       //const user = React.useContext(UserContext);
@@ -136,12 +142,12 @@ const clisting = () => {
 
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
-      console.log('customer set ' + categories);
+      console.log('cus customer set ' + categories);
 
       let sublist = Array.from(categories);
-      console.log('customer array ' + sublist);
+      console.log('cus customer array ' + sublist);
       saveArray = sublist;
-      console.log('saveArray is ' + saveArray.length);
+      console.log('cus saveArray is ' + saveArray.length);
 
       return sublist.map((person) => (
         <p
@@ -157,7 +163,6 @@ const clisting = () => {
   return cus();
 };
 
-
 //  onClick={() => setCurrency(CURRENCIES.Euro)}
 //onClick={(event) => handleClick(setName(person))}
 
@@ -165,7 +170,6 @@ const listing = () => {
   //const [name, setName] = useState(saveName);
   const user = React.useContext(UserContext);
   console.log('listing value ' + user);
-
 
   console.log('listing saveName ' + saveName);
   //console.log('listing saveArray ' + list);
@@ -239,11 +243,25 @@ const listing = () => {
   return print();
 };
 
+function UserNameInput() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = event => setUserName(event.target.value);
+  return (
+    <input
+      type="text"
+      value={userName}
+      onChange={changeHandler}
+    />
+  );
+}
+
 const App = () => {
-  //const [name, setName] = useState(saveName);e
+  const [userName, setUserName] = useState('John Smith');
+  const value = useMemo(() => ({ userName, setUserName }), [userName]);
+
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value={saveName}>
+      <UserContext.Provider value={value}>
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">{chdg()}</div>
 
