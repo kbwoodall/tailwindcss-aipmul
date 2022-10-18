@@ -100,7 +100,7 @@ const clisting = () => {
     console.log('selected name click value', saveName);
     const value = "My Context Value";
 
-    return <UserContext.Consumer>{(value) => <span>{value}</span>}</UserContext.Consumer>;
+    return <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>;
     //saveName = person;
     //setName(saveName);
 
@@ -146,7 +146,7 @@ const clisting = () => {
       return sublist.map((person) => (
         <p
           className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick('xxx')}
+          onClick={(event) => handleClick(person)}
         >
           {person}
         </p>
@@ -263,6 +263,41 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+import { createContext, useState, useContext, useMemo } from 'react';
+const UserContext = createContext({
+  userName: '',
+  setUserName: () => {},
+});
+function Application() {
+  const [userName, setUserName] = useState('John Smith');
+  const value = useMemo(
+    () => ({ userName, setUserName }), 
+    [userName]
+  );
+  
+  return (
+    <UserContext.Provider value={value}>
+      <UserNameInput />
+      <UserInfo />
+    </UserContext.Provider>
+  );
+}
+function UserNameInput() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = event => setUserName(event.target.value);
+  return (
+    <input
+      type="text"
+      value={userName}
+      onChange={changeHandler}
+    />
+  );
+}
+function UserInfo() {
+  const { userName } = useContext(UserContext);
+  return <span>{userName}</span>;
+}
 
 import { createContext } from "react";
 
