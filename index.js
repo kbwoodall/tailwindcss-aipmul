@@ -23,6 +23,11 @@ let names = [];
 
 //const UserContext = React.createContext('notready');
 
+function UserInfo() {
+  const { userName } = useContext(UserContext);
+  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>;
+}
+
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -249,11 +254,6 @@ function UserNameInput() {
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
 
-function UserInfo() {
-  const { userName } = useContext(UserContext);
-  return <span>{userName}</span>;
-}
-
 const App = () => {
   const [userName, setUserName] = useState('John Smith');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
@@ -262,9 +262,12 @@ const App = () => {
     <div className="flex justify-start bg-green-300 h-screen  ">
       <UserContext.Provider value={value}>
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">{chdg()}</div>
+          <div className=" mt-5 ml-5 ">{hdg()}</div>
 
-          <div className=" mt-5 ml-5 ">{clisting(list)}</div>
+          <div className=" mt-5 ml-5 ">
+            <UserInfo />
+          </div>
+          <div className="mt-5 ml-5 ">{clisting(list)}</div>
         </div>
 
         <div className=" bg-green-300 flex-row">
