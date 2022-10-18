@@ -21,11 +21,30 @@ let saveName = 'initial';
 let saveArray = [];
 let names = [];
 
-//const UserContext = React.createContext('notready');
-
-function UserInfo() {
+const UserInfo = () => {
   const { userName } = useContext(UserContext);
-  return <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>;
+  return (
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>
+  );
+};
+
+function UserNameInput() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = event => setUserName(event.target.value);
+  return (
+    <input className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+      type="text"
+      value={userName}
+      onChange={changeHandler}
+    />
+  );
+}
+
+
+function handleClickx() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = (event) => setUserName(event.target.value);
+  return <input type="text" value={userName} onChange={changeHandler} />;
 }
 
 const hdg = () => {
@@ -74,6 +93,12 @@ const list = [
   },
 ];
 
+function handleClickx() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = (event) => setUserName(event.target.value);
+  return <input type="text" value={userName} onChange={changeHandler} />;
+}
+
 const clisting = () => {
   //const [name, setName] = useState('initial');
   //const user = React.useContext(UserContext);
@@ -102,16 +127,18 @@ const clisting = () => {
 
   //});
   //  }, [name]);
+
   const handleClick = (person) => {
     //setName(person);
-    saveName = person;
+    //saveName = person;
 
-    console.log('selected name click value', saveName);
-    const value = 'My Context Value';
+    console.log('selected name click value', person);
+    //const value = 'My Context Value';
 
     return (
       <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>
     );
+
     //saveName = person;
     //setName(saveName);
 
@@ -138,12 +165,11 @@ const clisting = () => {
 
   function cus() {
     {
-      const user = React.useContext(UserContext);
-
+      //const user = React.useContext(UserContext);
       //setName('kkkk')
       //console.log('cus value ' + user);
       //const user = React.useContext(UserContext);
-      console.log('cus value ' + user);
+      //console.log('cus value ' + user);
 
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
@@ -266,6 +292,8 @@ const App = () => {
 
           <div className=" mt-5 ml-5 ">
             <UserInfo />
+
+            <UserNameInput/>
           </div>
           <div className="mt-5 ml-5 ">{clisting(list)}</div>
         </div>
