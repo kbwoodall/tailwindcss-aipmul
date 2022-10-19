@@ -210,9 +210,11 @@ const App = () => {
           <div className=" mt-5 ml-5 ">{hdg()}</div>
 
           <div className=" mt-5 ml-5 ">
-            <UserInfo />
-
             <UserNameInput />
+          </div>
+
+          <div className=" mt-5 ml-5 ">
+            <UserInfo />
           </div>
           <div className="mt-5 ml-5 ">{clisting(list)}</div>
         </div>
