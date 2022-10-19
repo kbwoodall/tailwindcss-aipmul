@@ -2,15 +2,11 @@ import React, { useState, useEffect } from 'react';
 //Author: Kerry Woodall 7/17/2022
 
 import './style.css';
-
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-
-import { useState, useReducer, useEffect } from 'react';
 import { createContext, useContext } from 'react';
-import { NewTextInput } from './showText.js';
-
 import { useMemo } from 'react';
+
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
