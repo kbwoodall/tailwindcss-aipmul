@@ -95,6 +95,29 @@ function handleClickx() {
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
 
+function Cusx() {
+  {
+    const { userName, setUserName } = useContext(UserContext);
+    let categories = [...new Set(list.map((iname) => iname.customer))];
+
+    console.log('cus customer set ' + categories);
+
+    let sublist = Array.from(categories);
+    console.log('cus customer array ' + sublist);
+    saveArray = sublist;
+    console.log('cus saveArray is ' + saveArray.length);
+
+    return sublist.map((person) => (
+      <p
+        className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+        onClick={(event) => setUserName(person)}
+      >
+        {person}
+      </p>
+    ));
+  }
+}
+
 const clisting = () => {
   const handleClick = (person) => {
     console.log('selected name click value', person);
@@ -212,7 +235,9 @@ const App = () => {
           <div className=" mt-5 ml-5 ">
             <UserInfo />
           </div>
-          <div className="mt-5 ml-5 ">{clisting(list)}</div>
+          <div className="mt-5 ml-5 ">
+            <Cusx />
+          </div>
         </div>
 
         <div className=" bg-green-300 flex-row">
