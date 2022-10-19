@@ -95,7 +95,7 @@ function handleClickx() {
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
 
-function Cusx() {
+function Cus() {
   {
     const { userName, setUserName } = useContext(UserContext);
     let categories = [...new Set(list.map((iname) => iname.customer))];
@@ -127,7 +127,7 @@ const clisting = () => {
     );
   };
 
-  function cus() {
+  function cusx() {
     {
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
@@ -219,7 +219,7 @@ function UserNameInput() {
 }
 
 const App = () => {
-  const [userName, setUserName] = useState('John Smith');
+  const [userName, setUserName] = useState('Jim');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
   return (
@@ -236,7 +236,7 @@ const App = () => {
             <UserInfo />
           </div>
           <div className="mt-5 ml-5 ">
-            <Cusx />
+            <Cus />
           </div>
         </div>
 
