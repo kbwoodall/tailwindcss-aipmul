@@ -50,7 +50,7 @@ const hdg = () => {
     </p>
   );
 };
-const chdg = () => {
+function Chdg ()  {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
       Customers
@@ -241,7 +241,7 @@ const App = () => {
         </div>
 
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">{chdg()}</div>
+          <div className=" mt-5 ml-5 "><Chdg/></div>
           <div className=" mt-5 ml-5 ">{listing(list)}</div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
