@@ -152,7 +152,7 @@ const clisting = () => {
   return cus();
 };
 
-const listing = () => {
+const Listing = () => {
   //const [name, setName] = useState(saveName);
   const user = React.useContext(UserContext);
   console.log('listing value ' + user);
@@ -242,7 +242,7 @@ const App = () => {
 
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 "><Chdg/></div>
-          <div className=" mt-5 ml-5 ">{listing(list)}</div>
+          <div className=" mt-5 ml-5 "><Listing/></div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
