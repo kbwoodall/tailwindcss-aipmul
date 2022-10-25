@@ -66,11 +66,11 @@ const printall = (printList) => {
   ));
 };
 
-const totln = (cst) => {
+function Totln() {
   return (
-    <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {cst}</p>
+    <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {tot}</p>
   );
-};
+}
 
 const list = [
   { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45 },
@@ -79,7 +79,7 @@ const list = [
     id: 3,
     customer: 'Terry',
     item: 'shoes',
-    cost: 100.15,
+    cost: 100.27,
   },
   {
     id: 4,
@@ -156,18 +156,14 @@ const Listing = () => {
   const { userName } = useContext(UserContext);
   console.log('listing ' + userName);
 
-  let slist = [];
   useEffect(() => {
+    let slist = [];
     slist = list.filter((person) => {
       return person.customer === userName;
     });
     console.log('Listing useEffect ' + slist.length + ' ' + slist);
     console.log('test ' + list);
   });
-
-  let list3 = [...slist];
-  console.log('test2 ' + { slist });
-  console.log('test3 ' + list3);
 
   let first = true;
   let hid = 0;
@@ -180,12 +176,12 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
-    let list4 = [...slist];
-    console.log('test3 ' + list3);
-
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
+
+      console.log(tot);
+
       if (first) {
         (first = false),
           (hcust = list[i].customer),
@@ -259,7 +255,9 @@ const App = () => {
           <div className=" mt-5 ml-5 ">
             <Listing />
           </div>
-          <div className=" mt-5 ml-5 ">{totln(tot)}</div>
+          <div className=" mt-5 ml-5 ">
+            <Totln />
+          </div>
         </div>
       </UserContext.Provider>
     </div>
