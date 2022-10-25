@@ -128,17 +128,22 @@ const Listing = () => {
   const { nlist, setNlist} = useContext(ListContext);
 
   console.log('listing ' + userName);
-  let slist = [];
+  let xlist = [];
+
+
+  
 
   useEffect(() => {
-    slist = list.filter((person) => {
+    let slist = list.filter((person) => {
       return person.customer === userName;
     });
     console.log('Listing useEffect ' + slist.length + ' ' + slist);
     setNlist(slist);
-    console.log('test ' + list);
+    console.log('test ' + list);    
+    xlist = [...slist]
   });
 
+  console.log('xlist ' + xlist.length + ' ' + xlist);
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -150,7 +155,7 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
-    console.log('nlist ' + nlist.length + ' ' + nlist);
+    //console.log('slist ' + slist.length + ' ' + slist);
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
