@@ -156,9 +156,18 @@ const Listing = () => {
   const { userName } = useContext(UserContext);
   console.log('listing ' + userName);
 
-  let slist = list.filter((person) => {
-    return person.customer === userName;
+  let slist = [];
+  useEffect(() => {
+    slist = list.filter((person) => {
+      return person.customer === userName;
+    });
+    console.log('Listing useEffect ' + slist.length + ' ' + slist);
+    console.log('test ' + list);
   });
+
+  let list3 = [...slist];
+  console.log('test2 ' + { slist });
+  console.log('test3 ' + list3);
 
   let first = true;
   let hid = 0;
@@ -171,7 +180,8 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
-    //let list = [...saveArray];
+    let list4 = [...slist];
+    console.log('test3 ' + list3);
 
     tot = 0;
     for (let i = 0; i < list.length; i++) {
