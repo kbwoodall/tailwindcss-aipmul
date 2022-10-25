@@ -12,11 +12,6 @@ const UserContext = createContext({
   setUserName: () => {},
 });
 
-const ListContext = createContext({
-  nlist: [],
-  setNlist: () => {},
-});
-
 let tot = 0.0;
 let saveName = 'initial';
 let saveArray = [];
@@ -125,25 +120,9 @@ function Cus() {
 
 const Listing = () => {
   const { userName, setUserName } = useContext(UserContext);
-  const { nlist, setNlist} = useContext(ListContext);
-
   console.log('listing ' + userName);
-  let xlist = [];
 
-
-  
-
-  useEffect(() => {
-    let slist = list.filter((person) => {
-      return person.customer === userName;
-    });
-    console.log('Listing useEffect ' + slist.length + ' ' + slist);
-    setNlist(slist);
-    console.log('test ' + list);    
-    xlist = [...slist]
-  });
-
-  console.log('xlist ' + xlist.length + ' ' + xlist);
+  console.log('list ' + list.length);
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -155,7 +134,10 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
-    //console.log('slist ' + slist.length + ' ' + slist);
+    let slist = list.filter((person) => {
+      return person.customer === userName;
+    });
+    console.log('slist ' + slist.length + ' ' + slist);
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
