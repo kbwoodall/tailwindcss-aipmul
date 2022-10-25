@@ -50,13 +50,13 @@ const hdg = () => {
     </p>
   );
 };
-function Chdg ()  {
+function Chdg() {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
       Customers
     </p>
   );
-};
+}
 
 const printall = (printList) => {
   return printList.map((items) => (
@@ -153,12 +153,8 @@ const clisting = () => {
 };
 
 const Listing = () => {
-  //const [name, setName] = useState(saveName);
-  const user = React.useContext(UserContext);
-  console.log('listing value ' + user);
-
-  console.log('listing saveName ' + saveName);
-  //console.log('listing saveArray ' + list);
+  const { userName } = useContext(UserContext);
+  console.log('listing ' + userName);
 
   let first = true;
   let hid = 0;
@@ -241,8 +237,12 @@ const App = () => {
         </div>
 
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 "><Chdg/></div>
-          <div className=" mt-5 ml-5 "><Listing/></div>
+          <div className=" mt-5 ml-5 ">
+            <Chdg />
+          </div>
+          <div className=" mt-5 ml-5 ">
+            <Listing />
+          </div>
           <div className=" mt-5 ml-5 ">{totln(tot)}</div>
         </div>
       </UserContext.Provider>
