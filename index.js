@@ -156,6 +156,10 @@ const Listing = () => {
   const { userName } = useContext(UserContext);
   console.log('listing ' + userName);
 
+  let slist = list.filter((person) => {
+    return person.customer === userName;
+  });
+
   let first = true;
   let hid = 0;
   let hcust = '';
@@ -167,6 +171,8 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
+    //let list = [...saveArray];
+
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
