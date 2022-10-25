@@ -12,6 +12,11 @@ const UserContext = createContext({
   setUserName: () => {},
 });
 
+const ListContext = createContext({
+  nlist: [],
+  setNlist: () => {},
+});
+
 let tot = 0.0;
 let saveName = 'initial';
 let saveArray = [];
@@ -118,50 +123,19 @@ function Cus() {
   }
 }
 
-const clisting = () => {
-  const handleClick = (person) => {
-    console.log('selected name click value', person);
-
-    return (
-      <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>
-    );
-  };
-
-  function cusx() {
-    {
-      let categories = [...new Set(list.map((iname) => iname.customer))];
-
-      console.log('cus customer set ' + categories);
-
-      let sublist = Array.from(categories);
-      console.log('cus customer array ' + sublist);
-      saveArray = sublist;
-      console.log('cus saveArray is ' + saveArray.length);
-
-      return sublist.map((person) => (
-        <p
-          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
-        >
-          {person}
-        </p>
-      ));
-    }
-  }
-
-  return cus();
-};
-
 const Listing = () => {
-  const { userName } = useContext(UserContext);
+  const { userName, setUserName } = useContext(UserContext);
+  const { nlist, setNlist} = useContext(ListContext);
+
   console.log('listing ' + userName);
+  let slist = [];
 
   useEffect(() => {
-    let slist = [];
     slist = list.filter((person) => {
       return person.customer === userName;
     });
     console.log('Listing useEffect ' + slist.length + ' ' + slist);
+    setNlist(slist);
     console.log('test ' + list);
   });
 
@@ -176,11 +150,10 @@ const Listing = () => {
   let newList = [];
 
   const print = () => {
+    console.log('nlist ' + nlist.length + ' ' + nlist);
     tot = 0;
     for (let i = 0; i < list.length; i++) {
       tot = tot + list[i].cost;
-
-      console.log(tot);
 
       if (first) {
         (first = false),
@@ -265,3 +238,39 @@ const App = () => {
 };
 
 render(<App />, document.getElementById('app'));
+
+/*
+const clisting = () => {
+  const handleClick = (person) => {
+    console.log('selected name click value', person);
+
+    return (
+      <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>
+    );
+  };
+
+  function cusx() {
+    {
+      let categories = [...new Set(list.map((iname) => iname.customer))];
+
+      console.log('cus customer set ' + categories);
+
+      let sublist = Array.from(categories);
+      console.log('cus customer array ' + sublist);
+      saveArray = sublist;
+      console.log('cus saveArray is ' + saveArray.length);
+
+      return sublist.map((person) => (
+        <p
+          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+          onClick={(event) => handleClick(person)}
+        >
+          {person}
+        </p>
+      ));
+    }
+  }
+
+  return cus();
+};
+*/
