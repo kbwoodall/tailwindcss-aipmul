@@ -139,37 +139,37 @@ const Listing = () => {
     });
     console.log('slist ' + slist.length + ' ' + slist);
     tot = 0;
-    for (let i = 0; i < list.length; i++) {
-      tot = tot + list[i].cost;
+    for (let i = 0; i < slist.length; i++) {
+      tot = tot + slist[i].cost;
 
       if (first) {
         (first = false),
-          (hcust = list[i].customer),
-          (hitem = list[i].item),
-          (hcost = list[i].cost),
-          (subtot = list[i].cost),
+          (hcust = slist[i].customer),
+          (hitem = slist[i].item),
+          (hcost = slist[i].cost),
+          (subtot = slist[i].cost),
           (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }]);
       } else {
-        if (hcust == list[i].customer) {
+        if (hcust == slist[i].customer) {
           printList.push(prev[0]);
-          subtot = subtot + list[i].cost;
-          hcust = list[i].customer;
-          hitem = list[i].item;
-          hcost = list[i].cost;
+          subtot = subtot + slist[i].cost;
+          hcust = slist[i].customer;
+          hitem = slist[i].item;
+          hcost = slist[i].cost;
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
           prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
           printList.push(prev[0]);
-          hcust = list[i].customer;
-          hitem = list[i].item;
-          hcost = list[i].cost;
+          hcust = slist[i].customer;
+          hitem = slist[i].item;
+          hcost = slist[i].cost;
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
           subtot = 0;
-          subtot = subtot + list[i].cost;
+          subtot = subtot + slist[i].cost;
         }
       }
-      if (i == list.length - 1) {
+      if (i == slist.length - 1) {
         printList.push(prev[0]);
         prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
         printList.push(prev[0]);
