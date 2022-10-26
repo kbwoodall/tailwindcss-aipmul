@@ -37,12 +37,6 @@ function UserNameInput() {
   );
 }
 
-function handleClickx() {
-  const { userName, setUserName } = useContext(UserContext);
-  const changeHandler = (event) => setUserName(event.target.value);
-  return <input type="text" value={userName} onChange={changeHandler} />;
-}
-
 const hdg = () => {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -88,12 +82,6 @@ const list = [
     cost: 200.36,
   },
 ];
-
-function handleClickx() {
-  const { userName, setUserName } = useContext(UserContext);
-  const changeHandler = (event) => setUserName(event.target.value);
-  return <input type="text" value={userName} onChange={changeHandler} />;
-}
 
 function Cus() {
   {
@@ -225,39 +213,3 @@ const App = () => {
 };
 
 render(<App />, document.getElementById('app'));
-
-/*
-const clisting = () => {
-  const handleClick = (person) => {
-    console.log('selected name click value', person);
-
-    return (
-      <UserContext.Consumer>{(value) => <p>{value}</p>}</UserContext.Consumer>
-    );
-  };
-
-  function cusx() {
-    {
-      let categories = [...new Set(list.map((iname) => iname.customer))];
-
-      console.log('cus customer set ' + categories);
-
-      let sublist = Array.from(categories);
-      console.log('cus customer array ' + sublist);
-      saveArray = sublist;
-      console.log('cus saveArray is ' + saveArray.length);
-
-      return sublist.map((person) => (
-        <p
-          className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-          onClick={(event) => handleClick(person)}
-        >
-          {person}
-        </p>
-      ));
-    }
-  }
-
-  return cus();
-};
-*/
