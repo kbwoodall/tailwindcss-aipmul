@@ -29,7 +29,7 @@ function UserNameInput() {
   const changeHandler = (event) => setUserName(event.target.value);
   return (
     <input
-      className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+      className="bg-teal-200 text-md font-bold pl-10 pt-2 pb-2"
       type="text"
       value={userName}
       onChange={changeHandler}
@@ -167,13 +167,17 @@ const Listing = () => {
   };
   return print();
 };
-
+/*
 function UserNameInput() {
   const { userName, setUserName } = useContext(UserContext);
   const changeHandler = (event) => setUserName(event.target.value);
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
+   <div className=" mt-5 ml-5 ">
+            <UserInfo />
+          </div>
 
+*/
 const App = () => {
   const [userName, setUserName] = useState('Jim');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
@@ -188,9 +192,6 @@ const App = () => {
             <UserNameInput />
           </div>
 
-          <div className=" mt-5 ml-5 ">
-            <UserInfo />
-          </div>
           <div className="mt-5 ml-5 ">
             <Cus />
           </div>
