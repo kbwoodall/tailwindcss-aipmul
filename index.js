@@ -61,9 +61,18 @@ const printall = (printList) => {
 };
 
 function Totln() {
-  return (
-    <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">Total {tot}</p>
-  );
+  const { userName, setUserName } = useContext(UserContext);
+  if (userName === 'All') {
+    return (
+      <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
+        Total {tot}
+      </p>
+    );
+  } else {
+    return (
+      nu
+    );
+  }
 }
 
 const list = [
@@ -120,11 +129,16 @@ const Listing = () => {
   let prev = [];
   let printList = [];
   let newList = [];
+  let slist = [];
 
   const print = () => {
-    let slist = list.filter((person) => {
-      return person.customer === userName;
-    });
+    if (userName === 'All') {
+      slist = [...list];
+    } else {
+      slist = list.filter((person) => {
+        return person.customer === userName;
+      });
+    }
     console.log('slist ' + slist.length + ' ' + slist);
     tot = 0;
     for (let i = 0; i < slist.length; i++) {
