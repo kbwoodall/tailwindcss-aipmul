@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 //Author: Kerry Woodall 7/17/2022
 
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+//const Home = lazy(() => import('./routes/Home'));
+//const About = lazy(() => import('./routes/About'));
+
 import './style.css';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
@@ -69,9 +75,7 @@ function Totln() {
       </p>
     );
   } else {
-    return (
-      null
-    );
+    return null;
   }
 }
 
@@ -195,36 +199,41 @@ function UserNameInput() {
 const App = () => {
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
+  //<Router>
+    //<Suspense fallback={<div>Loading...</div>}>
+      //<Routes>
+        return (
+        <div className="flex justify-start bg-green-300 h-screen  ">
+          <UserContext.Provider value={value}>
+            <div className=" bg-green-300 flex-row">
+              <div className=" mt-5 ml-5 ">{hdg()}</div>
 
-  return (
-    <div className="flex justify-start bg-green-300 h-screen  ">
-      <UserContext.Provider value={value}>
-        <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">{hdg()}</div>
+              <div className=" mt-5 ml-5 ">
+                <UserNameInput />
+              </div>
 
-          <div className=" mt-5 ml-5 ">
-            <UserNameInput />
-          </div>
+              <div className="mt-5 ml-5 ">
+                <Cus />
+              </div>
+            </div>
 
-          <div className="mt-5 ml-5 ">
-            <Cus />
-          </div>
+            <div className=" bg-green-300 flex-row">
+              <div className=" mt-5 ml-5 ">
+                <Chdg />
+              </div>
+              <div className=" mt-5 ml-5 ">
+                <Listing />
+              </div>
+              <div className=" mt-5 ml-5 ">
+                <Totln />
+              </div>
+            </div>
+          </UserContext.Provider>
         </div>
-
-        <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">
-            <Chdg />
-          </div>
-          <div className=" mt-5 ml-5 ">
-            <Listing />
-          </div>
-          <div className=" mt-5 ml-5 ">
-            <Totln />
-          </div>
-        </div>
-      </UserContext.Provider>
-    </div>
-  );
+        );
+      //</Routes>
+    //</Suspense>
+  //</Router>;
 };
 
 render(<App />, document.getElementById('app'));
