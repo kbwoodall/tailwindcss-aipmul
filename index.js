@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 //Author: Kerry Woodall 7/17/2022
 
 import { Suspense, lazy } from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-//const Home = lazy(() => import('./routes/Home'));
-//const About = lazy(() => import('./routes/About'));
+const Home = lazy(() => import('./routes/Home'));
+const About = lazy(() => import('./routes/About'));
+
+import {useRoutes} from 'hookrouter';
+import Routes from './router'
 
 import './style.css';
 import React, { Component } from 'react';
@@ -194,15 +198,26 @@ function UserNameInput() {
    <div className=" mt-5 ml-5 ">
             <UserInfo />
           </div>
+           //<Suspense fallback={<div>Loading...</div>}>
+
+
+              </Route>
+    </Routes>
+  </BrowserRouter>;
+
+      <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />}>
+
 
 */
 const App = () => {
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
-  //<Router>
-    //<Suspense fallback={<div>Loading...</div>}>
-      //<Routes>
-        return (
+
+  return (
+    
+      
         <div className="flex justify-start bg-green-300 h-screen  ">
           <UserContext.Provider value={value}>
             <div className=" bg-green-300 flex-row">
@@ -230,10 +245,33 @@ const App = () => {
             </div>
           </UserContext.Provider>
         </div>
-        );
-      //</Routes>
-    //</Suspense>
-  //</Router>;
+      
+    
+  );
 };
 
 render(<App />, document.getElementById('app'));
+
+
+
+
+/*
+const routes = {
+  "/user": () => <Users />,
+  "/about": () => <About />,
+  "/contact": () => <Contact />
+};
+
+function App() {
+  const routeResult = useRoutes(routes);
+  return (
+    <div className="App">
+      <A href="/user">Users Page</A>
+      <A href="/about">About Page</A>
+      <A href="/contact">Contacts Page</A>
+      {routeResult}
+    </div>
+  );
+}
+
+*/
