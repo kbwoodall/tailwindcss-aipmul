@@ -8,8 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 
-import {useRoutes} from 'hookrouter';
-import Routes from './router'
+import { useRoutes } from 'hookrouter';
+import Routes from './router';
 
 import './style.css';
 import React, { Component } from 'react';
@@ -195,83 +195,47 @@ function UserNameInput() {
   const changeHandler = (event) => setUserName(event.target.value);
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
-   <div className=" mt-5 ml-5 ">
-            <UserInfo />
-          </div>
-           //<Suspense fallback={<div>Loading...</div>}>
-
-
-              </Route>
-    </Routes>
-  </BrowserRouter>;
-
-      <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />}>
-
-
 */
-const App = () => {
+
+const routes = {
+  './routes/About': () => <Users />,
+  './routes/Home': () => <About />,
+};
+function App() {
+  const routeResult = useRoutes(routes);
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
   return (
-    
-      
-        <div className="flex justify-start bg-green-300 h-screen  ">
-          <UserContext.Provider value={value}>
-            <div className=" bg-green-300 flex-row">
-              <div className=" mt-5 ml-5 ">{hdg()}</div>
+    <div className="flex justify-start bg-green-300 h-screen  ">
+      <div>{routeResult}</div>
+      <UserContext.Provider value={value}>
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-5 ml-5 ">{hdg()}</div>
 
-              <div className=" mt-5 ml-5 ">
-                <UserNameInput />
-              </div>
+          <div className=" mt-5 ml-5 ">
+            <UserNameInput />
+          </div>
 
-              <div className="mt-5 ml-5 ">
-                <Cus />
-              </div>
-            </div>
-
-            <div className=" bg-green-300 flex-row">
-              <div className=" mt-5 ml-5 ">
-                <Chdg />
-              </div>
-              <div className=" mt-5 ml-5 ">
-                <Listing />
-              </div>
-              <div className=" mt-5 ml-5 ">
-                <Totln />
-              </div>
-            </div>
-          </UserContext.Provider>
+          <div className="mt-5 ml-5 ">
+            <Cus />
+          </div>
         </div>
-      
-    
-  );
-};
 
-render(<App />, document.getElementById('app'));
-
-
-
-
-/*
-const routes = {
-  "/user": () => <Users />,
-  "/about": () => <About />,
-  "/contact": () => <Contact />
-};
-
-function App() {
-  const routeResult = useRoutes(routes);
-  return (
-    <div className="App">
-      <A href="/user">Users Page</A>
-      <A href="/about">About Page</A>
-      <A href="/contact">Contacts Page</A>
-      {routeResult}
+        <div className=" bg-green-300 flex-row">
+          <div className=" mt-5 ml-5 ">
+            <Chdg />
+          </div>
+          <div className=" mt-5 ml-5 ">
+            <Listing />
+          </div>
+          <div className=" mt-5 ml-5 ">
+            <Totln />
+          </div>
+        </div>
+      </UserContext.Provider>
     </div>
   );
 }
 
-*/
+render(<App />, document.getElementById('app'));
