@@ -211,7 +211,9 @@ function App() {
       <div>{routeResult}</div>
       <UserContext.Provider value={value}>
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">{hdg()}</div>
+          <div className=" mt-5 ml-5 ">
+            <Chdg />
+          </div>
 
           <div className=" mt-5 ml-5 ">
             <UserNameInput />
@@ -223,9 +225,7 @@ function App() {
         </div>
 
         <div className=" bg-green-300 flex-row">
-          <div className=" mt-5 ml-5 ">
-            <Chdg />
-          </div>
+          <div className=" mt-5 ml-5 ">{hdg()}</div>
           <div className=" mt-5 ml-5 ">
             <Listing />
           </div>
