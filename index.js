@@ -57,7 +57,7 @@ const hdg = () => {
 function Chdg() {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
-      Customers
+      My favorite Customers
     </p>
   );
 }
