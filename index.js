@@ -12,6 +12,8 @@ import { useRoutes } from 'hookrouter';
 import Routes from './router';
 
 import './style.css';
+import App2 from './listapp.js'; 
+import List2 from './listmore.js;'
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { createContext, useContext } from 'react';
