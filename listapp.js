@@ -1,11 +1,11 @@
 import React from 'react';
-import List from './List';
+import List2 from './listmore';
 
 const App2 = () => {
   return (
     <div>
       <h1>List Example</h1>
-      <List />
+      <List2 />
     </div>
   );
 };
