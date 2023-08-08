@@ -36,6 +36,18 @@ const UserInfo = () => {
   );
 };
 
+const handleButtonClick = () => {
+  alert('Button clicked!');
+};
+
+function UserAll() {
+  return (
+    <div className="bg-teal-200 text-md font-bold pl-10 pt-2 pb-2">
+      <button onClick={handleButtonClick}>All</button>
+    </div>
+  );
+}
+
 function UserNameInput() {
   const { userName, setUserName } = useContext(UserContext);
   const changeHandler = (event) => setUserName(event.target.value);
@@ -218,7 +230,7 @@ function App() {
           </div>
 
           <div className=" mt-5 ml-5 ">
-            <UserNameInput />
+            <UserAll />
           </div>
 
           <div className="mt-5 ml-5 ">
