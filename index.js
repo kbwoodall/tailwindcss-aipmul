@@ -42,8 +42,8 @@ const handleButtonClick = () => {
 
 function UserAll() {
   return (
-    <div className="bg-teal-200 text-md font-bold pl-10 pt-2 pb-2">
-      <button onClick={handleButtonClick}>All</button>
+    <div >
+      <button className="bg-teal-400 text-md font-bold  pt-2 pb-2 w-64" onClick={handleButtonClick}>All</button>
     </div>
   );
 }
