@@ -41,9 +41,17 @@ const handleButtonClick = () => {
 };
 
 function UserAll() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = (event) => setUserName('All');
+
   return (
-    <div >
-      <button className="bg-teal-400 text-left font-bold  pl-10 pt-2 pb-2 w-64" onClick={handleButtonClick}>All</button>
+    <div>
+      <button
+        className="bg-teal-400 text-left font-bold  pl-10 pt-2 pb-2 w-64"
+        onClick={handleButtonClick}
+      >
+        All
+      </button>
     </div>
   );
 }
