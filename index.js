@@ -76,6 +76,15 @@ const hdg = () => {
     </p>
   );
 };
+
+function Ihdg() {
+  return (
+    <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
+      Item Description
+    </p>
+  );
+}
+
 function Chdg() {
   return (
     <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
@@ -256,6 +265,9 @@ function App() {
           <div className=" mt-5 ml-5 ">
             <Totln />
           </div>
+        </div>
+        <div className=" mt-5 ml-5 ">
+          <Ihdg />
         </div>
       </UserContext.Provider>
     </div>
