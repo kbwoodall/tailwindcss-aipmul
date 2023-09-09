@@ -187,6 +187,8 @@ const Listing = () => {
         (first = false),
           (hcust = slist[i].customer),
           (hitem = slist[i].item),
+          //alert(hitem),
+
           (hcost = slist[i].cost),
           (subtot = slist[i].cost),
           (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }]);
@@ -253,8 +255,6 @@ function App() {
           <div className="mt-5 ml-5 ">
             <Cus />
           </div>
-
-          <div></div>
         </div>
 
         <div className=" bg-green-300 flex-row">
