@@ -69,12 +69,8 @@ function UserNameInput() {
   );
 }
 
-const itemdesc = () => {
-  return (
-    <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">
-      Empty photo
-    </p>
-  );
+const Itemdesc = () => {
+  return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 };
 
 const hdg = () => {
@@ -280,9 +276,10 @@ function App() {
         </div>
         <div className=" mt-5 ml-5 ">
           <Ihdg />
-        </div>
-        <div >
-          <itemdesc />
+
+          <div>
+            <Itemdesc />
+          </div>
         </div>
       </UserContext.Provider>
     </div>
