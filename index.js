@@ -71,7 +71,7 @@ function UserNameInput() {
 }
 
 const Itemdesc = () => {
-  return <img src="../golfPants.jpg" />;
+  return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
 };
 
 const hdg = () => {
