@@ -12,6 +12,7 @@ import { useRoutes } from 'hookrouter';
 import Routes from './router';
 
 import './style.css';
+
 import App2 from './listapp.js';
 
 import React, { Component } from 'react';
@@ -70,7 +71,7 @@ function UserNameInput() {
 }
 
 const Itemdesc = () => {
-  return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
+  return <img src="../golfPants.jpg" />;
 };
 
 const hdg = () => {
@@ -232,7 +233,7 @@ function UserNameInput() {
   const changeHandler = (event) => setUserName(event.target.value);
   return <input type="text" value={userName} onChange={changeHandler} />;
 }
-
+return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 <div className=" mt-5 ml-5 ">
           <itemdesc />
         </div>
