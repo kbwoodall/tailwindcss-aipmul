@@ -71,7 +71,9 @@ function UserNameInput() {
 }
 
 const Itemdesc = () => {
-  return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
+  return (
+    <img src="./routes/golfPants.jpg" />
+  );
 };
 
 const hdg = () => {
@@ -237,6 +239,8 @@ return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 <div className=" mt-5 ml-5 ">
           <itemdesc />
         </div>
+
+         return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
 */
 
 const routes = {
