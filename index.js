@@ -72,7 +72,7 @@ function UserNameInput() {
 
 const Itemdesc = () => {
   return (
-    <img src="https://github.com/kbwoodall/tailwindcss-aipmul/blob/main/bird.png" />
+    <img src="https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png" />
   );
 };
 
