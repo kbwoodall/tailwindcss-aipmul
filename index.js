@@ -74,7 +74,7 @@ const Itemdesc = () => {
   return (
     <img
       class="flex justify-center items-center pt-12 ml-10"
-      src="https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png"
+      src="https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg"
     />
   );
 };
