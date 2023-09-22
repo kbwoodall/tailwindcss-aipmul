@@ -73,7 +73,7 @@ function UserNameInput() {
 const Itemdesc = () => {
   return (
     <img
-      class="flex justify-center items-center pl2 pt-4 pb-2 w-64"
+      class="flex justify-center items-center  pt-6 w-64"
       src="https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg"
     />
   );
@@ -81,7 +81,7 @@ const Itemdesc = () => {
 
 const hdg = () => {
   return (
-    <p className="bg-green-400 text-md font-bold pt-4 w-64 pl-2 pb-2">
+    <p className="bg-green-400 text-md font-bold pt-2 w-64 pl-2 pb-4">
       Total Purchases by Customer
     </p>
   );
@@ -89,7 +89,7 @@ const hdg = () => {
 
 function Ihdg() {
   return (
-    <p className="bg-green-400 text-md font-bold pt-2 pb-4 w-64 pl-4">
+    <p className="bg-green-400 text-md font-bold pt-2 w-64 pl-4 pb-4">
       Item Description
     </p>
   );
