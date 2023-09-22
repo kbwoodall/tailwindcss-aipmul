@@ -1,7 +1,13 @@
 import React from 'react';
 
 const List2 = () => {
-  const items = ['Item 1', 'Item 2', 'Item 3'];
+  const pic1 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
+
+  const pic2 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg';
+
+  const items = [pic1, pic2];
 
   return (
     <ul className="bg-gray-100 p-4">
@@ -15,3 +21,17 @@ const List2 = () => {
 };
 
 export default List2;
+
+/*
+
+return (
+    <ul className="bg-gray-100 p-4">
+      {items.map((item, index) => (
+        <li key={index} className="p-2">
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+
+*/
