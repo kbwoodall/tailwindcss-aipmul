@@ -12,6 +12,7 @@ import { useRoutes } from 'hookrouter';
 import Routes from './router';
 
 import './style.css';
+import List2 from './listmore';
 
 import App2 from './listapp.js';
 

@@ -10,13 +10,13 @@ const List2 = () => {
   const items = [pic1, pic2];
 
   return (
-    <ul className="bg-gray-100 p-4">
+    <div className="bg-gray-100 p-4">
       {items.map((item, index) => (
-        <li key={index} className="p-2">
+        <img key={index} className="p-2">
           {item}
-        </li>
+        </img>
       ))}
-    </ul>
+    </div>
   );
 };
 
