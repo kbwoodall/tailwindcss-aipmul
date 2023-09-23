@@ -10,8 +10,8 @@ const List2 = () => {
   const items = [pic1, pic2];
 
   return (
-    <div className="bg-gray-100 p-4">
-      <img class="flex justify-center items-center  pt-6 w-64" src={pic1} />
+    <div className="bg-gray-100 mt-6">
+      <img class="flex justify-center items-center  w-64" src={pic1} />
     </div>
   );
 };
