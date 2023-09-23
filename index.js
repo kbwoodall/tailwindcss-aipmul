@@ -287,7 +287,7 @@ function App() {
           <Ihdg />
 
           <div>
-            <Itemdesc />
+            <List2 />
           </div>
         </div>
       </UserContext.Provider>

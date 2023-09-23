@@ -11,11 +11,7 @@ const List2 = () => {
 
   return (
     <div className="bg-gray-100 p-4">
-      {items.map((item, index) => (
-        <img key={index} className="p-2">
-          {item}
-        </img>
-      ))}
+      <img class="flex justify-center items-center  pt-6 w-64" src={pic1} />
     </div>
   );
 };
@@ -23,7 +19,11 @@ const List2 = () => {
 export default List2;
 
 /*
-
+   //{items.map((item, index) => (
+      //  <img key={index} className="p-2">
+      //    {item}
+      //  </img>
+      //))}
 return (
     <ul className="bg-gray-100 p-4">
       {items.map((item, index) => (
