@@ -13,22 +13,10 @@ const List2 = () => {
     { key: 1, value: pic1 },
     { key: 2, value: pic2 },
   ];
-  console.log('returning1 ' + pic2);
-  let check = nlist.includes('key');
 
   const param = 1;
-  const getImg = (param) => {
-    newObj = {};
-    newObj.key = param;
-    return newObj.key;
-  };
 
-  // nlist.map(getImg(param));
-
-  console.log('returning ' + nlist[param].value);
   const testObj = nlist[param].value;
-
-  const items = [pic1, pic2];
 
   return (
     <div className="bg-gray-100 mt-6">
