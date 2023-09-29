@@ -14,9 +14,9 @@ const List2 = () => {
     { keyn: 2, value: pic2 },
   ];
 
-  const param = 1;
+  const param = 2;
 
-  const specificValuesFromArray = nlist.filter((obj) => obj.keyn === 2);
+  const specificValuesFromArray = nlist.filter((obj) => obj.keyn === param);
 
   const testObj = specificValuesFromArray[0].value;
 
