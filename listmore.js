@@ -10,13 +10,17 @@ const List2 = () => {
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg';
 
   const nlist = [
-    { key: 1, value: pic1 },
-    { key: 2, value: pic2 },
+    { keyn: 1, value: pic1 },
+    { keyn: 2, value: pic2 },
   ];
 
   const param = 1;
 
-  const testObj = nlist[param].value;
+  const specificValuesFromArray = nlist.filter((obj) => obj.keyn === 2);
+
+  const testObj = specificValuesFromArray[0].value;
+
+  console.log(testObj);
 
   return (
     <div className="bg-gray-100 mt-6">
@@ -28,6 +32,13 @@ const List2 = () => {
 export default List2;
 
 /*
+
+const testObj = nlist[param].value;
+
+  const index = nlist.findIndex((el) => el.key == 2);
+
+  const testReturn = nlist.find.name;
+  console.log('xxx ' + index);
 
 // defining an array
 let languages = ["JavaScript", "Java", "C"];
