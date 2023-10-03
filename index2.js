@@ -102,33 +102,7 @@ function handleClickx() {
 }
 
 const clisting = () => {
-  //const [name, setName] = useState('initial');
-  //const user = React.useContext(UserContext);
-  //console.log('clisting value ' + user);
 
-  //const user = React.useContext(UserContext);
-  //console.log('clisting value ' + user);
-  /*
-  useEffect(() => {
-    saveArray = list.filter((person) => {
-      return person.customer === 'saveName';
-    });
-    console.log('handleClick useEffect ' + saveArray.length + ' ' + saveArray);
-  }, [saveArray]);
-  */
-  //const value = React.useContext(UserContext);
-  /*
-  const [name, setName] = useState('initial');
-
-  console.log('clisting function ' + name);
-  useEffect(() => {
-    //setName(person);
-    console.log('handleClick useEffect ' + name);
-  }, []);
-*/
-
-  //});
-  //  }, [name]);
 
   const handleClick = (person) => {
     //setName(person);
@@ -144,35 +118,12 @@ const clisting = () => {
     //saveName = person;
     //setName(saveName);
 
-    //const value = React.useContext(person);
-
-    //console.log('selected array click ', saveArray);
-    //console.log('selected saveName click ', name);
-    /*
-    alert('Selected ' + val);
-    alert('Selected ' + n);
-    saveArray = list.filter((val) => {
-      return val.customer === saveName;
-    });
-
-    if (saveArray.length > 0) {
-      console.log(
-        'saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer
-      );
-      //setName(saveArray[0].customer);
-      //console.log(name);
-    }
-    */
+    
   };
 
   function cus() {
     {
-      //const user = React.useContext(UserContext);
-      //setName('kkkk')
-      //console.log('cus value ' + user);
-      //const user = React.useContext(UserContext);
-      //console.log('cus value ' + user);
-
+   
       let categories = [...new Set(list.map((iname) => iname.customer))];
 
       console.log('cus customer set ' + categories);
@@ -218,22 +169,7 @@ const listing = () => {
   let prev = [];
   let printList = [];
   let newList = [];
-  /*
-  useEffect(() => {
-    sameArray = list.filter((person) => {
-      return person.customer === 'saveName';
-    });
-    console.log('copy in useEffect ' + newList.length + ' ' + newList);
-  }, [saveArray]);
-  
-  const filtered = list.filter((person) => {
-    return person.customer === saveName;
-  });
-  console.log('purchase list size ' + filtered.length);
-  */
-  //list = [...saveArray]
-  //console.log('copy in listing ' + saveArray.length);
-
+ 
   const print = () => {
     tot = 0;
     for (let i = 0; i < list.length; i++) {
@@ -317,6 +253,81 @@ const App = () => {
 render(<App />, document.getElementById('app'));
 
 /*
+
+   //const user = React.useContext(UserContext);
+      //setName('kkkk')
+      //console.log('cus value ' + user);
+      //const user = React.useContext(UserContext);
+      //console.log('cus value ' + user);
+
+//const value = React.useContext(person);
+
+    //console.log('selected array click ', saveArray);
+    //console.log('selected saveName click ', name);
+    /*
+    alert('Selected ' + val);
+    alert('Selected ' + n);
+    saveArray = list.filter((val) => {
+      return val.customer === saveName;
+    });
+
+    if (saveArray.length > 0) {
+      console.log(
+        'saveArray test is ' + saveArray.length + ' ' + saveArray[0].customer
+      );
+      //setName(saveArray[0].customer);
+      //console.log(name);
+    }
+    */
+
+
+  //const [name, setName] = useState('initial');
+  //const user = React.useContext(UserContext);
+  //console.log('clisting value ' + user);
+
+ 
+
+  //});
+  //  }, [name]);
+----------------------------------------------------------------------
+ //const user = React.useContext(UserContext);
+  //console.log('clisting value ' + user);
+  /*
+  useEffect(() => {
+    saveArray = list.filter((person) => {
+      return person.customer === 'saveName';
+    });
+    console.log('handleClick useEffect ' + saveArray.length + ' ' + saveArray);
+  }, [saveArray]);
+  */
+  //const value = React.useContext(UserContext);
+  /*
+  const [name, setName] = useState('initial');
+
+  console.log('clisting function ' + name);
+  useEffect(() => {
+    //setName(person);
+    console.log('handleClick useEffect ' + name);
+  }, []);
+*/
+
+
+ /*
+  useEffect(() => {
+    sameArray = list.filter((person) => {
+      return person.customer === 'saveName';
+    });
+    console.log('copy in useEffect ' + newList.length + ' ' + newList);
+  }, [saveArray]);
+  
+  const filtered = list.filter((person) => {
+    return person.customer === saveName;
+  });
+  console.log('purchase list size ' + filtered.length);
+  */
+  //list = [...saveArray]
+  //console.log('copy in listing ' + saveArray.length);
+
 
 import { createContext, useState, useContext, useMemo } from 'react';
 const UserContext = createContext({
