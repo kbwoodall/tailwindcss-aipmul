@@ -14,6 +14,8 @@ import { useMemo } from 'react';
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
+  picNbr: 1,
+  setPicNbr : () => {},
 });
 
 let tot = 0.0;
@@ -22,7 +24,7 @@ let saveArray = [];
 let names = [];
 
 const UserInfo = () => {
-  const { userName } = useContext(UserContext);
+  const { userName, picNbr } = useContext(UserContext);
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>
   );
