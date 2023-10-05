@@ -288,7 +288,7 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
-            <List2 />
+            <List2 name = {name}/>
           </div>
         </div>
       </UserContext.Provider>

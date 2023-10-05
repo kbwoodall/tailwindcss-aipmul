@@ -3,6 +3,9 @@ import React from 'react';
 const listarg = 1;
 
 const List2 = () => {
+
+  //const { userName, setUserName } = useContext(UserContext);
+
   const pic1 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
 
