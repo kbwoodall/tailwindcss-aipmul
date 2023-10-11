@@ -1,10 +1,10 @@
 import React from 'react';
 
-const listarg = 1;
+//const listarg = 1;
 
 const List2 = (props) => {
 
-  console.log('List2 props ' + props.name)
+  console.log('List2 props ' + props.picNbr)
 
   //const { userName, setUserName } = useContext(aUserContext);
 
@@ -19,7 +19,7 @@ const List2 = (props) => {
     { keyn: 2, value: pic2 },
   ];
 
-  const param = 2;
+  const param = Number(props.picNbr);
 
   const specificValuesFromArray = nlist.filter((obj) => obj.keyn === param);
 
