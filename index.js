@@ -133,14 +133,14 @@ const list = [
     customer: 'Terry',
     item: 'shoes',
     cost: 100.27,
-    itempic: 1
+    itempic: 1,
   },
   {
     id: 4,
     customer: 'Terry',
     item: 'pants',
     cost: 200.36,
-    itempic: 2
+    itempic: 2,
   },
 ];
 
@@ -288,7 +288,7 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
-            <List2 name = {userName}/>
+            <List2 name="wassup" />
           </div>
         </div>
       </UserContext.Provider>

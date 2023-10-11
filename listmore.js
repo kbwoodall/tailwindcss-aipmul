@@ -4,7 +4,7 @@ const listarg = 1;
 
 const List2 = (props) => {
 
-  console.log('List2 props ' + props)
+  console.log('List2 props ' + props.name)
 
   //const { userName, setUserName } = useContext(aUserContext);
 
