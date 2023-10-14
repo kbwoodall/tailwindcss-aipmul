@@ -38,6 +38,8 @@ const UserInfo = () => {
   );
 };
 
+//<button onClick={() => this.handleButtonClick()}>
+
 const handleButtonClick = () => {
   alert('Button clicked!');
 };
@@ -231,7 +233,8 @@ const Listing = () => {
         printList.push(prev[0]);
       }
     }
-    return printall(printList);
+    return printall(printList)
+      
   };
   return print();
 };
