@@ -108,7 +108,11 @@ function Chdg() {
 
 const printall = (printList) => {
   return printList.map((items) => (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2" key={items.id}>
+    <p
+      className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+      key={items.id}
+      onClick={(event) => alert('hey ' + items.customer + ' ' +  items.id)}
+    >
       {items.customer} {items.item} {items.cost}
     </p>
   ));
@@ -233,8 +237,7 @@ const Listing = () => {
         printList.push(prev[0]);
       }
     }
-    return printall(printList)
-      
+    return printall(printList);
   };
   return print();
 };
@@ -291,7 +294,7 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
-            <List2 picNbr='2' />
+            <List2 picNbr="2" />
           </div>
         </div>
       </UserContext.Provider>

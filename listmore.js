@@ -1,12 +1,7 @@
 import React from 'react';
 
-//const listarg = 1;
-
 const List2 = (props) => {
-
-  console.log('List2 props ' + props.picNbr)
-
-  //const { userName, setUserName } = useContext(aUserContext);
+  console.log('List2 props ' + props.picNbr);
 
   const pic1 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
