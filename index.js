@@ -111,7 +111,7 @@ const printall = (printList) => {
     <p
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
-      onClick={(event) => alert('hey ' + items.customer + ' ' +  items.id)}
+      onClick={(event) => alert('hey ' + items.customer + ' ' + items.id)}
     >
       {items.customer} {items.item} {items.cost}
     </p>
@@ -183,6 +183,7 @@ const Listing = () => {
   let hcust = '';
   let hitem = '';
   let hcost = 0;
+  let hitempic = 1;
   let subtot = 0.0;
   let prev = [];
   let printList = [];
@@ -206,8 +207,7 @@ const Listing = () => {
         (first = false),
           (hcust = slist[i].customer),
           (hitem = slist[i].item),
-          //alert(hitem),
-
+          (hitempic = slist[i].itempic),
           (hcost = slist[i].cost),
           (subtot = slist[i].cost),
           (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }]);
@@ -218,6 +218,7 @@ const Listing = () => {
           hcust = slist[i].customer;
           hitem = slist[i].item;
           hcost = slist[i].cost;
+          hitempic = slist[i].itempic;
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
         } else {
           printList.push(prev[0]);
@@ -226,6 +227,7 @@ const Listing = () => {
           hcust = slist[i].customer;
           hitem = slist[i].item;
           hcost = slist[i].cost;
+          hitempic = slist[i].itempic;
           prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost }];
           subtot = 0;
           subtot = subtot + slist[i].cost;
