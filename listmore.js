@@ -1,7 +1,15 @@
 import React from 'react';
+import { createContext, useContext } from 'react';
+const UserContext = createContext({
+  userName: '',
+  setUserName: () => {},
+});
 
 const List2 = (props) => {
   console.log('List2 props ' + props.picNbr);
+
+  const { userName, setUserName } = useContext(UserContext);
+  console.log('listing ' + userName);
 
   const pic1 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
