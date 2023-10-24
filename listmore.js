@@ -1,14 +1,15 @@
 import React from 'react';
+/*
 import { createContext, useContext } from 'react';
 const UserContext = createContext({
   userName: ' unknown',
   setUserName: () => {},
 });
-
+*/
 const List2 = (props) => {
   console.log('List2 props ' + props.picNbr);
 
-  const { userName, setUserName } = useContext(UserContext);
+  //const { userName, setUserName } = useContext(UserContext);
   //console.log('listing List2' + userName);
 
   const pic1 =

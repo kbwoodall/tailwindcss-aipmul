@@ -25,7 +25,7 @@ const UserContext = createContext({
   userName: '',
   setUserName: () => {},
   imageNbr: 1,
-  setImageNbr: () => {}
+  setImageNbr: () => {},
 });
 
 let tot = 0.0;
@@ -113,7 +113,9 @@ const printall = (printList) => {
     <p
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
-      onClick={(event) => alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic)}
+      onClick={(event) =>
+        alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic)
+      }
     >
       {items.customer} {items.item} {items.cost}
     </p>
@@ -213,7 +215,15 @@ const Listing = () => {
           (hcost = slist[i].cost),
           (subtot = slist[i].cost),
           (hitempic = slist[i].itempic),
-          (prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost, itempic: hitempic }]);
+          (prev = [
+            {
+              id: hid++,
+              customer: hcust,
+              item: hitem,
+              cost: hcost,
+              itempic: hitempic,
+            },
+          ]);
       } else {
         if (hcust == slist[i].customer) {
           printList.push(prev[0]);
@@ -222,7 +232,15 @@ const Listing = () => {
           hitem = slist[i].item;
           hcost = slist[i].cost;
           hitempic = slist[i].itempic;
-          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost, itempic: hitempic  }];
+          prev = [
+            {
+              id: hid++,
+              customer: hcust,
+              item: hitem,
+              cost: hcost,
+              itempic: hitempic,
+            },
+          ];
         } else {
           printList.push(prev[0]);
           prev = [{ id: hid++, customer: hcust, item: '', cost: subtot }];
@@ -231,7 +249,15 @@ const Listing = () => {
           hitem = slist[i].item;
           hcost = slist[i].cost;
           hitempic = slist[i].itempic;
-          prev = [{ id: hid++, customer: hcust, item: hitem, cost: hcost, itempic: hitempic  }];
+          prev = [
+            {
+              id: hid++,
+              customer: hcust,
+              item: hitem,
+              cost: hcost,
+              itempic: hitempic,
+            },
+          ];
           subtot = 0;
           subtot = subtot + slist[i].cost;
         }
@@ -299,6 +325,7 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
+            console.log(' In index.js ' + {userName} + ' ' + itemNbr)
             <List2 picNbr={userName} />
           </div>
         </div>
