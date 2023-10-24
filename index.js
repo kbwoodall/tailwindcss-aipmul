@@ -295,6 +295,10 @@ function App() {
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
+  const value1 = () => ({ userName, setUserName, picNbr })
+  console.log('App ' + value1)
+
+
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
       <div>{routeResult}</div>
