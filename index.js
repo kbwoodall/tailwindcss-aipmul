@@ -24,6 +24,8 @@ import { useMemo } from 'react';
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
+  imageNbr: 1,
+  setImageNbr: () => {}
 });
 
 let tot = 0.0;
@@ -297,7 +299,7 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
-            <List2 picNbr="2" />
+            <List2 picNbr={userName} />
           </div>
         </div>
       </UserContext.Provider>

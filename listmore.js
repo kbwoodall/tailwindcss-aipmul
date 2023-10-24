@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContext, useContext } from 'react';
 const UserContext = createContext({
-  userName: '',
+  userName: ' unknown',
   setUserName: () => {},
 });
 
@@ -9,7 +9,7 @@ const List2 = (props) => {
   console.log('List2 props ' + props.picNbr);
 
   const { userName, setUserName } = useContext(UserContext);
-  console.log('listing ' + userName);
+  //console.log('listing List2' + userName);
 
   const pic1 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
@@ -22,7 +22,8 @@ const List2 = (props) => {
     { keyn: 2, value: pic2 },
   ];
 
-  const param = Number(props.picNbr);
+  //const param = Number(props.picNbr);
+  const param = 2;
 
   const specificValuesFromArray = nlist.filter((obj) => obj.keyn === param);
 
