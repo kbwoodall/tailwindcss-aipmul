@@ -47,7 +47,7 @@ const handleButtonClick = () => {
 };
 
 function UserAll() {
-  const { userName, setUserName } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
   const changeHandler = (event) => setUserName('All');
 
   return (
@@ -63,7 +63,7 @@ function UserAll() {
 }
 
 function UserNameInput() {
-  const { userName, setUserName } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
   const changeHandler = (event) => setUserName(event.target.value);
   return (
     <input
@@ -123,7 +123,7 @@ const printall = (printList) => {
 };
 
 function Totln() {
-  const { userName, setUserName } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
   if (userName === 'All') {
     return (
       <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
@@ -156,7 +156,7 @@ const list = [
 
 function Cus() {
   {
-    const { userName, setUserName } = useContext(UserContext);
+    const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
     console.log('cus customer set ' + categories);
@@ -178,7 +178,7 @@ function Cus() {
 }
 
 const Listing = () => {
-  const { userName, setUserName } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
   console.log('listing ' + userName);
 
   console.log('list ' + list.length);
@@ -295,8 +295,8 @@ function App() {
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
-  const value1 = () => ({ userName, setUserName, picNbr })
-  console.log('App ' + value1)
+  const value1 = () => ({ userName, setUserName, imageNbr })
+  console.log('App ' + userName)
 
 
   return (
