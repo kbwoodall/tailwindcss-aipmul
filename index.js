@@ -47,7 +47,8 @@ const handleButtonClick = () => {
 };
 
 function UserAll() {
-  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
   const changeHandler = (event) => setUserName('All');
 
   return (
@@ -63,7 +64,8 @@ function UserAll() {
 }
 
 function UserNameInput() {
-  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
   const changeHandler = (event) => setUserName(event.target.value);
   return (
     <input
@@ -73,6 +75,13 @@ function UserNameInput() {
       onChange={changeHandler}
     />
   );
+}
+
+function SetImage() {
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
+  const changeHandler = () => setImageNbr(1);
+  return { changeHandler };
 }
 
 const Itemdesc = () => {
@@ -109,12 +118,24 @@ function Chdg() {
 }
 
 const printall = (printList) => {
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
+
   return printList.map((items) => (
     <p
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
       onClick={(event) =>
-        alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic)
+        alert(
+          'hey ' +
+            items.customer +
+            ' ' +
+            items.id +
+            ' ' +
+            items.itempic +
+            ' ' +
+            Number({imageNbr})
+        )
       }
     >
       {items.customer} {items.item} {items.cost}
@@ -123,7 +144,8 @@ const printall = (printList) => {
 };
 
 function Totln() {
-  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
   if (userName === 'All') {
     return (
       <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
@@ -156,7 +178,8 @@ const list = [
 
 function Cus() {
   {
-    const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
+    const { userName, setUserName, imageNbr, setImageNbr } =
+      useContext(UserContext);
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
     console.log('cus customer set ' + categories);
@@ -178,7 +201,8 @@ function Cus() {
 }
 
 const Listing = () => {
-  const { userName, setUserName, imageNbr, setImageNbr } = useContext(UserContext);
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
   console.log('listing ' + userName);
 
   console.log('list ' + list.length);
@@ -295,9 +319,8 @@ function App() {
   const [userName, setUserName] = useState('All');
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
-  const value1 = () => ({ userName, setUserName, imageNbr })
-  console.log('App ' + userName)
-
+  const value1 = () => ({ userName, setUserName, imageNbr });
+  console.log('App ' + userName);
 
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
