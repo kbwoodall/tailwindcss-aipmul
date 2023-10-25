@@ -12,7 +12,7 @@ import { useRoutes } from 'hookrouter';
 import Routes from './router';
 
 import './style.css';
-import List2 from './listmore';
+//import List2 from './listmore';
 
 import App2 from './listapp.js';
 
@@ -39,8 +39,6 @@ const UserInfo = () => {
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>
   );
 };
-
-//<button onClick={() => this.handleButtonClick()}>
 
 const handleButtonClick = () => {
   alert('Button clicked!');
@@ -110,13 +108,26 @@ function Chdg() {
   );
 }
 
+function SetImageMore(param) {
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
+  //const changeHandler = () => setImageNbr(1);
+
+  console.log('param ' + param);
+  //setImageNbr(param);
+
+  //return alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+
+  return null;
+}
+
 function SetImage(items) {
   //const { userName, setUserName, imageNbr, setImageNbr } =
   //useContext(UserContext);
   //const changeHandler = () => setImageNbr(1);
 
-  return alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
-
+  alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+  //SetImageMore(items.itempic);
   //return null
 }
 
@@ -125,11 +136,13 @@ const printall = (printList) => {
     useContext(UserContext);
 
   return printList.map((items) => (
+    //alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+
     <p
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
       onClick={(event) => {
-        SetImage(items);
+        alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
       }}
     >
       {items.customer} {items.item} {items.cost}
@@ -308,6 +321,44 @@ const routes = {
   './routes/About': () => <Users />,
   './routes/Home': () => <About />,
 };
+
+const List2 = (props) => {
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
+  console.log('List2 listing ' + userName);
+
+  console.log('List2 props ' + props.picNbr);
+
+  //const { userName, setUserName } = useContext(UserContext);
+  //console.log('listing List2' + userName);
+
+  const pic1 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
+
+  const pic2 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg';
+
+  const nlist = [
+    { keyn: 1, value: pic1 },
+    { keyn: 2, value: pic2 },
+  ];
+
+  //const param = Number(props.picNbr);
+  const param = 2;
+
+  const specificValuesFromArray = nlist.filter((obj) => obj.keyn === param);
+
+  const testObj = specificValuesFromArray[0].value;
+
+  console.log(testObj);
+
+  return (
+    <div className="bg-gray-100 mt-6">
+      <img className="flex justify-center items-center  w-64" src={testObj} />
+    </div>
+  );
+};
+
 function App() {
   const routeResult = useRoutes(routes);
   const [userName, setUserName] = useState('All');
