@@ -13,8 +13,7 @@ import Routes from './router';
 
 import './style.css';
 //import List2 from './listmore';
-
-import App2 from './listapp.js';
+//import App2 from './listapp.js';
 
 import React, { Component } from 'react';
 import { render } from 'react-dom';
@@ -24,7 +23,7 @@ import { useMemo } from 'react';
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
-  imageNbr: '',
+  imageNbr: '2',
   setImageNbr: () => {},
 });
 
@@ -34,7 +33,8 @@ let saveArray = [];
 let names = [];
 
 const UserInfo = () => {
-  const { userName } = useContext(UserContext);
+  const { userName, imageNbr } = useContext(UserContext);
+  console.log('UserInfo ' + imageNbr + ' ' + userName);
   return (
     <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>
   );
@@ -49,6 +49,8 @@ function UserAll() {
     useContext(UserContext);
   const changeHandler = (event) => setUserName('All');
 
+  console.log('UserInfo ' + imageNbr + ' ' + userName);
+
   return (
     <div>
       <button
@@ -62,8 +64,11 @@ function UserAll() {
 }
 
 function UserNameInput() {
-  const { userName, setUserName, imageNbr, setImageNbr } =
-    useContext(UserContext);
+  const { userName, setUserName } = useContext(UserContext);
+  const { imageNbr, setImageNbr } = useContext(UserContext);
+  setImageNbr = 1;
+  console.log('Testxxxxxxx ' + setImageNbr);
+
   const changeHandler = (event) => setUserName(event.target.value);
   return (
     <input
@@ -303,29 +308,19 @@ const Listing = () => {
   };
   return print();
 };
-/*
-function UserNameInput() {
-  const { userName, setUserName } = useContext(UserContext);
-  const changeHandler = (event) => setUserName(event.target.value);
-  return <input type="text" value={userName} onChange={changeHandler} />;
-}
-return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
-<div className=" mt-5 ml-5 ">
-          <itemdesc />
-        </div>
-
-         return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
-*/
 
 const routes = {
   './routes/About': () => <Users />,
   './routes/Home': () => <About />,
 };
 
+//------------------------------------------------------------------
+
 const List2 = (props) => {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
-  console.log('List2 listing ' + userName);
+
+  console.log('List2 listing ' + userName + ' ' + imageNbr);
 
   console.log('List2 props ' + props.picNbr);
 
@@ -407,3 +402,17 @@ function App() {
 }
 
 render(<App />, document.getElementById('app'));
+
+/*
+function UserNameInput() {
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = (event) => setUserName(event.target.value);
+  return <input type="text" value={userName} onChange={changeHandler} />;
+}
+return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
+<div className=" mt-5 ml-5 ">
+          <itemdesc />
+        </div>
+
+         return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
+*/
