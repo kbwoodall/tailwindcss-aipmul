@@ -24,7 +24,7 @@ import { useMemo } from 'react';
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
-  imageNbr: 1,
+  imageNbr: '',
   setImageNbr: () => {},
 });
 
@@ -77,13 +77,6 @@ function UserNameInput() {
   );
 }
 
-function SetImage() {
-  const { userName, setUserName, imageNbr, setImageNbr } =
-    useContext(UserContext);
-  const changeHandler = () => setImageNbr(1);
-  return { changeHandler };
-}
-
 const Itemdesc = () => {
   return (
     <img
@@ -117,6 +110,16 @@ function Chdg() {
   );
 }
 
+function SetImage(items) {
+  //const { userName, setUserName, imageNbr, setImageNbr } =
+  //useContext(UserContext);
+  //const changeHandler = () => setImageNbr(1);
+
+  return alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+
+  //return null
+}
+
 const printall = (printList) => {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
@@ -125,18 +128,9 @@ const printall = (printList) => {
     <p
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
-      onClick={(event) =>
-        alert(
-          'hey ' +
-            items.customer +
-            ' ' +
-            items.id +
-            ' ' +
-            items.itempic +
-            ' ' +
-            Number({imageNbr})
-        )
-      }
+      onClick={(event) => {
+        SetImage(items);
+      }}
     >
       {items.customer} {items.item} {items.cost}
     </p>
