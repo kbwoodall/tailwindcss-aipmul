@@ -23,7 +23,7 @@ import { useMemo } from 'react';
 const UserContext = createContext({
   userName: '',
   setUserName: () => {},
-  imageNbr: '2',
+  imageNbr: '',
   setImageNbr: () => {},
 });
 
@@ -316,16 +316,11 @@ const routes = {
 
 //------------------------------------------------------------------
 
-const List2 = (props) => {
+const List2 = () => {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
 
   console.log('List2 listing ' + userName + ' ' + imageNbr);
-
-  console.log('List2 props ' + props.picNbr);
-
-  //const { userName, setUserName } = useContext(UserContext);
-  //console.log('listing List2' + userName);
 
   const pic1 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/bird.png';
@@ -338,14 +333,11 @@ const List2 = (props) => {
     { keyn: 2, value: pic2 },
   ];
 
-  //const param = Number(props.picNbr);
-  const param = 2;
+  const param = imageNbr;
 
   const specificValuesFromArray = nlist.filter((obj) => obj.keyn === param);
 
   const testObj = specificValuesFromArray[0].value;
-
-  console.log(testObj);
 
   return (
     <div className="bg-gray-100 mt-6">
@@ -357,15 +349,21 @@ const List2 = (props) => {
 function App() {
   const routeResult = useRoutes(routes);
   const [userName, setUserName] = useState('All');
+
+  const [imageNbr, setImageNbr] = useState(1);
+
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
+  const value2 = { userName, setUserName, imageNbr, setImageNbr };
+
   const value1 = () => ({ userName, setUserName, imageNbr });
-  console.log('App ' + userName);
+  console.log('App ' + userName + ' ' + imageNbr);
 
   return (
     <div className="flex justify-start bg-green-300 h-screen  ">
       <div>{routeResult}</div>
-      <UserContext.Provider value={value}>
+
+      <UserContext.Provider value={value2}>
         <div className=" bg-green-300 flex-row">
           <div className=" mt-5 ml-5 ">
             <Chdg />
@@ -392,7 +390,6 @@ function App() {
         <div className=" mt-5 ml-5 ">
           <Ihdg />
           <div>
-            console.log(' In index.js ' + {userName} + ' ' + itemNbr)
             <List2 picNbr={userName} />
           </div>
         </div>
@@ -402,6 +399,13 @@ function App() {
 }
 
 render(<App />, document.getElementById('app'));
+
+//const param = Number(props.picNbr);
+
+//console.log('List2 props ' + props.picNbr);
+
+//const { userName, setUserName } = useContext(UserContext);
+//console.log('listing List2' + userName);
 
 /*
 function UserNameInput() {
@@ -416,3 +420,12 @@ return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 
          return <img src="https://github.com/kbwoodall/tailwindcss-aipmul/tree/main/golfPants.jpg"/>;
 */
+
+//<AppContext.Provider value={{ userName, setUserName, imageNbr, setImageNbr }}>
+
+//<UserContext.Provider value={value}>
+
+//userName: '',
+//setUserName: () => {},
+//imageNbr: '2',
+//setImageNbr: () => {},
