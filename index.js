@@ -125,6 +125,7 @@ const printall = (printList) => {
       key={items.id}
       onClick={(event) => {
         alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+        setImageNbr(items.itempic)
       }}
     >
       {items.customer} {items.item} {items.cost}
