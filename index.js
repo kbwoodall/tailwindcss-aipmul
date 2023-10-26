@@ -118,13 +118,13 @@ const printall = (printList) => {
       className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
       onClick={(event) => {
-        alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+        //alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
         if (isNaN(items.itempic)) {
           setImageNbr(1);
-          console.log('NOT A NUMBER')
+          console.log('NOT A NUMBER');
         } else {
           setImageNbr(items.itempic);
-          console.log('IS A NUMBER')
+          console.log('IS A NUMBER');
         }
       }}
     >
@@ -148,18 +148,18 @@ function Totln() {
 }
 
 const list = [
-  { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45, itempic: 1 },
-  { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56, itempic: 2 },
+  { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45, itempic: 4 },
+  { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56, itempic: 4 },
   {
     id: 3,
-    customer: 'Terry',
+    customer: 'Nick',
     item: 'shoes',
     cost: 100.27,
-    itempic: 1,
+    itempic: 3,
   },
   {
     id: 4,
-    customer: 'Terry',
+    customer: 'Nick',
     item: 'pants',
     cost: 200.36,
     itempic: 2,
@@ -306,9 +306,17 @@ const List2 = () => {
   const pic2 =
     'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfPants.jpg';
 
+  const pic3 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/justPants.jpg';
+
+  const pic4 =
+    'https://stackblitz.com/files/tailwindcss-aipmul/github/kbwoodall/tailwindcss-aipmul/main/golfShirt.jpg';
+
   const nlist = [
     { keyn: 1, value: pic1 },
     { keyn: 2, value: pic2 },
+    { keyn: 3, value: pic3 },
+    { keyn: 4, value: pic4 },
   ];
 
   const param = imageNbr;
