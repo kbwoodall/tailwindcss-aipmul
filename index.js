@@ -21,10 +21,10 @@ import { createContext, useContext } from 'react';
 import { useMemo } from 'react';
 
 const UserContext = createContext({
-  userName: '',
-  setUserName: () => {},
-  imageNbr: '',
-  setImageNbr: () => {},
+  //userName: '',
+  //setUserName: () => {},
+  //imageNbr: '',
+  //setImageNbr: () => {},
 });
 
 let tot = 0.0;
@@ -67,7 +67,6 @@ function UserNameInput() {
   const { userName, setUserName } = useContext(UserContext);
   const { imageNbr, setImageNbr } = useContext(UserContext);
   setImageNbr = 1;
-  console.log('Testxxxxxxx ' + setImageNbr);
 
   const changeHandler = (event) => setUserName(event.target.value);
   return (
@@ -113,28 +112,6 @@ function Chdg() {
   );
 }
 
-function SetImageMore(param) {
-  const { userName, setUserName, imageNbr, setImageNbr } =
-    useContext(UserContext);
-  //const changeHandler = () => setImageNbr(1);
-
-  console.log('param ' + param);
-  //setImageNbr(param);
-
-  //return alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
-
-  return null;
-}
-
-function SetImage(items) {
-  //const { userName, setUserName, imageNbr, setImageNbr } =
-  //useContext(UserContext);
-  //const changeHandler = () => setImageNbr(1);
-
-  alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
-  //SetImageMore(items.itempic);
-  //return null
-}
 
 const printall = (printList) => {
   const { userName, setUserName, imageNbr, setImageNbr } =
@@ -429,3 +406,27 @@ return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 //setUserName: () => {},
 //imageNbr: '2',
 //setImageNbr: () => {},
+/*
+function SetImageMore(param) {
+  const { userName, setUserName, imageNbr, setImageNbr } =
+    useContext(UserContext);
+  //const changeHandler = () => setImageNbr(1);
+
+  console.log('param ' + param);
+  //setImageNbr(param);
+
+  //return alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+
+  return null;
+}
+
+function SetImage(items) {
+  //const { userName, setUserName, imageNbr, setImageNbr } =
+  //useContext(UserContext);
+  //const changeHandler = () => setImageNbr(1);
+
+  alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
+  //SetImageMore(items.itempic);
+  //return null
+}
+*/
