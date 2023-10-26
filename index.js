@@ -20,12 +20,7 @@ import { render } from 'react-dom';
 import { createContext, useContext } from 'react';
 import { useMemo } from 'react';
 
-const UserContext = createContext({
-  //userName: '',
-  //setUserName: () => {},
-  //imageNbr: '',
-  //setImageNbr: () => {},
-});
+const UserContext = createContext({});
 
 let tot = 0.0;
 let saveName = 'initial';
@@ -112,7 +107,6 @@ function Chdg() {
   );
 }
 
-
 const printall = (printList) => {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
@@ -125,7 +119,13 @@ const printall = (printList) => {
       key={items.id}
       onClick={(event) => {
         alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
-        setImageNbr(items.itempic)
+        if (isNaN(items.itempic)) {
+          setImageNbr(1);
+          console.log('NOT A NUMBER')
+        } else {
+          setImageNbr(items.itempic);
+          console.log('IS A NUMBER')
+        }
       }}
     >
       {items.customer} {items.item} {items.cost}
