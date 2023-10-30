@@ -179,12 +179,10 @@ function Cus() {
     saveArray = sublist;
     console.log('cus saveArray is ' + saveArray.length);
 
-    return sublist.map((person,index) => (
+    return sublist.map((person, index) => (
       <p
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
-     
-
-
+        key={index}
         onClick={(event) => setUserName(person)}
       >
         {person}
