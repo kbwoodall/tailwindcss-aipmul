@@ -155,14 +155,14 @@ const list = [
     customer: 'Nick',
     item: 'shoes',
     cost: 100.27,
-    itempic: 3,
+    itempic: 2,
   },
   {
     id: 4,
     customer: 'Nick',
     item: 'pants',
     cost: 200.36,
-    itempic: 2,
+    itempic: 3,
   },
 ];
 
