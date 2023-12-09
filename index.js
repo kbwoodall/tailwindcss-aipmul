@@ -31,7 +31,7 @@ const UserInfo = () => {
   const { userName, imageNbr } = useContext(UserContext);
   console.log('UserInfo ' + imageNbr + ' ' + userName);
   return (
-    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2">{userName}</p>
+    <p className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2 ">{userName}</p>
   );
 };
 
@@ -49,7 +49,7 @@ function UserAll() {
   return (
     <div>
       <button
-        className="bg-teal-400 text-left font-bold  pl-10 pt-2 pb-2 w-64"
+        className="bg-teal-400 text-left font-bold  pl-10 pt-2 pb-2 w-64 "
         onClick={changeHandler}
       >
         All
@@ -66,7 +66,7 @@ function UserNameInput() {
   const changeHandler = (event) => setUserName(event.target.value);
   return (
     <input
-      className="bg-teal-200 text-md font-bold "
+      className="bg-teal-200 text-md font-bold focus:bg-teal-200  "
       type="text"
       value={userName}
       onChange={changeHandler}

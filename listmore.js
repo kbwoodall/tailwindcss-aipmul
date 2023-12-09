@@ -34,7 +34,7 @@ const List2 = (props) => {
 
   return (
     <div className="bg-gray-100 mt-6">
-      <img className="flex justify-center items-center  w-64" src={testObj} />
+      <img className="flex justify-center items-center  w-64 " src={testObj} />
     </div>
   );
 };
