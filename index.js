@@ -132,16 +132,19 @@ const printall = (printList) => {
     </p>
   ));
 };
-
+//setImageNbr(1);
 function Totln() {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
   if (userName === 'All') {
-    return (
-      <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
-        Total {tot}
-      </p>
-    );
+    setImageNbr(1);
+    {
+      return (
+        <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
+          Total {tot}
+        </p>
+      );
+    }
   } else {
     return null;
   }
@@ -184,7 +187,9 @@ function Cus() {
       <p
         className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
         key={index}
-        onClick={(event) => setUserName(person)}
+        onClick={(event) => {
+          setUserName(person), setImageNbr(1);
+        }}
       >
         {person}
       </p>
