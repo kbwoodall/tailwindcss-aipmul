@@ -170,7 +170,7 @@ function Cus() {
   {
     const { userName, setUserName, imageNbr, setImageNbr } =
       useContext(UserContext);
-    //setImageNbr(1);
+    //setImageNbr();
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
     console.log('cus customer set ' + categories);
