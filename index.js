@@ -44,6 +44,8 @@ function UserAll() {
     useContext(UserContext);
   const changeHandler = (event) => setUserName('All');
 
+  //<div onClick={onClick}  className="bg-green-300"> {item} </div>
+
   console.log('UserInfo ' + imageNbr + ' ' + userName);
 
   return (
