@@ -153,8 +153,8 @@ function Totln() {
 }
 
 const list = [
-  { id: 1, customer: 'Jim', item: 'shirt-m', cost: 112.45, itempic: 4 },
-  { id: 2, customer: 'Leo', item: 'shirt-lg', cost: 127.56, itempic: 4 },
+  { id: 1, customer: 'Antionette', item: 'shirt-m', cost: 112.45, itempic: 4 },
+  { id: 2, customer: 'Shelly', item: 'shirt-lg', cost: 127.56, itempic: 4 },
   {
     id: 3,
     customer: 'Nick',
