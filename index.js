@@ -185,6 +185,10 @@ function Cus() {
     saveArray = sublist;
     console.log('cus saveArray is ' + saveArray.length);
 
+    const chgit = ({ person }) => {
+      return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
+    };
+
     return sublist.map((person, index) => (
       <p
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
@@ -194,7 +198,7 @@ function Cus() {
           //alert(person)
         }}
       >
-        <div className="bg-red-200 mr-2 pl-2">{person}</div>
+        <div className="bg-teal-200 mr-2 pl-2">{person}</div>
       </p>
     ));
   }
