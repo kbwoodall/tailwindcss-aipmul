@@ -187,14 +187,14 @@ function Cus() {
 
     return sublist.map((person, index) => (
       <p
-        className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+        className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
         key={index}
         onClick={(event) => {
-          setUserName(person), setImageNbr(1)
+          setUserName(person), setImageNbr(1);
           //alert(person)
         }}
       >
-        {person}
+        <div className="bg-red-200 mr-2 pl-2">{person}</div>
       </p>
     ));
   }
