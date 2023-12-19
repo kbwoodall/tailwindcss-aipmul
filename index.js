@@ -187,7 +187,7 @@ function Cus() {
 
     const chgit = (param) => {
       alert('person ' + param);
-      //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
+      return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
     //chgit("person")
     return sublist.map((person, index) => (
@@ -200,10 +200,11 @@ function Cus() {
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
-          alert(person + ' ' + index)
+          //alert(person + ' ' + index);
         }}
       >
-        <p className="bg-teal-200 mr-2 pl-2">{person}</p>
+        <chgit>'xx'</chgit>
+        {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
       </p>
     ));
   }
