@@ -193,16 +193,17 @@ function Cus() {
     return sublist.map((person, index) => (
       //chgit({person})
       //chgit("xx")
+      //setHlite(0)
 
       <p
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
-          //alert(person)
+          alert(person + ' ' + index)
         }}
       >
-        <div className="bg-teal-200 mr-2 pl-2">{person}</div>
+        <p className="bg-teal-200 mr-2 pl-2">{person}</p>
       </p>
     ));
   }
