@@ -185,16 +185,13 @@ function Cus() {
     saveArray = sublist;
     console.log('cus saveArray is ' + saveArray.length);
 
-    const chgit = (param) => {
-      alert('person ' + param);
-      return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
+    const Chgit = () => {
+      //alert('person ' );
+      return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
+      //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
-    //chgit("person")
-    return sublist.map((person, index) => (
-      //chgit({person})
-      //chgit("xx")
-      //setHlite(0)
 
+    return sublist.map((person, index) => (
       <p
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
         key={index}
@@ -203,7 +200,7 @@ function Cus() {
           //alert(person + ' ' + index);
         }}
       >
-        <chgit>'xx'</chgit>
+        <Chgit />
         {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
       </p>
     ));
