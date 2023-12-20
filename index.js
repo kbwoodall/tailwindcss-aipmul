@@ -192,7 +192,9 @@ function Cus() {
     };
 
     function Welcome(props) {
-      //return <h1>Hello, {props.name}</h1>;
+      //return <h1>Hello, {props. name}</h1>;
+      console.log('name is ' + props.name);
+
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
 
@@ -202,12 +204,10 @@ function Cus() {
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
-          //alert(person + ' ' + index);
+          console.log('click is xxxx ' + index);
         }}
       >
         <Welcome name={person} />
-
-       
       </p>
     ));
   }
