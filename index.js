@@ -191,6 +191,11 @@ function Cus() {
       //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
 
+    function Welcome(props) {
+      //return <h1>Hello, {props.name}</h1>;
+      return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
+    }
+
     return sublist.map((person, index) => (
       <p
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
@@ -200,12 +205,15 @@ function Cus() {
           //alert(person + ' ' + index);
         }}
       >
-        <Chgit />
-        {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
+        <Welcome name={person} />
+
+       
       </p>
     ));
   }
 }
+
+// {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
 
 const Listing = () => {
   const { userName, setUserName, imageNbr, setImageNbr } =
