@@ -174,11 +174,11 @@ const list = [
 
 function Cus() {
   {
-    const { userName, setUserName, imageNbr, setImageNbr } =
+    const { userName, setUserName, imageNbr, setImageNbr, indx, setIndx } =
       useContext(UserContext);
-    const { indx, setIndx } = useContext(UserContext);
+    //const { indx, setIndx } = useContext(UserContext);
 
-    setIndx(0);
+    //setIndx(0);
 
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
@@ -191,22 +191,22 @@ function Cus() {
 
     const lastIndex = 0;
 
-    const Chgit = () => {
+    const Chgitx = () => {
       //alert('person ' );
       return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
       //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
 
-    function Chgitx(props) {
+    function Chgit(props) {
       //return <h1>Hello, {props. name}</h1>;
-      console.log('name is Chgitx xxxxxxxxx');
-      //return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
+      console.log('index is ' + props );
+      return <p className="bg-teal-200 mr-2 pl-2">xxxxx{props}</p>;
     }
 
     function Welcome(props) {
       //return <h1>Hello, {props. name}</h1>;
       console.log('name is ' + props.name);
-      console.log('index is ' + indx);
+      //console.log('index is ' + indx);
 
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
@@ -217,8 +217,11 @@ function Cus() {
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
-          console.log('click lastIndex ' + index);
+          console.log('click lastIndex1 ' + index);
           setIndx(index);
+          //Chgit(index);
+          //<Chgit  name={index}/>
+          console.log('click lastIndex2 ' + indx);
         }}
       >
         <Welcome name={person} />
