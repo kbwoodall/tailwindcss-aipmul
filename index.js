@@ -63,6 +63,7 @@ function UserAll() {
 function UserNameInput() {
   const { userName, setUserName } = useContext(UserContext);
   const { imageNbr, setImageNbr } = useContext(UserContext);
+
   setImageNbr = 1;
 
   const changeHandler = (event) => setUserName(event.target.value);
@@ -175,7 +176,10 @@ function Cus() {
   {
     const { userName, setUserName, imageNbr, setImageNbr } =
       useContext(UserContext);
-    //setImageNbr();
+    const { indx, setIndx } = useContext(UserContext);
+
+    setIndx(0);
+
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
     console.log('cus customer set ' + categories);
@@ -185,11 +189,19 @@ function Cus() {
     saveArray = sublist;
     console.log('cus saveArray is ' + saveArray.length);
 
+    const lastIndex = 0;
+
     const Chgit = () => {
       //alert('person ' );
       return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
       //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
+
+    function Chgitx(props) {
+      //return <h1>Hello, {props. name}</h1>;
+      console.log('name is Chgitx xxxxxxxxx');
+      //return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
+    }
 
     function Welcome(props) {
       //return <h1>Hello, {props. name}</h1>;
@@ -204,7 +216,9 @@ function Cus() {
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
-          console.log('click is xxxx ' + index);
+          console.log('click lastIndex ' + index);
+          <Chgitx name={index} />;
+          //setMe(index);
         }}
       >
         <Welcome name={person} />
@@ -362,10 +376,18 @@ function App() {
   const [userName, setUserName] = useState('All');
 
   const [imageNbr, setImageNbr] = useState(1);
+  const [indx, setIndx] = useState(0);
 
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
-  const value2 = { userName, setUserName, imageNbr, setImageNbr };
+  const value2 = {
+    userName,
+    setUserName,
+    imageNbr,
+    setImageNbr,
+    indx,
+    setIndx,
+  };
 
   const value1 = () => ({ userName, setUserName, imageNbr });
   console.log('App ' + userName + ' ' + imageNbr);
