@@ -206,6 +206,7 @@ function Cus() {
     function Welcome(props) {
       //return <h1>Hello, {props. name}</h1>;
       console.log('name is ' + props.name);
+      console.log('index is ' + indx);
 
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
