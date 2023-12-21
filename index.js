@@ -217,8 +217,7 @@ function Cus() {
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
           console.log('click lastIndex ' + index);
-          <Chgitx name={index} />;
-          //setMe(index);
+          setIndx(index);
         }}
       >
         <Welcome name={person} />
