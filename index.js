@@ -212,10 +212,9 @@ function Cus() {
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
 
-    const Welcomex = ({ imageUrl, imageText }) => (
-      <div className="img-with-text">
-        <p className="txt">{imageText}</p>
-      </div>
+    const Welcomex = ({ person, index }) => (
+      //console.log('click lastIndex3 ' + index + person)
+      <p className="bg-teal-200 mr-2 pl-2">{index}</p>
     );
 
     const ImageText = ({ imageUrl, imageText }) => (
@@ -236,19 +235,19 @@ function Cus() {
         key={index}
         onClick={(event) => {
           setUserName(person), setImageNbr(1), setIndx(index);
-          console.log('click lastIndex1 ' + index + indx + imageNbr);
+          console.log('click lastIndex1 ' + index + person);
           //lastIndex = index;
 
           console.log('click lastIndex2 ' + lastIndex);
-          <IndexInfo />;
         }}
       >
-        <Welcome name={(person, index)} />
+        <Welcome name={(person)}/>
       </p>
     ));
   }
 }
 
+//    <Welcomex {...{person, indx}}
 // {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
 
 const Listing = () => {
