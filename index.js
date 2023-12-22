@@ -199,8 +199,9 @@ function Cus() {
 
     function Chgit(props) {
       //return <h1>Hello, {props. name}</h1>;
-      console.log('index is ' + props );
-      return <p className="bg-teal-200 mr-2 pl-2">xxxxx{props}</p>;
+      console.log('index in Chgit  xxxxxxxxxxx ' + props.name);
+      return null;
+      //return <p className="bg-teal-200 mr-2 pl-2">xxxxx{props}</p>;
     }
 
     function Welcome(props) {
@@ -211,20 +212,26 @@ function Cus() {
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
 
+    const IndexInfo = () => {
+      const { indx, setIndx } = useContext(UserContext);
+      alert(indx);
+      console.log('IndexInfo ' + indx);
+    };
+
     return sublist.map((person, index) => (
       <p
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
         key={index}
         onClick={(event) => {
-          setUserName(person), setImageNbr(1);
-          console.log('click lastIndex1 ' + index);
-          setIndx(index);
-          //Chgit(index);
-          //<Chgit  name={index}/>
-          console.log('click lastIndex2 ' + indx);
+          setUserName(person), setImageNbr(1), setIndx(index);
+          console.log('click lastIndex1 ' + index + indx + imageNbr);
+          //lastIndex = index;
+
+          console.log('click lastIndex2 ' + lastIndex);
+          <IndexInfo />;
         }}
       >
-        <Welcome name={person} />
+        <Welcome name={person, index} />
       </p>
     ));
   }
