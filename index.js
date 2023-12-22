@@ -212,6 +212,18 @@ function Cus() {
       return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
 
+    const Welcomex = ({ imageUrl, imageText }) => (
+      <div className="img-with-text">
+        <p className="txt">{imageText}</p>
+      </div>
+    );
+
+    const ImageText = ({ imageUrl, imageText }) => (
+      <div className="img-with-text">
+        <p className="txt">{imageText}</p>
+      </div>
+    );
+
     const IndexInfo = () => {
       const { indx, setIndx } = useContext(UserContext);
       alert(indx);
@@ -231,7 +243,7 @@ function Cus() {
           <IndexInfo />;
         }}
       >
-        <Welcome name={person, index} />
+        <Welcome name={(person, index)} />
       </p>
     ));
   }
