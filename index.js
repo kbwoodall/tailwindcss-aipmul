@@ -174,7 +174,7 @@ const list = [
 
 function Cus() {
   {
-    const { userName, setUserName, imageNbr, setImageNbr, indx, setIndx } =
+    const { userName, setUserName, imageNbr, setImageNbr, hindx, setHindx } =
       useContext(UserContext);
     //const { indx, setIndx } = useContext(UserContext);
 
@@ -223,10 +223,10 @@ function Cus() {
       </div>
     );
 
-    const IndexInfo = () => {
-      const { indx, setIndx } = useContext(UserContext);
-      alert(indx);
-      console.log('IndexInfo ' + indx);
+    const indexInfo = (param) => {
+      console.log('IndexInfo ' + param);
+
+      return param;
     };
 
     return sublist.map((person, index) => (
@@ -234,14 +234,14 @@ function Cus() {
         className="bg-teal-400 text-md font-bold pl-2 pt-2 pb-2"
         key={index}
         onClick={(event) => {
-          setUserName(person), setImageNbr(1), setIndx(index);
-          console.log('click lastIndex1 ' + index + person);
-          //lastIndex = index;
+          setUserName(person), setImageNbr(1);
 
-          console.log('click lastIndex2 ' + lastIndex);
+          //console.log('click lastIndex1 ' + index + ' ' + person);
+          indexInfo(index);
+          console.log('click lastIndex2 ' + indexInfo(index));
         }}
       >
-        <Welcome name={(person)}/>
+        <Welcome name={person} />
       </p>
     ));
   }
@@ -397,7 +397,7 @@ function App() {
   const [userName, setUserName] = useState('All');
 
   const [imageNbr, setImageNbr] = useState(1);
-  const [indx, setIndx] = useState(0);
+  const [hindx, setHindx] = useState(0);
 
   const value = useMemo(() => ({ userName, setUserName }), [userName]);
 
@@ -406,8 +406,8 @@ function App() {
     setUserName,
     imageNbr,
     setImageNbr,
-    indx,
-    setIndx,
+    hindx,
+    setHindx,
   };
 
   const value1 = () => ({ userName, setUserName, imageNbr });
