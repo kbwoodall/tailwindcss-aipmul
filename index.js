@@ -186,39 +186,19 @@ function Cus() {
     saveArray = sublist;
     console.log('cus saveArray is ' + saveArray.length);
 
-    const lastIndex = 0;
+    const indexInfo = (param) => {
+      console.log('IndexInfo ' + param);
 
-    const Chgitx = () => {
-      return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
+      return param;
     };
 
-    function Chgit(props) {
-      console.log('index in Chgit  xxxxxxxxxxx ' + props.name);
-    }
-
-    function Welcome(props) {
+    function Shownames(props) {
       console.log('name is ' + props.name);
 
       return (
         <p className="bg-teal-400 hover:bg-teal-200 mr-2 pl-2">{props.name}</p>
       );
     }
-
-    const Welcomex = ({ person, index }) => (
-      <p className="bg-teal-200 mr-2 pl-2">{person}</p>
-    );
-
-    const ImageText = ({ imageUrl, imageText }) => (
-      <div className="img-with-text">
-        <p className="txt">{imageText}</p>
-      </div>
-    );
-
-    const indexInfo = (param) => {
-      console.log('IndexInfo ' + param);
-
-      return param;
-    };
 
     return sublist.map((person, index) => (
       <p
@@ -231,7 +211,7 @@ function Cus() {
           console.log('click lastIndex2 ' + indexInfo(index));
         }}
       >
-        <Welcome name={person} />
+        <Shownames name={person} />
       </p>
     ));
   }
@@ -449,6 +429,22 @@ render(<App />, document.getElementById('app'));
 //console.log('listing List2' + userName);
 
 /*
+
+
+    const indexInfo = (param) => {
+      console.log('IndexInfo ' + param);
+
+      return param;
+    };
+    const lastIndex = 0;
+
+    const Chgitx = () => {
+      return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
+    };
+
+    function Chgit(props) {
+      console.log('index in Chgit  xxxxxxxxxxx ' + props.name);
+    }
 function UserNameInput() {
   const { userName, setUserName } = useContext(UserContext);
   const changeHandler = (event) => setUserName(event.target.value);
@@ -471,6 +467,17 @@ return <p className=" text-md font-bold pt-2 b-4 w-64 pl-4">Empty photo</p>;
 //imageNbr: '2',
 //setImageNbr: () => {},
 /*
+
+
+ const Welcomex = ({ person, index }) => (
+      <p className="bg-teal-200 mr-2 pl-2">{person}</p>
+    );
+
+    const ImageText = ({ imageUrl, imageText }) => (
+      <div className="img-with-text">
+        <p className="txt">{imageText}</p>
+      </div>
+    );
 function SetImageMore(param) {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
