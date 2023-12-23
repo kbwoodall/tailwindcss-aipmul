@@ -118,7 +118,7 @@ const printall = (printList) => {
     //alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
 
     <p
-      className="bg-teal-400 text-md font-bold pl-10 pt-2 pb-2"
+      className="bg-teal-400 hover:bg-teal-200 text-md font-bold pl-10 pt-2 pb-2"
       key={items.id}
       onClick={(event) => {
         //alert('hey ' + items.customer + ' ' + items.id + ' ' + items.itempic);
