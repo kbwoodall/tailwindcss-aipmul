@@ -209,12 +209,12 @@ function Cus() {
       console.log('name is ' + props.name);
       //console.log('index is ' + indx);
 
-      return <p className="bg-teal-200 mr-2 pl-2">{props.name}</p>;
+      return <p className="bg-teal-400 hover:bg-teal-200 mr-2 pl-2">{props.name}</p>;
     }
 
     const Welcomex = ({ person, index }) => (
       //console.log('click lastIndex3 ' + index + person)
-      <p className="bg-teal-200 mr-2 pl-2">{index}</p>
+      <p className="bg-teal-200 mr-2 pl-2">{person}</p>
     );
 
     const ImageText = ({ imageUrl, imageText }) => (
