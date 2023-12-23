@@ -135,7 +135,7 @@ const printall = (printList) => {
     </p>
   ));
 };
-//setImageNbr(1);
+
 function Totln() {
   const { userName, setUserName, imageNbr, setImageNbr } =
     useContext(UserContext);
@@ -176,9 +176,6 @@ function Cus() {
   {
     const { userName, setUserName, imageNbr, setImageNbr, hindx, setHindx } =
       useContext(UserContext);
-    //const { indx, setIndx } = useContext(UserContext);
-
-    //setIndx(0);
 
     let categories = [...new Set(list.map((iname) => iname.customer))];
 
@@ -192,28 +189,22 @@ function Cus() {
     const lastIndex = 0;
 
     const Chgitx = () => {
-      //alert('person ' );
       return <div className="bg-teal-400 mr-2 pl-2">{userName}</div>;
-      //return <div className="bg-teal-400 mr-2 pl-2">{person}</div>;
     };
 
     function Chgit(props) {
-      //return <h1>Hello, {props. name}</h1>;
       console.log('index in Chgit  xxxxxxxxxxx ' + props.name);
-      return null;
-      //return <p className="bg-teal-200 mr-2 pl-2">xxxxx{props}</p>;
     }
 
     function Welcome(props) {
-      //return <h1>Hello, {props. name}</h1>;
       console.log('name is ' + props.name);
-      //console.log('index is ' + indx);
 
-      return <p className="bg-teal-400 hover:bg-teal-200 mr-2 pl-2">{props.name}</p>;
+      return (
+        <p className="bg-teal-400 hover:bg-teal-200 mr-2 pl-2">{props.name}</p>
+      );
     }
 
     const Welcomex = ({ person, index }) => (
-      //console.log('click lastIndex3 ' + index + person)
       <p className="bg-teal-200 mr-2 pl-2">{person}</p>
     );
 
@@ -236,7 +227,6 @@ function Cus() {
         onClick={(event) => {
           setUserName(person), setImageNbr(1);
 
-          //console.log('click lastIndex1 ' + index + ' ' + person);
           indexInfo(index);
           console.log('click lastIndex2 ' + indexInfo(index));
         }}
@@ -246,9 +236,6 @@ function Cus() {
     ));
   }
 }
-
-//    <Welcomex {...{person, indx}}
-// {<p className="bg-teal-200 mr-2 pl-2">{person}</p>}
 
 const Listing = () => {
   const { userName, setUserName, imageNbr, setImageNbr } =
