@@ -9,7 +9,7 @@ const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
 
 import { useRoutes } from 'hookrouter';
-import Routes from './router';
+//import Routes from './router';
 
 import './style.css';
 //import List2 from './listmore';
