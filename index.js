@@ -22,7 +22,7 @@ import { useMemo } from 'react';
 
 const UserContext = createContext({});
 
-let tot = 0.0;
+let tot = 0.00;
 let saveName = 'initial';
 let saveArray = [];
 let names = [];
@@ -131,7 +131,7 @@ const printall = (printList) => {
         }
       }}
     >
-      {items.customer} {items.item} {items.cost}
+      {items.customer} {items.item}  ${items.cost}
     </p>
   ));
 };
@@ -144,7 +144,7 @@ function Totln() {
     {
       return (
         <p className="bg-red-400 text-md font-bold pl-10 pt-2 pb-2">
-          Total {tot}
+          Total ${tot.toFixed(2)}
         </p>
       );
     }
@@ -154,20 +154,20 @@ function Totln() {
 }
 
 const list = [
-  { id: 1, customer: 'Arnie', item: 'shirt-m', cost: 112.45, itempic: 4 },
-  { id: 2, customer: 'Ben', item: 'shirt-lg', cost: 127.56, itempic: 4 },
+  { id: 1, customer: 'Arnie', item: 'shirt-m', cost: 79.99, itempic: 4 },
+  { id: 2, customer: 'Ben', item: 'shirt-lg', cost: 69.99, itempic: 4 },
   {
     id: 3,
     customer: 'Jack',
-    item: 'shoes',
-    cost: 100.27,
+    item: 'attire',
+    cost: 200.99,
     itempic: 2,
   },
   {
     id: 4,
     customer: 'Jack',
     item: 'pants',
-    cost: 200.36,
+    cost: 55.99,
     itempic: 3,
   },
 ];
